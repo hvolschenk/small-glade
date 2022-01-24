@@ -11,7 +11,9 @@ const Player: React.FC = () => {
   return (
     <React.Fragment>
       <p>{name}</p>
-      <button onClick={() => trigger('player:name')} type="button">Change name</button>
+      <button onClick={() => trigger('player:name')} type="button">
+        Change name
+      </button>
     </React.Fragment>
   );
 };

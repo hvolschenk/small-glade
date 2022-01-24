@@ -6,7 +6,9 @@
   "scripts": {
     "build": "parcel build index.html",
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:format",
+    "test:format": "prettier --check ./src",
+    "test:format:fix": "prettier --write ./src"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-redux": "^7.1.22",
     "@types/redux": "^3.6.0",
-    "@types/redux-saga": "^0.10.5"
+    "@types/redux-saga": "^0.10.5",
+    "prettier": "^2.5.1"
   }
 }

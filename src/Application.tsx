@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Provider as ReactReduxProvider } from 'react-redux';
 
 import { Provider as EngineProvider } from './engine';
