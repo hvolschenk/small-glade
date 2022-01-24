@@ -19,15 +19,15 @@ const EngineProvider: React.FC = ({ children }) => {
     };
     if (event.validators.every((validator) => validator(options))) {
       event.handler(options);
-      event.effects.forEach((effect) => { effect(options); });
+      event.effects.forEach((effect) => {
+        effect(options);
+      });
     }
   }, []);
 
   const value = React.useMemo(() => ({ trigger }), [trigger]);
 
-  return (
-    <EngineContext.Provider value={value}>{children}</EngineContext.Provider>
-  );
+  return <EngineContext.Provider value={value}>{children}</EngineContext.Provider>;
 };
 
 export default EngineProvider;

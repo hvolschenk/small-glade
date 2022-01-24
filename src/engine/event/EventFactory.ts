@@ -5,9 +5,7 @@ interface BuildProps {
   event: string;
 }
 
-const events = [
-  PlayerName,
-];
+const events = [PlayerName];
 
 class EventFactory {
   public static build(props: BuildProps): Event<any> {
