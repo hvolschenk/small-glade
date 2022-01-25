@@ -5,7 +5,7 @@ import { RootState } from '../types';
 
 const playerUpdateName =
   (name: Player['name']): ThunkAction<void, RootState, void, AnyAction> =>
-  (dispatch, getState) => {
+  (dispatch) => {
     dispatch(playerNameUpdate({ name }));
   };
 
