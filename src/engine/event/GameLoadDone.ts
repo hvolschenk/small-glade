@@ -15,7 +15,8 @@ class GameLoadDone extends EventAbstract {
   effects: Effect<EventOptions>[] = [];
   validators: Validator<EventOptions>[] = [validateGameLoading];
 
-  handler(options?: EventOptions): void {
+  // eslint-disable-next-line class-methods-use-this
+  handler(options: EventOptions): void {
     options.dispatch(gameStatusUpdate(GameStatus.GAME_STATUS_UNSTARTED));
   }
 }
