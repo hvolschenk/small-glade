@@ -1,7 +1,7 @@
 import GameLoadDone from './GameLoadDone';
 import GameStart from './GameStart';
 import PlayerName from './PlayerName';
-import { Event } from './types';
+import { Event as EventInterface } from './types';
 
 interface BuildProps {
   event: string;
@@ -10,7 +10,7 @@ interface BuildProps {
 const events = [GameLoadDone, GameStart, PlayerName];
 
 class EventFactory {
-  public static build(props: BuildProps): Event<any> {
+  public static build(props: BuildProps): EventInterface<any> {
     const Event = events.find((EventClass) => EventClass.event === props.event);
     if (!Event) {
       throw new Error(`Event "${props.event}" not found`);

@@ -8,6 +8,7 @@ class PlayerName extends EventAbstract {
   effects: Effect<EventOptions>[] = [];
   validators: Validator<EventOptions>[] = [];
 
+  // eslint-disable-next-line class-methods-use-this
   handler(options: EventOptions): void {
     options.dispatch(playerUpdateName('Nod'));
   }

@@ -8,7 +8,8 @@
     "start": "parcel index.html",
     "test": "npm run test:format",
     "test:format": "prettier --check ./src",
-    "test:format:fix": "prettier --write ./src"
+    "test:format:fix": "prettier --write ./src",
+    "test:lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ."
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,17 @@
     "@types/react-redux": "^7.1.22",
     "@types/redux": "^3.6.0",
     "@types/redux-saga": "^0.10.5",
-    "prettier": "^2.5.1"
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
   }
 }
