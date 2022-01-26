@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Map from './Map';
 import Player from './Player';
 import { useEngine } from '../engine';
 import { GameStatus } from '../models/Game';
@@ -35,6 +36,7 @@ const Game: React.FC = () => {
   return (
     <React.Fragment>
       <Player />
+      <Map />
     </React.Fragment>
   );
 };
