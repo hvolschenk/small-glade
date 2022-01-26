@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Player from './Player';
 import { useEngine } from '../engine';
 import { GameStatus } from '../models/Game';
 import { selectGameStatus } from '../store/reducers/game';
@@ -31,7 +32,11 @@ const Game: React.FC = () => {
     );
   }
 
-  return (<p>Game</p>);
+  return (
+    <React.Fragment>
+      <Player />
+    </React.Fragment>
+  );
 };
 
 export default Game;
