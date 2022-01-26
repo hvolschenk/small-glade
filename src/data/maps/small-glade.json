@@ -1,0 +1,13 @@
+{
+  "identifier": "small-glade",
+  "name": "Small glade",
+  "tiles": [
+    [
+      { "isAccessible": true, "type": "placeholder", "variant": "empty" },
+      { "isAccessible": true, "type": "placeholder", "variant": "empty" }
+    ], [
+      { "isAccessible": true, "type": "placeholder", "variant": "empty" },
+      { "isAccessible": true, "type": "placeholder", "variant": "empty" }
+    ]
+  ]
+}

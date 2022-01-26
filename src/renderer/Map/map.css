@@ -1,0 +1,15 @@
+@import url('../../variables.css');
+
+#map {
+  position: relative;
+}
+
+.tile {
+  height: var(--size-tile);
+  position: absolute;
+  width: var(--size-tile);
+}
+
+.tile.placeholder-empty {
+  background-color: var(--color-blue-light);
+}
