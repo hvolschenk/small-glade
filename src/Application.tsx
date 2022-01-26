@@ -6,6 +6,8 @@ import Game from './renderer/Game';
 import Player from './renderer/Player';
 import { store } from './store';
 
+import './index.css';
+
 const Application: React.FC = () => (
   <ReactReduxProvider store={store}>
     <EngineProvider>
