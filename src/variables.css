@@ -3,4 +3,14 @@
   --color-gray-light: #eee;
 
   --size-tile: 80px;
+
+  --z-index--map: 0;
+  --z-index--tile: 5;
+  --z-index--interactable: 10;
+  --z-index--player: 15;
+  --z-index--environment: 20;
+  --z-index--hud: 25;
+  --z-index--control: 30;
+  --z-index--menu: 35;
+  --z-index--end-screen: 40;
 }

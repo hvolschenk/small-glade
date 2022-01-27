@@ -13,7 +13,7 @@ const Map: React.FC = () => {
   return (
     <div id="map">
       {tiles.map((row, rowIndex) => (
-        <React.Fragment>
+        <React.Fragment key={rowIndex}>
           {row.map((tile, tileIndex) => (
             <div
               className={classnames('tile', `${tile.type}-${tile.variant}`)}
