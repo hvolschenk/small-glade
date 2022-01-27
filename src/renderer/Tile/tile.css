@@ -1,0 +1,16 @@
+@import url('../../variables.css');
+
+.tile {
+  height: var(--size-tile);
+  position: absolute;
+  width: var(--size-tile);
+  z-index: var(--z-index--tile);
+}
+
+.tile.placeholder-empty {
+  background-color: var(--color-blue-light);
+}
+
+.tile.tree-birch {
+  background-color: var(--color-green-light);
+}

@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-import classnames from 'classnames';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -8,6 +7,7 @@ import configuration from '../../configuration';
 import { selectMapTiles } from '../../store/reducers/map';
 
 import './map.css';
+import Tile from '../Tile';
 
 const Map: React.FC = () => {
   const tiles = useSelector(selectMapTiles);
@@ -18,16 +18,16 @@ const Map: React.FC = () => {
       {tiles.map((row, rowIndex) => (
         <React.Fragment key={rowIndex}>
           {row.map((tile, tileIndex) => (
-            <div
-              className={classnames('tile', `${tile.type}-${tile.variant}`)}
+            <Tile
               key={`${rowIndex}-${tileIndex}`}
               style={{
                 left: tileIndex * configuration.tileSize(),
                 top: rowIndex * configuration.tileSize(),
               }}
+              tile={tile}
             >
               {rowIndex} {tileIndex}
-            </div>
+            </Tile>
           ))}
         </React.Fragment>
       ))}
