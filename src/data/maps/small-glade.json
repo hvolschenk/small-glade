@@ -5,7 +5,8 @@
     [
       { "isAccessible": true, "type": "placeholder", "variant": "empty" },
       { "isAccessible": true, "type": "placeholder", "variant": "empty" }
-    ], [
+    ],
+    [
       { "isAccessible": true, "type": "placeholder", "variant": "empty" },
       { "isAccessible": true, "type": "placeholder", "variant": "empty" }
     ]

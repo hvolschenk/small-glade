@@ -21,7 +21,10 @@ const validateGameStatusIdle: Validator<Options> = (options) => {
 const validateInMapBounds: Validator<Options> = (options) => {
   const state = options.getState();
   const playerPosition = selectPlayerPosition(state);
-  const position = positionFromDirection({ direction: options.direction, position: playerPosition });
+  const position = positionFromDirection({
+    direction: options.direction,
+    position: playerPosition,
+  });
   if (position.left < 0 || position.top < 0) {
     return false;
   }
@@ -38,7 +41,10 @@ const validateInMapBounds: Validator<Options> = (options) => {
 const validateTileAccessible: Validator<Options> = (options) => {
   const state = options.getState();
   const playerPosition = selectPlayerPosition(state);
-  const position = positionFromDirection({ direction: options.direction, position: playerPosition });
+  const position = positionFromDirection({
+    direction: options.direction,
+    position: playerPosition,
+  });
   const tiles = selectMapTiles(state);
   const row = tiles[position.top];
   if (row) {
