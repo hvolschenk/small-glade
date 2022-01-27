@@ -1,34 +1,54 @@
 /* eslint-disable react/no-array-index-key */
-import classnames from 'classnames';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Player from '../Player';
 import configuration from '../../configuration';
-import { selectMapTiles } from '../../store/reducers/map';
+import { selectMap } from '../../store/reducers/map';
 
 import './map.css';
+import Tile from '../Tile';
+import Interactable from '../Interactable';
 
 const Map: React.FC = () => {
-  const tiles = useSelector(selectMapTiles);
+  const map = useSelector(selectMap);
 
   return (
     <div id="map">
       <Player />
-      {tiles.map((row, rowIndex) => (
+      {map.tiles.map((row, rowIndex) => (
         <React.Fragment key={rowIndex}>
           {row.map((tile, tileIndex) => (
-            <div
-              className={classnames('tile', `${tile.type}-${tile.variant}`)}
+            <Tile
               key={`${rowIndex}-${tileIndex}`}
               style={{
                 left: tileIndex * configuration.tileSize(),
                 top: rowIndex * configuration.tileSize(),
               }}
+              tile={tile}
             >
               {rowIndex} {tileIndex}
-            </div>
+            </Tile>
           ))}
+        </React.Fragment>
+      ))}
+      {map.interactables.map((row, rowIndex) => (
+        <React.Fragment key={rowIndex}>
+          {row.map((interactable, interactableIndex) => {
+            if (interactable) {
+              return (
+                <Interactable
+                  interactable={interactable}
+                  key={`${rowIndex}-${interactableIndex}`}
+                  style={{
+                    left: interactableIndex * configuration.tileSize(),
+                    top: rowIndex * configuration.tileSize(),
+                  }}
+                />
+              );
+            }
+            return null;
+          })}
         </React.Fragment>
       ))}
     </div>

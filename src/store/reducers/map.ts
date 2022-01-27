@@ -2,10 +2,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../types';
-import { Map } from '../../models/Map';
+import { Map } from '../../models/Map/types';
 
 const initialState: Map = {
   identifier: '',
+  interactables: [],
   name: '',
   tiles: [],
 };
@@ -20,6 +21,7 @@ const mapSlice = createSlice({
   },
 });
 
+export const selectMap = (state: RootState): Map => state.map;
 export const selectMapTiles = (state: RootState): Map['tiles'] => state.map.tiles;
 
 export const { mapNameUpdate } = mapSlice.actions;

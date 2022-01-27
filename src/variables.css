@@ -1,9 +1,10 @@
 :root {
-  --color-blue-light: lightblue;
-  --color-gray-light: #eee;
-  --color-red-light: lightcoral;
+  --color--blue-light: lightblue;
+  --color--gray-light: #eee;
+  --color--green-light: lightgreen;
+  --color--red-light: lightcoral;
 
-  --size-tile: 80px;
+  --size--tile: 80px;
 
   --z-index--map: 0;
   --z-index--tile: 5;
