@@ -2,12 +2,14 @@
 
 #map {
   position: relative;
+  z-index: var(--z-index--map);
 }
 
 .tile {
   height: var(--size-tile);
   position: absolute;
   width: var(--size-tile);
+  z-index: var(--z-index--tile);
 }
 
 .tile.placeholder-empty {

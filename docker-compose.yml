@@ -10,6 +10,7 @@ services:
     command: ["npm", "start"]
     environment:
       - PORT=1234
+      - TILE_SIZE=${TILE_SIZE:-80}
     networks:
       - small-glade-network
     ports:

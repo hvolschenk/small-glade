@@ -1,5 +1,6 @@
 import GameLoadDone from './GameLoadDone';
 import GameStart from './GameStart';
+import PlayerMove from './PlayerMove';
 import PlayerName from './PlayerName';
 import { Event as EventInterface } from './types';
 
@@ -7,7 +8,7 @@ interface BuildProps {
   event: string;
 }
 
-const events = [GameLoadDone, GameStart, PlayerName];
+const events = [GameLoadDone, GameStart, PlayerMove, PlayerName];
 
 class EventFactory {
   public static build(props: BuildProps): EventInterface<any> {
