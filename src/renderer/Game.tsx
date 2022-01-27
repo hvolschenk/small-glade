@@ -27,12 +27,14 @@ const Game: React.FC = () => {
     return (
       <div className="game__unstarted">
         <p>What the hell happened? Where am I?</p>
-        <button onClick={() => trigger('game:start')} type="button">Shit</button>
+        <button onClick={() => trigger('game:start')} type="button">
+          Shit
+        </button>
       </div>
     );
   }
 
-  return (<Map />);
+  return <Map />;
 };
 
 export default Game;
