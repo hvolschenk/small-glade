@@ -5,6 +5,7 @@ import { Map } from './types';
 
 const smallGlade: Map = {
   identifier: 'small-glade',
+  interactables: [[, , bushBearberry], []],
   name: 'Small glade',
   tiles: [
     [placeholderEmpty, placeholderEmpty, placeholderEmpty],

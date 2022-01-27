@@ -1,0 +1,13 @@
+@import url('../../variables.css');
+
+.interactable {
+  height: var(--size--tile);
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--interactable);
+}
+
+.interactable.bush-bearberry {
+  background-color: var(--color--red-light);
+  opacity: 0.2;
+}

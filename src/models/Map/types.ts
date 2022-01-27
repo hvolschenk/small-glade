@@ -3,6 +3,7 @@ import { Tile } from '../Tile/types';
 
 export interface Map {
   identifier: string;
+  interactables: (Interactable | undefined)[][];
   name: string;
   tiles: Tile[][];
 }
