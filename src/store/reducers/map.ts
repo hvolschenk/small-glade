@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../types';
-import { Map } from '../../models/Map';
+import { Map } from '../../models/Map/types';
 
 const initialState: Map = {
   identifier: '',
