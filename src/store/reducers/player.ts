@@ -2,7 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../types';
-import { Player } from '../../models/Player';
+import { Player } from '../../models/Player/types';
 import { Position } from '../../models/Position';
 
 const initialState: Player = {

@@ -1,5 +1,5 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
-import { Player } from '../../models/Player';
+import { Player } from '../../models/Player/types';
 import { playerNameUpdate } from '../reducers/player';
 import { RootState } from '../types';
 
