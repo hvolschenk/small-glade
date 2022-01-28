@@ -40,6 +40,7 @@ const Map: React.FC = () => {
                 <Interactable
                   interactable={interactable}
                   key={`${rowIndex}-${interactableIndex}`}
+                  position={{ left: interactableIndex, top: rowIndex }}
                   style={{
                     left: interactableIndex * configuration.tileSize(),
                     top: rowIndex * configuration.tileSize(),

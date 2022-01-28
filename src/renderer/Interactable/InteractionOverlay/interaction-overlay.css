@@ -1,0 +1,12 @@
+@import url('../../../variables.css');
+
+#interaction-overlay {
+  position: fixed;
+  right: 0;
+  top: 16px;
+}
+
+#interaction-overlay .interaction-overlay__action--open {
+  height: var(--size--tile);
+  width: var(--size--tile);
+}

@@ -1,5 +1,6 @@
 import GameLoadDone from './GameLoadDone';
 import GameStart from './GameStart';
+import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
 import InventoryToggle from './InventoryToggle';
 import PlayerMove from './PlayerMove';
@@ -13,6 +14,7 @@ interface BuildProps {
 const events = [
   GameLoadDone,
   GameStart,
+  InteractableHarvest,
   InventoryItemAdd,
   InventoryToggle,
   PlayerMove,

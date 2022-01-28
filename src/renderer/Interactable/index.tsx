@@ -1,8 +1,8 @@
 import React from 'react';
-import { Interactable as InteractableInterface } from '../../models/Interactable/types';
-import BushBearberry from './BushBearberry';
 
+import BushBearberry from './BushBearberry';
 import { InteractableRendererProps } from './types';
+import { Interactable as InteractableInterface } from '../../models/Interactable/types';
 
 import './interactable.css';
 
@@ -28,9 +28,9 @@ const interactableFactory = (
   return NullRenderer;
 };
 
-const Interactable: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
+const Interactable: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
   const InteractableRenderer = interactableFactory(interactable);
-  return <InteractableRenderer interactable={interactable} style={style} />;
+  return <InteractableRenderer interactable={interactable} position={position} style={style} />;
 };
 
 export default Interactable;
