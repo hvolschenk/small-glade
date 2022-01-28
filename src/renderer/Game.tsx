@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Inventory from './Inventory';
 import Map from './Map';
 import { useEngine } from '../engine';
 import { GameStatus } from '../models/Game';
@@ -34,7 +35,12 @@ const Game: React.FC = () => {
     );
   }
 
-  return <Map />;
+  return (
+    <React.Fragment>
+      <Inventory />
+      <Map />
+    </React.Fragment>
+  );
 };
 
 export default Game;

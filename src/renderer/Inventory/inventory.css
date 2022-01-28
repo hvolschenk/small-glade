@@ -1,0 +1,17 @@
+@import url('../../variables.css');
+
+#inventory {
+  background-color: var(--color--black);
+  color: var(--color--white);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--z-index--menu);
+}
+
+#inventory.open {
+  display: block;
+}
