@@ -1,8 +1,10 @@
 :root {
+  --color--black: black;
   --color--blue-light: lightblue;
   --color--gray-light: #eee;
   --color--green-light: lightgreen;
   --color--red-light: lightcoral;
+  --color--white: white;
 
   --size--tile: 80px;
 

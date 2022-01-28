@@ -1,5 +1,8 @@
 import GameLoadDone from './GameLoadDone';
 import GameStart from './GameStart';
+import InteractableHarvest from './InteractableHarvest';
+import InventoryItemAdd from './InventoryItemAdd';
+import InventoryToggle from './InventoryToggle';
 import PlayerMove from './PlayerMove';
 import PlayerName from './PlayerName';
 import { Event as EventInterface } from './types';
@@ -8,7 +11,15 @@ interface BuildProps {
   event: string;
 }
 
-const events = [GameLoadDone, GameStart, PlayerMove, PlayerName];
+const events = [
+  GameLoadDone,
+  GameStart,
+  InteractableHarvest,
+  InventoryItemAdd,
+  InventoryToggle,
+  PlayerMove,
+  PlayerName,
+];
 
 class EventFactory {
   public static build(props: BuildProps): EventInterface<any> {
