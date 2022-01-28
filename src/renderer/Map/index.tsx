@@ -1,6 +1,5 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Player from '../Player';
 import configuration from '../../configuration';
@@ -9,6 +8,7 @@ import { selectMap } from '../../store/reducers/map';
 import './map.css';
 import Tile from '../Tile';
 import Interactable from '../Interactable';
+import { useSelector } from '../../store/hooks';
 
 const Map: React.FC = () => {
   const map = useSelector(selectMap);

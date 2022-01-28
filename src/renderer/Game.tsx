@@ -1,10 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import Inventory from './Inventory';
 import Map from './Map';
 import { useEngine } from '../engine';
 import { GameStatus } from '../models/Game';
+import { useSelector } from '../store/hooks';
 import { selectGameStatus } from '../store/reducers/game';
 
 const Game: React.FC = () => {
