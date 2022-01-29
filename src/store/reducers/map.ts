@@ -4,6 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../types';
 import { Map } from '../../models/Map/types';
 import { Position } from '../../models/Position';
+import { Tile } from '../../models/Tile/types';
 
 const initialState: Map = {
   identifier: '',
@@ -33,6 +34,16 @@ const mapSlice = createSlice({
 });
 
 export const selectMap = (state: RootState): Map => state.map;
+export const selectMapTileAtPosition = (state: RootState, position: Position): null | Tile => {
+  const row = state.map.tiles[position.top];
+  if (row) {
+    const tile = row[position.left];
+    if (tile) {
+      return tile;
+    }
+  }
+  return null;
+};
 export const selectMapTiles = (state: RootState): Map['tiles'] => state.map.tiles;
 
 export const { mapInteractableInteract, mapNameUpdate } = mapSlice.actions;
