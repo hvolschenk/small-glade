@@ -1,0 +1,40 @@
+@import url('../../../variables.css');
+
+.movement-control {
+  align-items: center;
+  background-color: var(--color--black);
+  display: flex;
+  height: var(--size--tile);
+  justify-content: center;
+  opacity: 0.6;
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--control);
+}
+
+.movement-control button {
+  border: none;
+  border-radius: 5px;
+  height: 10px;
+  width: 10px;
+}
+
+.movement-control.down {
+  left: 0;
+  top: var(--size--tile);
+}
+
+.movement-control.left {
+  left: calc(var(--size--tile) * -1);
+  top: 0;
+}
+
+.movement-control.right {
+  left: var(--size--tile);
+  top: 0;
+}
+
+.movement-control.up {
+  left: 0;
+  top: calc(var(--size--tile) * -1);
+}
