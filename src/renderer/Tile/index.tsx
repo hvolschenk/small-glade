@@ -1,8 +1,10 @@
 import React from 'react';
 
 import PlaceholderEmpty from './PlaceholderEmpty';
+import RockBasic from './RockBasic';
 import TreeBirch from './TreeBirch';
 import { TileRendererProps } from './types';
+import WaterBasic from './WaterBasic';
 import { Tile as TileInterface } from '../../models/Tile/types';
 
 import './tile.css';
@@ -12,8 +14,14 @@ const tileFactory = (tile: TileInterface): React.ComponentType<TileRendererProps
     placeholder: {
       empty: PlaceholderEmpty,
     },
+    rock: {
+      basic: RockBasic,
+    },
     tree: {
       birch: TreeBirch,
+    },
+    water: {
+      basic: WaterBasic,
     },
   };
   const variants = tiles[tile.type];

@@ -11,6 +11,14 @@
   background-color: var(--color--blue-light);
 }
 
+.tile.rock-basic {
+  background-color: var(--color--gray);
+}
+
 .tile.tree-birch {
   background-color: var(--color--green-light);
+}
+
+.tile.water-basic {
+  background-color: var(--color--blue);
 }
