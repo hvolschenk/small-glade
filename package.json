@@ -6,10 +6,11 @@
   "scripts": {
     "build": "parcel build index.html",
     "start": "parcel index.html",
-    "test": "npm run test:format",
+    "test": "npm run test:format && npm run test:lint && npm run test:types",
     "test:format": "prettier --check ./src",
     "test:format:fix": "prettier --write ./src",
-    "test:lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ."
+    "test:lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
+    "test:types": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
