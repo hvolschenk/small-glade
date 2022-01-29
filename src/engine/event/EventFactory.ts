@@ -4,7 +4,6 @@ import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
 import InventoryToggle from './InventoryToggle';
 import PlayerMove from './PlayerMove';
-import PlayerName from './PlayerName';
 import { Event as EventInterface } from './types';
 
 interface BuildProps {
@@ -18,7 +17,6 @@ const events = [
   InventoryItemAdd,
   InventoryToggle,
   PlayerMove,
-  PlayerName,
 ];
 
 class EventFactory {
