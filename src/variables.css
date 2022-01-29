@@ -1,6 +1,8 @@
 :root {
   --color--black: black;
+  --color--blue: blue;
   --color--blue-light: lightblue;
+  --color--gray: grey;
   --color--gray-light: #eee;
   --color--green-light: lightgreen;
   --color--red-light: lightcoral;
