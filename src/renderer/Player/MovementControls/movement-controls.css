@@ -2,7 +2,6 @@
 
 .movement-control {
   align-items: center;
-  background-color: var(--color--black);
   display: flex;
   height: var(--size--tile);
   justify-content: center;
@@ -13,10 +12,12 @@
 }
 
 .movement-control button {
+  background-color: var(--color--black);
   border: none;
-  border-radius: 5px;
-  height: 10px;
-  width: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
 }
 
 .movement-control.down {
