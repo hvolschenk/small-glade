@@ -3,6 +3,7 @@ import GameStart from './GameStart';
 import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
 import InventoryToggle from './InventoryToggle';
+import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
 import { Event as EventInterface } from './types';
 
@@ -16,6 +17,7 @@ const events = [
   InteractableHarvest,
   InventoryItemAdd,
   InventoryToggle,
+  OutfitToggle,
   PlayerMove,
 ];
 
