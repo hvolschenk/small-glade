@@ -22,6 +22,9 @@ const playerSlice = createSlice({
     playerPositionUpdate: (state, action: PayloadAction<{ position: Position }>) => {
       state.position = action.payload.position;
     },
+    playerVitalsUpdate: (state, action: PayloadAction<{ vitals: Vitals }>) => {
+      state.vitals = action.payload.vitals;
+    },
   },
 });
 
@@ -29,5 +32,5 @@ export const selectPlayer = (state: RootState): Player => state.player;
 export const selectPlayerPosition = (state: RootState): Position => state.player.position;
 export const selectPlayerVitals = (state: RootState): Vitals => state.player.vitals;
 
-export const { playerPositionUpdate } = playerSlice.actions;
+export const { playerPositionUpdate, playerVitalsUpdate } = playerSlice.actions;
 export default playerSlice.reducer;
