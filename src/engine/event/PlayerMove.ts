@@ -13,6 +13,10 @@ export interface PlayerMoveOptions {
 }
 type Options = EventOptions & PlayerMoveOptions;
 
+const effectGameTurn: Effect<Options> = (options) => {
+  options.trigger('game:turn');
+};
+
 const validateGameStatusIdle: Validator<Options> = (options) => {
   const status = selectGameStatus(options.getState());
   return status === GameStatus.GAME_STATUS_IDLE;
@@ -59,7 +63,7 @@ const validateTileAccessible: Validator<Options> = (options) => {
 class PlayerMove extends EventAbstract<Options> {
   public static event: string = 'player:move';
 
-  effects: Effect[] = [];
+  effects: Effect<Options>[] = [effectGameTurn];
   validators: Validator<Options>[] = [
     validateGameStatusIdle,
     validateInMapBounds,
