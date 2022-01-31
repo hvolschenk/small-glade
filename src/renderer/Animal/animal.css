@@ -1,0 +1,16 @@
+@import url('../../variables.css');
+
+.animal {
+  height: var(--size--tile);
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--interactable);
+}
+
+.animal.deer-elk {
+  background-color: var(--color--brown);
+}
+
+.animal.wolf-arctic {
+  background-color: var(--color--white);
+}
