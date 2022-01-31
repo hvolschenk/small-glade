@@ -2,7 +2,21 @@
 
 #vitals {
   bottom: var(--size--small);
+  display: flex;
+  gap: var(--size--small);
   left: var(--size--small);
   position: fixed;
   z-index: var(--z-index--hud);
+}
+
+@media (orientation: landscape) {
+  #vitals {
+    flex-direction: row;
+  }
+}
+
+@media (orientation: portrait) {
+  #vitals {
+    flex-direction: column;
+  }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useSelector } from '../../store/hooks';
 import { selectPlayerVitals } from '../../store/reducers/player';
+import Vital from './Vital';
 
 import './vitals.css';
 
@@ -10,10 +11,10 @@ const Vitals: React.FC = () => {
 
   return (
     <div id="vitals">
-      <p>
-        <em>{vitals.health}</em>&nbsp; F: {vitals.fullness};&nbsp; H: {vitals.hydration};&nbsp; W:{' '}
-        {vitals.warmth}
-      </p>
+      <Vital name="HP" percentage={vitals.health} />
+      <Vital name="Full" percentage={vitals.fullness} />
+      <Vital name="Hydr" percentage={vitals.hydration} />
+      <Vital name="Warm" percentage={vitals.warmth} />
     </div>
   );
 };
