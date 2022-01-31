@@ -2,13 +2,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '../types';
-import { Player } from '../../models/Player/types';
+import { Player, Vitals } from '../../models/Player/types';
 import { Position } from '../../models/Position';
 
 const initialState: Player = {
-  position: {
-    left: 0,
-    top: 0,
+  position: { left: 0, top: 0 },
+  vitals: {
+    fullness: 100,
+    health: 100,
+    hydration: 100,
+    warmth: 100,
   },
 };
 
@@ -24,6 +27,7 @@ const playerSlice = createSlice({
 
 export const selectPlayer = (state: RootState): Player => state.player;
 export const selectPlayerPosition = (state: RootState): Position => state.player.position;
+export const selectPlayerVitals = (state: RootState): Vitals => state.player.vitals;
 
 export const { playerPositionUpdate } = playerSlice.actions;
 export default playerSlice.reducer;

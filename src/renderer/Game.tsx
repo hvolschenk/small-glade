@@ -4,6 +4,7 @@ import Controls from './Controls';
 import Inventory from './Inventory';
 import Map from './Map';
 import Outfit from './Outfit';
+import Vitals from './Vitals';
 import { useEngine } from '../engine';
 import { GameStatus } from '../models/Game';
 import { useSelector } from '../store/hooks';
@@ -42,6 +43,7 @@ const Game: React.FC = () => {
       <Inventory />
       <Outfit />
       <Map />
+      <Vitals />
       <Controls />
     </React.Fragment>
   );
