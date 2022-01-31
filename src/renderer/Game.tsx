@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Controls from './Controls';
 import Inventory from './Inventory';
 import Map from './Map';
 import Outfit from './Outfit';
@@ -41,6 +42,7 @@ const Game: React.FC = () => {
       <Inventory />
       <Outfit />
       <Map />
+      <Controls />
     </React.Fragment>
   );
 };
