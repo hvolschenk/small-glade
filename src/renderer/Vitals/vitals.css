@@ -1,0 +1,8 @@
+@import url('../../variables.css');
+
+#vitals {
+  bottom: var(--size--small);
+  left: var(--size--small);
+  position: fixed;
+  z-index: var(--z-index--hud);
+}
