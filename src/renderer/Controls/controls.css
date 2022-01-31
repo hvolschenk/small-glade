@@ -1,0 +1,24 @@
+@import url('../../variables.css');
+
+#controls {
+  bottom: var(--size--small);
+  display: flex;
+  flex-direction: row;
+  gap: var(--size--small);
+  position: fixed;
+  right: var(--size--small);
+  z-index: var(--z-index--control);
+}
+
+#controls .control {
+  background-color: var(--color--gray-light);
+  border-radius: var(--size--extra-small);
+  border: 1px solid var(--color--gray);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 0 0 rgb(255 255 255 / 70%) inset;
+  color: var(--color--black);
+  cursor: pointer;
+  font-family: monospace;
+  font-weight: 700;
+  padding: var(--size--extra-small);
+  white-space: nowrap;
+}
