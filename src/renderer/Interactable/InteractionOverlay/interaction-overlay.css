@@ -3,7 +3,7 @@
 #interaction-overlay {
   position: fixed;
   right: 0;
-  top: 16px;
+  top: var(--size--normal);
 }
 
 #interaction-overlay .interaction-overlay__action--open {

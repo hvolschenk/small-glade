@@ -8,6 +8,9 @@
   --color--red-light: lightcoral;
   --color--white: white;
 
+  --size--extra-small: 4px;
+  --size--small: 8px;
+  --size--normal: 16px;
   --size--tile: 80px;
 
   --z-index--map: 0;
