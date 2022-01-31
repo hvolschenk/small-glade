@@ -4,6 +4,7 @@
   position: fixed;
   right: 0;
   top: var(--size--normal);
+  z-index: var(--z-index--control);
 }
 
 #interaction-overlay .interaction-overlay__action--open {
