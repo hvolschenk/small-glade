@@ -7,6 +7,7 @@ import { Position } from '../../models/Position';
 import { Tile } from '../../models/Tile/types';
 
 const initialState: Map = {
+  animals: [],
   identifier: '',
   interactables: [],
   name: '',

@@ -9,6 +9,7 @@ import './map.css';
 import Tile from '../Tile';
 import Interactable from '../Interactable';
 import { useSelector } from '../../store/hooks';
+import Animal from '../Animal';
 
 const Map: React.FC = () => {
   const map = useSelector(selectMap);
@@ -43,6 +44,25 @@ const Map: React.FC = () => {
                   position={{ left: interactableIndex, top: rowIndex }}
                   style={{
                     left: interactableIndex * configuration.tileSize(),
+                    top: rowIndex * configuration.tileSize(),
+                  }}
+                />
+              );
+            }
+            return null;
+          })}
+        </React.Fragment>
+      ))}
+      {map.animals.map((row, rowIndex) => (
+        <React.Fragment key={rowIndex}>
+          {row.map((animal, animalIndex) => {
+            if (animal) {
+              return (
+                <Animal
+                  animal={animal}
+                  key={`${rowIndex}-${animalIndex}`}
+                  style={{
+                    left: animalIndex * configuration.tileSize(),
                     top: rowIndex * configuration.tileSize(),
                   }}
                 />
