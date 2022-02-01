@@ -8,6 +8,7 @@ import {
   selectOutfitProtection,
   selectOutfitWarmth,
 } from '../../store/reducers/outfit';
+import { selectWeather } from '../../store/reducers/weather';
 
 import './outfit.css';
 
@@ -16,6 +17,7 @@ const Outfit: React.FC = () => {
   const outfit = useSelector(selectOutfit);
   const protection = useSelector(selectOutfitProtection);
   const warmth = useSelector(selectOutfitWarmth);
+  const weather = useSelector(selectWeather);
 
   const handleKeyDown = React.useCallback(
     (event: KeyboardEvent) => {
@@ -42,6 +44,9 @@ const Outfit: React.FC = () => {
       <p>Underwear: {outfit.underwear.name}</p>
       <p>Protection: {protection}</p>
       <p>Warmth: {warmth}</p>
+      <br />
+      <p>Temperature: {weather.temperature}</p>
+      <p>Conditions: {weather.conditions}</p>
     </div>
   );
 };

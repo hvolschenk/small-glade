@@ -8,6 +8,7 @@ import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
 import PlayerVitalsUpdate from './PlayerVitalsUpdate';
 import { Event as EventInterface } from './types';
+import WeatherUpdate from './WeatherUpdate';
 
 interface BuildProps {
   event: string;
@@ -23,6 +24,7 @@ const events = [
   OutfitToggle,
   PlayerMove,
   PlayerVitalsUpdate,
+  WeatherUpdate,
 ];
 
 class EventFactory {

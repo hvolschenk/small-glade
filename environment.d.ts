@@ -9,6 +9,8 @@ declare global {
       VITALS_HYDRATION_LOSS_PER_TURN: string;
       VITALS_WARMTH_HEALTH_LOSS_PER_TURN: string;
       VITALS_WARMTH_LOSS_PER_TURN: string;
+      WEATHER_TEMPERATURE_LIMIT_LOWER: string;
+      WEATHER_TEMPERATURE_LIMIT_UPPER: string;
     }
   }
 }
