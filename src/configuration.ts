@@ -9,6 +9,10 @@ const configuration = {
     warmthHealthLossPerTurn: () => parseInt(process.env.VITALS_WARMTH_HEALTH_LOSS_PER_TURN, 10),
     warmthLossPerTurn: () => parseInt(process.env.VITALS_WARMTH_LOSS_PER_TURN, 10),
   },
+  weather: {
+    temperatureLimitLower: () => parseInt(process.env.WEATHER_TEMPERATURE_LIMIT_LOWER, 10),
+    temperatureLimitUpper: () => parseInt(process.env.WEATHER_TEMPERATURE_LIMIT_UPPER, 10),
+  },
 };
 
 export default configuration;
