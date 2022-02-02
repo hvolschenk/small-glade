@@ -1,15 +1,16 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 
+import configuration from '~/src/configuration';
+import { useSelector } from '~/src/store/hooks';
+import { selectMap } from '~/src/store/reducers/map';
+
+import Animal from '../Animal';
+import Interactable from '../Interactable';
 import Player from '../Player';
-import configuration from '../../configuration';
-import { selectMap } from '../../store/reducers/map';
+import Tile from '../Tile';
 
 import './map.css';
-import Tile from '../Tile';
-import Interactable from '../Interactable';
-import { useSelector } from '../../store/hooks';
-import Animal from '../Animal';
 
 const Map: React.FC = () => {
   const map = useSelector(selectMap);

@@ -1,8 +1,9 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
+import { GameStatus } from '~/src/models/Game';
+
 import { gameStatusUpdate as gameStatusUpdateAction } from '../reducers/game';
 import { RootState } from '../types';
-import { GameStatus } from '../../models/Game';
 
 const gameStatusUpdate =
   (status: GameStatus): ThunkAction<void, RootState, void, AnyAction> =>

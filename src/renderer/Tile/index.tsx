@@ -1,11 +1,12 @@
 import React from 'react';
 
+import { Tile as TileInterface } from '~/src/models/Tile/types';
+
 import PlaceholderEmpty from './PlaceholderEmpty';
 import RockBasic from './RockBasic';
 import TreeBirch from './TreeBirch';
 import { TileRendererProps } from './types';
 import WaterBasic from './WaterBasic';
-import { Tile as TileInterface } from '../../models/Tile/types';
 
 import './tile.css';
 

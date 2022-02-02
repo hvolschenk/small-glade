@@ -1,14 +1,14 @@
 import classnames from 'classnames';
 import React from 'react';
 
-import { useEngine } from '../../engine';
-import { useSelector } from '../../store/hooks';
+import { useEngine } from '~/src/engine';
+import { useSelector } from '~/src/store/hooks';
 import {
   selectOutfit,
   selectOutfitProtection,
   selectOutfitWarmth,
-} from '../../store/reducers/outfit';
-import { selectWeather } from '../../store/reducers/weather';
+} from '~/src/store/reducers/outfit';
+import { selectWeather } from '~/src/store/reducers/weather';
 
 import './outfit.css';
 

@@ -1,13 +1,14 @@
 import React from 'react';
 
+import { useEngine } from '~/src/engine';
+import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarvest';
+import bearBerry from '~/src/models/Item/Bearberry';
+import { useSelector } from '~/src/store/hooks';
+import { selectPlayerPosition } from '~/src/store/reducers/player';
+import positionsEqual from '~/src/utilities/positionsEqual';
+
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
-import { useEngine } from '../../engine';
-import { InteractableHarvestOptions } from '../../engine/event/InteractableHarvest';
-import bearBerry from '../../models/Item/Bearberry';
-import { useSelector } from '../../store/hooks';
-import { selectPlayerPosition } from '../../store/reducers/player';
-import positionsEqual from '../../utilities/positionsEqual';
 
 const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
   const { trigger } = useEngine();

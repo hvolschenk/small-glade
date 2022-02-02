@@ -1,8 +1,9 @@
+import { GameStatus } from '~/src/models/Game';
+import { selectGameStatus } from '~/src/store/reducers/game';
+import gameStatusUpdate from '~/src/store/thunks/gameStatusUpdate';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import { GameStatus } from '../../models/Game';
-import { selectGameStatus } from '../../store/reducers/game';
-import gameStatusUpdate from '../../store/thunks/gameStatusUpdate';
 
 const validateGameLoading: Validator<EventOptions> = (options) => {
   const status = selectGameStatus(options.getState());

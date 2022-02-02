@@ -1,9 +1,10 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import gameStatusUpdate from './gameStatusUpdate';
+import { GameStatus } from '~/src/models/Game';
+
 import { outfitToggle as outfitToggleAction, selectOutfitIsOpen } from '../reducers/outfit';
 import { RootState } from '../types';
-import { GameStatus } from '../../models/Game';
+import gameStatusUpdate from './gameStatusUpdate';
 
 const outfitToggle = (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {
   dispatch(outfitToggleAction());

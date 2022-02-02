@@ -1,6 +1,7 @@
+import playerVitalsUpdate from '~/src/store/thunks/playerVitalsUpdate';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import playerVitalsUpdate from '../../store/thunks/playerVitalsUpdate';
 
 class PlayerVitalsUpdate extends EventAbstract {
   public static event: string = 'player:vitals:update';

@@ -1,8 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-import baseOutfit from '../../models/Outfit/BaseOutfit';
-import { Outfit } from '../../models/Outfit/types';
+import baseOutfit from '~/src/models/Outfit/BaseOutfit';
+import { Outfit } from '~/src/models/Outfit/types';
+
 import { RootState } from '../types';
 
 const initialState: Outfit = baseOutfit;

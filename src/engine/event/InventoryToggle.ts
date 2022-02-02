@@ -1,6 +1,7 @@
+import inventoryToggle from '~/src/store/thunks/inventoryToggle';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import inventoryToggle from '../../store/thunks/inventoryToggle';
 
 class InventoryToggle extends EventAbstract {
   public static event: string = 'inventory:toggle';

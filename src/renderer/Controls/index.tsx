@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useEngine } from '../../engine';
+import { useEngine } from '~/src/engine';
 
 import './controls.css';
 

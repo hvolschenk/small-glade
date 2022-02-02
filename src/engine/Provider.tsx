@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import { store } from '~/src/store';
+
 import EngineContext from './context';
 import EventFactory from './event/EventFactory';
 import { Engine } from './types';
-import { store } from '../store';
 
 const EngineProvider: React.FC = ({ children }) => {
   const dispatch = useDispatch();

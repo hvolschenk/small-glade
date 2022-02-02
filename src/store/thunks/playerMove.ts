@@ -1,9 +1,10 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import { RootState } from '../types';
-import { Direction } from '../../models/Direction';
+import { Direction } from '~/src/models/Direction';
+import positionFromDirection from '~/src/utilities/positionFromDirection';
+
 import { playerPositionUpdate, selectPlayerPosition } from '../reducers/player';
-import positionFromDirection from '../../utilities/positionFromDirection';
+import { RootState } from '../types';
 
 const playerMove =
   (direction: Direction): ThunkAction<void, RootState, void, AnyAction> =>

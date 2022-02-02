@@ -1,8 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { Weather } from '~/src/models/Weather/types';
+
 import { RootState } from '../types';
-import { Weather } from '../../models/Weather/types';
 
 const initialState: Weather = {
   conditions: 'sunny',
