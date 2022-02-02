@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
+import l10n from '~/src/l10n';
 import { useSelector } from '~/src/store/hooks';
 import { selectInventory } from '~/src/store/reducers/inventory';
 
@@ -30,7 +31,7 @@ const Inventory: React.FC = () => {
       {inventory.items.length > 0 && (
         <ul>
           {inventory.items.map((item) => (
-            <li key={item.name}>{item.name}</li>
+            <li key={item.name}>{l10n[item.l10nKey]}</li>
           ))}
         </ul>
       )}

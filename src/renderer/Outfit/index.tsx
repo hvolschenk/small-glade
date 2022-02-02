@@ -2,6 +2,8 @@ import classnames from 'classnames';
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
+import l10n from '~/src/l10n';
+import { Weather } from '~/src/models/Weather/types';
 import { useSelector } from '~/src/store/hooks';
 import {
   selectOutfit,
@@ -11,6 +13,15 @@ import {
 import { selectWeather } from '~/src/store/reducers/weather';
 
 import './outfit.css';
+
+const weatherConditionsText = (conditions: Weather['conditions']): string => {
+  const texts: Record<Weather['conditions'], string> = {
+    overcast: l10n.weatherConditionsOvercast,
+    snowing: l10n.weatherConditionsSnowing,
+    sunny: l10n.weatherConditionsSunny,
+  };
+  return texts[conditions];
+};
 
 const Outfit: React.FC = () => {
   const { trigger } = useEngine();
@@ -35,18 +46,40 @@ const Outfit: React.FC = () => {
 
   return (
     <div className={classnames({ open: outfit.isOpen })} id="outfit">
-      <p>Hat: {outfit.hat.name}</p>
-      <p>Jacket: {outfit.jacket.name}</p>
-      <p>Pants: {outfit.pants.name}</p>
-      <p>Shirt: {outfit.shirt.name}</p>
-      <p>Shoes: {outfit.shoes.name}</p>
-      <p>Socks: {outfit.socks.name}</p>
-      <p>Underwear: {outfit.underwear.name}</p>
-      <p>Protection: {protection}</p>
-      <p>Warmth: {warmth}</p>
+      <p>
+        {l10n.outfitItemTypeHat}: {l10n[outfit.hat.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypeJacket}: {l10n[outfit.jacket.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypePants}: {l10n[outfit.pants.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypeShirt}: {l10n[outfit.shirt.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypeShoes}: {l10n[outfit.shoes.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypeSocks}: {l10n[outfit.socks.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitItemTypeUnderwear}: {l10n[outfit.underwear.l10nKey]}
+      </p>
+      <p>
+        {l10n.outfitStatisticProtection}: {protection}
+      </p>
+      <p>
+        {l10n.outfitStatisticWarmth}: {warmth}
+      </p>
       <br />
-      <p>Temperature: {weather.temperature}</p>
-      <p>Conditions: {weather.conditions}</p>
+      <p>
+        {l10n.weatherTemperature}: {weather.temperature}
+      </p>
+      <p>
+        {l10n.weatherConditions}: {weatherConditionsText(weather.conditions)}
+      </p>
     </div>
   );
 };
