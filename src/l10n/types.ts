@@ -1,0 +1,30 @@
+export interface L10n {
+  controlInventoryShortcut: string;
+  controlOutfitShortcut: string;
+  gameIntroductionAction: string;
+  gameIntroductionLoading: string;
+  gameIntroductionQuote: string;
+  interactableActionHarvest: string;
+  itemBearberry: string;
+  itemClothingHatBeanieWool: string;
+  itemClothingJacketDenim: string;
+  itemClothingPantsJeans: string;
+  itemClothingShirtCotton: string;
+  itemClothingShoesSneakers: string;
+  itemClothingSocksCotton: string;
+  itemClothingUnderwearCotton: string;
+  outfitItemTypeHat: string;
+  outfitItemTypeJacket: string;
+  outfitItemTypePants: string;
+  outfitItemTypeShirt: string;
+  outfitItemTypeShoes: string;
+  outfitItemTypeSocks: string;
+  outfitItemTypeUnderwear: string;
+  outfitStatisticProtection: string;
+  outfitStatisticWarmth: string;
+  weatherConditions: string;
+  weatherConditionsOvercast: string;
+  weatherConditionsSnowing: string;
+  weatherConditionsSunny: string;
+  weatherTemperature: string;
+}

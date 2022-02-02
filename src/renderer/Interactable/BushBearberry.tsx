@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useEngine } from '~/src/engine';
 import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarvest';
+import l10n from '~/src/l10n';
 import bearBerry from '~/src/models/Item/Bearberry';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerPosition } from '~/src/store/reducers/player';
@@ -32,7 +33,7 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
                   position,
                 });
               },
-              title: 'Harvest',
+              title: l10n.interactableActionHarvest,
             },
           ]}
         />

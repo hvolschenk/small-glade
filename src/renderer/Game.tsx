@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
+import l10n from '~/src/l10n';
 import { GameStatus } from '~/src/models/Game';
 import { useSelector } from '~/src/store/hooks';
 import { selectGameStatus } from '~/src/store/reducers/game';
@@ -23,7 +24,7 @@ const Game: React.FC = () => {
   if (status === GameStatus.GAME_STATUS_LOADING) {
     return (
       <div className="game__loading">
-        <p>Loading</p>
+        <p>{l10n.gameIntroductionLoading}</p>
       </div>
     );
   }
@@ -31,9 +32,9 @@ const Game: React.FC = () => {
   if (status === GameStatus.GAME_STATUS_UNSTARTED) {
     return (
       <div className="game__unstarted">
-        <p>What the hell happened? Where am I?</p>
+        <p>{l10n.gameIntroductionQuote}</p>
         <button onClick={() => trigger('game:start')} type="button">
-          Shit
+          {l10n.gameIntroductionAction}
         </button>
       </div>
     );
