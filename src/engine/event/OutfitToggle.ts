@@ -1,6 +1,7 @@
+import outfitToggle from '~/src/store/thunks/outfitToggle';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import outfitToggle from '../../store/thunks/outfitToggle';
 
 class OutfitToggle extends EventAbstract {
   public static event: string = 'outfit:toggle';

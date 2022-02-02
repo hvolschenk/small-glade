@@ -1,4 +1,3 @@
-import { Map } from './types';
 import deerElk from '../Animal/DeerElk';
 import wolfArctic from '../Animal/WolfArctic';
 import bushBearberry from '../Interactable/BushBearberry';
@@ -6,6 +5,7 @@ import placeholderEmpty from '../Tile/PlaceholderEmpty';
 import rockBasic from '../Tile/RockBasic';
 import treeBirch from '../Tile/TreeBirch';
 import waterBasic from '../Tile/WaterBasic';
+import { Map } from './types';
 
 const smallGlade: Map = {
   animals: [

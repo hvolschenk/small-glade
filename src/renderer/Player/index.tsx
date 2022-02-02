@@ -1,12 +1,13 @@
 import React from 'react';
 
+import configuration from '~/src/configuration';
+import { useEngine } from '~/src/engine';
+import { PlayerMoveOptions } from '~/src/engine/event/PlayerMove';
+import { Direction } from '~/src/models/Direction';
+import { useSelector } from '~/src/store/hooks';
+import { selectPlayerPosition } from '~/src/store/reducers/player';
+
 import MovementControls from './MovementControls';
-import configuration from '../../configuration';
-import { useEngine } from '../../engine';
-import { PlayerMoveOptions } from '../../engine/event/PlayerMove';
-import { Direction } from '../../models/Direction';
-import { useSelector } from '../../store/hooks';
-import { selectPlayerPosition } from '../../store/reducers/player';
 
 import './player.css';
 

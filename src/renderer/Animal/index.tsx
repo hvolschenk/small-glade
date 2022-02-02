@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Animal as AnimalInterface } from '~/src/models/Animal/types';
+
 import DeerElk from './DeerElk';
 import { AnimalRendererProps } from './types';
 import WolfArctic from './WolfArctic';
-import { Animal as AnimalInterface } from '../../models/Animal/types';
 
 import './animal.css';
 

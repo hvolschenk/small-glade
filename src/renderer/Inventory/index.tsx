@@ -1,9 +1,9 @@
 import classnames from 'classnames';
 import React from 'react';
 
-import { useEngine } from '../../engine';
-import { useSelector } from '../../store/hooks';
-import { selectInventory } from '../../store/reducers/inventory';
+import { useEngine } from '~/src/engine';
+import { useSelector } from '~/src/store/hooks';
+import { selectInventory } from '~/src/store/reducers/inventory';
 
 import './inventory.css';
 

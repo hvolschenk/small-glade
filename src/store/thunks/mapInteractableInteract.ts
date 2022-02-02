@@ -1,8 +1,9 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
+import { Position } from '~/src/models/Position';
+
 import { mapInteractableInteract as mapInteractableInteractAction } from '../reducers/map';
 import { RootState } from '../types';
-import { Position } from '../../models/Position';
 
 const mapInteractableInteract =
   (position: Position): ThunkAction<void, RootState, void, AnyAction> =>

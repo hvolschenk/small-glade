@@ -1,10 +1,11 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { Map } from '~/src/models/Map/types';
+import { Position } from '~/src/models/Position';
+import { Tile } from '~/src/models/Tile/types';
+
 import { RootState } from '../types';
-import { Map } from '../../models/Map/types';
-import { Position } from '../../models/Position';
-import { Tile } from '../../models/Tile/types';
 
 const initialState: Map = {
   animals: [],

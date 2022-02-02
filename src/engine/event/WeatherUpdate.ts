@@ -1,6 +1,7 @@
+import weatherUpdate from '~/src/store/thunks/weatherUpdate';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import weatherUpdate from '../../store/thunks/weatherUpdate';
 
 class WeatherUpdate extends EventAbstract {
   public static event: string = 'weather:update';

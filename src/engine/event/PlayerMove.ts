@@ -1,12 +1,13 @@
+import { Direction } from '~/src/models/Direction';
+import { GameStatus } from '~/src/models/Game';
+import { selectGameStatus } from '~/src/store/reducers/game';
+import { selectMapTiles } from '~/src/store/reducers/map';
+import { selectPlayerPosition } from '~/src/store/reducers/player';
+import playerMove from '~/src/store/thunks/playerMove';
+import positionFromDirection from '~/src/utilities/positionFromDirection';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import { Direction } from '../../models/Direction';
-import { GameStatus } from '../../models/Game';
-import { selectGameStatus } from '../../store/reducers/game';
-import { selectMapTiles } from '../../store/reducers/map';
-import { selectPlayerPosition } from '../../store/reducers/player';
-import playerMove from '../../store/thunks/playerMove';
-import positionFromDirection from '../../utilities/positionFromDirection';
 
 export interface PlayerMoveOptions {
   direction: Direction;

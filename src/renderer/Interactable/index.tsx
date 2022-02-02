@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { Interactable as InteractableInterface } from '~/src/models/Interactable/types';
+
 import BushBearberry from './BushBearberry';
 import { InteractableRendererProps } from './types';
-import { Interactable as InteractableInterface } from '../../models/Interactable/types';
 
 import './interactable.css';
 

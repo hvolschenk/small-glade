@@ -1,5 +1,5 @@
-import { Interactable } from '../../models/Interactable/types';
-import { Position } from '../../models/Position';
+import { Interactable } from '~/src/models/Interactable/types';
+import { Position } from '~/src/models/Position';
 
 export interface InteractableRendererProps {
   interactable: Interactable;

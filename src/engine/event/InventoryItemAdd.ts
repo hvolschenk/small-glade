@@ -1,8 +1,9 @@
+import { Item } from '~/src/models/Item/types';
+import { selectInventory } from '~/src/store/reducers/inventory';
+import inventoryItemAdd from '~/src/store/thunks/inventoryItemAdd';
+
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-import { Item } from '../../models/Item/types';
-import inventoryItemAdd from '../../store/thunks/inventoryItemAdd';
-import { selectInventory } from '../../store/reducers/inventory';
 
 export interface InventoryItemAddOptions {
   item: Item;

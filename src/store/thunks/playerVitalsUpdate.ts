@@ -1,7 +1,8 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import configuration from '../../configuration';
-import { Vitals } from '../../models/Player/types';
+import configuration from '~/src/configuration';
+import { Vitals } from '~/src/models/Player/types';
+
 import { selectOutfitWarmth } from '../reducers/outfit';
 import {
   playerVitalsUpdate as playerVitalsUpdateAction,

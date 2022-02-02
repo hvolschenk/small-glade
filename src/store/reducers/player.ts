@@ -1,9 +1,10 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { Player, Vitals } from '~/src/models/Player/types';
+import { Position } from '~/src/models/Position';
+
 import { RootState } from '../types';
-import { Player, Vitals } from '../../models/Player/types';
-import { Position } from '../../models/Position';
 
 const initialState: Player = {
   position: { left: 0, top: 0 },

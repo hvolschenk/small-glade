@@ -1,4 +1,4 @@
-import { Animal } from '../../models/Animal/types';
+import { Animal } from '~/src/models/Animal/types';
 
 export interface AnimalRendererProps {
   animal: Animal;

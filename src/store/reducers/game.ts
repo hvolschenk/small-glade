@@ -1,8 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { Game, GameStatus } from '~/src/models/Game';
+
 import { RootState } from '../types';
-import { Game, GameStatus } from '../../models/Game';
 
 const initialState: Game = {
   status: GameStatus.GAME_STATUS_LOADING,

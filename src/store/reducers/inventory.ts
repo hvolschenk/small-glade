@@ -1,9 +1,10 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { Inventory } from '~/src/models/Inventory/types';
+import { Item } from '~/src/models/Item/types';
+
 import { RootState } from '../types';
-import { Inventory } from '../../models/Inventory/types';
-import { Item } from '../../models/Item/types';
 
 const initialState: Inventory = {
   capacity: 30,

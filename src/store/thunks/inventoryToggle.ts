@@ -1,12 +1,13 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import gameStatusUpdate from './gameStatusUpdate';
+import { GameStatus } from '~/src/models/Game';
+
 import {
   inventoryToggle as inventoryToggleAction,
   selectInventoryIsOpen,
 } from '../reducers/inventory';
 import { RootState } from '../types';
-import { GameStatus } from '../../models/Game';
+import gameStatusUpdate from './gameStatusUpdate';
 
 const inventoryToggle =
   (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {

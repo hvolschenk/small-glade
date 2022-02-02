@@ -1,5 +1,5 @@
-import { Direction } from '../models/Direction';
-import { Position } from '../models/Position';
+import { Direction } from '~/src/models/Direction';
+import { Position } from '~/src/models/Position';
 
 interface PositionFromDirectionOptions {
   direction: Direction;

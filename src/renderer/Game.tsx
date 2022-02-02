@@ -1,14 +1,15 @@
 import React from 'react';
 
+import { useEngine } from '~/src/engine';
+import { GameStatus } from '~/src/models/Game';
+import { useSelector } from '~/src/store/hooks';
+import { selectGameStatus } from '~/src/store/reducers/game';
+
 import Controls from './Controls';
 import Inventory from './Inventory';
 import Map from './Map';
 import Outfit from './Outfit';
 import Vitals from './Vitals';
-import { useEngine } from '../engine';
-import { GameStatus } from '../models/Game';
-import { useSelector } from '../store/hooks';
-import { selectGameStatus } from '../store/reducers/game';
 
 const Game: React.FC = () => {
   const { trigger } = useEngine();

@@ -1,5 +1,6 @@
+import { Dispatch, GetState } from '~/src/store';
+
 import { Engine } from '../types';
-import { Dispatch, GetState } from '../../store';
 
 export interface EventOptions {
   dispatch: Dispatch;

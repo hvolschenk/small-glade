@@ -1,11 +1,12 @@
+import { Interactable } from '~/src/models/Interactable/types';
+import { Item } from '~/src/models/Item/types';
+import { Position } from '~/src/models/Position';
+import { selectInventory } from '~/src/store/reducers/inventory';
+import mapInteractableInteract from '~/src/store/thunks/mapInteractableInteract';
+
 import EventAbstract from './EventAbstract';
 import { InventoryItemAddOptions } from './InventoryItemAdd';
 import { Effect, EventOptions, Validator } from './types';
-import { Interactable } from '../../models/Interactable/types';
-import { Item } from '../../models/Item/types';
-import { Position } from '../../models/Position';
-import { selectInventory } from '../../store/reducers/inventory';
-import mapInteractableInteract from '../../store/thunks/mapInteractableInteract';
 
 export interface InteractableHarvestOptions {
   item: Item;

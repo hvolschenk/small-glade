@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { useSelector } from '../../store/hooks';
-import { selectPlayerVitals } from '../../store/reducers/player';
+import { useSelector } from '~/src/store/hooks';
+import { selectPlayerVitals } from '~/src/store/reducers/player';
+
 import Vital from './Vital';
 
 import './vitals.css';
