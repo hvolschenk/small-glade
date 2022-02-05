@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import startingInventory from '~/src/models/Inventory/StartingInventory';
 import smallGlade from '~/src/models/Map/SmallGlade';
 import baseOutfit from '~/src/models/Outfit/BaseOutfit';
 
@@ -10,6 +11,10 @@ export type Dispatch = typeof store.dispatch;
 export type GetState = typeof store.getState;
 
 export const store = configureStore<RootState>({
-  preloadedState: { map: smallGlade, outfit: baseOutfit },
+  preloadedState: {
+    inventory: startingInventory,
+    map: smallGlade,
+    outfit: baseOutfit,
+  },
   reducer: reducers,
 });
