@@ -5,6 +5,9 @@ export interface L10n {
   gameIntroductionLoading: string;
   gameIntroductionQuote: string;
   interactableActionHarvest: string;
+  inventoryMessageNoItems: string;
+  inventoryMessageNoItemSelected: string;
+  inventoryTitle: string;
   itemClothingHatBeanieWoolDescription: string;
   itemClothingHatBeanieWoolName: string;
   itemClothingJacketDenimDescription: string;

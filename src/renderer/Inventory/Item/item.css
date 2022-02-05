@@ -1,0 +1,9 @@
+@import url('../../../variables.css');
+
+.inventory__item {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+  height: var(--size--tile);
+  width: var(--size--tile);
+}
