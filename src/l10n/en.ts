@@ -7,11 +7,16 @@ const en: L10n = {
   gameIntroductionLoading: 'Loading',
   gameIntroductionQuote: 'What the hell happened? Where am I?',
   interactableActionHarvest: 'Harvest',
+  inventoryMessageNoItems: 'No items in inventory.',
+  inventoryMessageNoItemSelected: 'No item selected.',
+  inventoryTitle: 'Inventory',
   itemClothingHatBeanieWoolDescription: 'A beanie made from wool. Warm and waterproof.',
   itemClothingHatBeanieWoolName: 'Wool beanie',
-  itemClothingJacketDenimDescription: 'The top half of the canadian tuxedo. Windproof, but not very warm.',
+  itemClothingJacketDenimDescription:
+    'The top half of the canadian tuxedo. Windproof, but not very warm.',
   itemClothingJacketDenimName: 'Denim jacket',
-  itemClothingPantsJeansDescription: 'The bottom half of the canadian tuxedo. Built for style, but not for the cold.',
+  itemClothingPantsJeansDescription:
+    'The bottom half of the canadian tuxedo. Built for style, but not for the cold.',
   itemClothingPantsJeansName: 'Jeans',
   itemClothingShirtCottonDescription: 'A light cotton shirt. Not warm at the slightest.',
   itemClothingShirtCottonName: 'Cotton shirt',
