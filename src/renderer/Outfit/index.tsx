@@ -47,25 +47,25 @@ const Outfit: React.FC = () => {
   return (
     <div className={classnames({ open: outfit.isOpen })} id="outfit">
       <p>
-        {l10n.outfitItemTypeHat}: {l10n[outfit.hat.l10nKey]}
+        {l10n.outfitItemTypeHat}: {l10n[outfit.hat.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypeJacket}: {l10n[outfit.jacket.l10nKey]}
+        {l10n.outfitItemTypeJacket}: {l10n[outfit.jacket.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypePants}: {l10n[outfit.pants.l10nKey]}
+        {l10n.outfitItemTypePants}: {l10n[outfit.pants.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypeShirt}: {l10n[outfit.shirt.l10nKey]}
+        {l10n.outfitItemTypeShirt}: {l10n[outfit.shirt.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypeShoes}: {l10n[outfit.shoes.l10nKey]}
+        {l10n.outfitItemTypeShoes}: {l10n[outfit.shoes.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypeSocks}: {l10n[outfit.socks.l10nKey]}
+        {l10n.outfitItemTypeSocks}: {l10n[outfit.socks.l10n.name]}
       </p>
       <p>
-        {l10n.outfitItemTypeUnderwear}: {l10n[outfit.underwear.l10nKey]}
+        {l10n.outfitItemTypeUnderwear}: {l10n[outfit.underwear.l10n.name]}
       </p>
       <p>
         {l10n.outfitStatisticProtection}: {protection}

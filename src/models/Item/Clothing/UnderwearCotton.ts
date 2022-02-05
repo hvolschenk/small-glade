@@ -1,9 +1,14 @@
 import { ClothingUnderwear } from './types';
 
 const underwearCotton: ClothingUnderwear = {
-  l10nKey: 'itemClothingUnderwearCotton',
-  name: 'Cotton underwear',
+  category: 'clothing',
+  l10n: {
+    description: 'itemClothingUnderwearCottonDescription',
+    name: 'itemClothingUnderwearCottonName',
+  },
   protection: 0,
+  type: 'underwear',
+  variant: 'cotton',
   warmth: 1,
 };
 

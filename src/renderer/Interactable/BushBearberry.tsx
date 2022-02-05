@@ -3,7 +3,7 @@ import React from 'react';
 import { useEngine } from '~/src/engine';
 import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarvest';
 import l10n from '~/src/l10n';
-import bearBerry from '~/src/models/Item/Bearberry';
+import bearBerry from '~/src/models/Item/Consumable/Bearberry';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerPosition } from '~/src/store/reducers/player';
 import positionsEqual from '~/src/utilities/positionsEqual';
