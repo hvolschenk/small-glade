@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider as ReactReduxProvider } from 'react-redux';
 
 import { Provider as EngineProvider } from './engine';
-import Game from './renderer/Game';
+import Renderer from './renderer';
 import { store } from './store';
 
 import './index.css';
@@ -10,7 +10,7 @@ import './index.css';
 const Application: React.FC = () => (
   <ReactReduxProvider store={store}>
     <EngineProvider>
-      <Game />
+      <Renderer />
     </EngineProvider>
   </ReactReduxProvider>
 );

@@ -1,6 +1,7 @@
 export interface L10n {
   controlInventoryShortcut: string;
   controlOutfitShortcut: string;
+  gameEndedMessage: string;
   gameIntroductionAction: string;
   gameIntroductionLoading: string;
   gameIntroductionQuote: string;

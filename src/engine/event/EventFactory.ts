@@ -1,3 +1,4 @@
+import GameEnd from './GameEnd';
 import GameLoadDone from './GameLoadDone';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
@@ -15,6 +16,7 @@ interface BuildProps {
 }
 
 const events = [
+  GameEnd,
   GameLoadDone,
   GameStart,
   GameTurn,
