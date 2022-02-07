@@ -9,6 +9,7 @@ import { selectInventory } from '~/src/store/reducers/inventory';
 
 import InventoryItem from './Item';
 import SelectedItem from './SelectedItem';
+import { InventoryItem as InventoryItemInterface } from './types';
 
 import './inventory.css';
 
@@ -25,6 +26,23 @@ const Inventory: React.FC = () => {
     },
     [trigger],
   );
+
+  const inventoryItems: InventoryItemInterface[] = React.useMemo(() => {
+    const returnList: InventoryItemInterface[] = inventory.items.reduce((accumulator, item) => {
+      const foundInventoryItem = accumulator.find(
+        (inventoryItem) =>
+          inventoryItem.item.category === item.category &&
+          inventoryItem.item.type === item.type &&
+          inventoryItem.item.variant === item.variant,
+      );
+      if (foundInventoryItem) {
+        foundInventoryItem.count += 1;
+        return accumulator;
+      }
+      return [...accumulator, { count: 1, item }];
+    }, [] as InventoryItemInterface[]);
+    return returnList;
+  }, [inventory]);
 
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -47,13 +65,14 @@ const Inventory: React.FC = () => {
       </div>
       <div id="inventory__content">
         <div id="inventory__items">
-          {inventory.items.length === 0 && (
+          {inventoryItems.length === 0 && (
             <p className="inventory__items__error">{l10n.inventoryMessageNoItems}</p>
           )}
-          {inventory.items.length > 0 && (
+          {inventoryItems.length > 0 && (
             <React.Fragment>
-              {inventory.items.map((item) => (
+              {inventoryItems.map(({ count, item }) => (
                 <InventoryItem
+                  count={count}
                   item={item}
                   key={`${item.category}-${item.type}-${item.variant}`}
                   onClick={setSelectedItem}
