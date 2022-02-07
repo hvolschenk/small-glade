@@ -1,0 +1,19 @@
+@import url('../variables.css');
+
+#game__status {
+  align-items: center;
+  background-color: var(--color--black);
+  color: var(--color--white);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--z-index--end-screen);
+}
+
+#game__status > div {
+  text-align: center;
+}

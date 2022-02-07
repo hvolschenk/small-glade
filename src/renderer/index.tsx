@@ -12,7 +12,9 @@ import Map from './Map';
 import Outfit from './Outfit';
 import Vitals from './Vitals';
 
-const Game: React.FC = () => {
+import './renderer.css';
+
+const Renderer: React.FC = () => {
   const { trigger } = useEngine();
   const status = useSelector(selectGameStatus);
 
@@ -21,21 +23,35 @@ const Game: React.FC = () => {
     trigger('game:load:done');
   }, [trigger]);
 
+  if (status === GameStatus.GAME_STATUS_ENDED) {
+    return (
+      <div id="game__status">
+        <div>
+          <p>{l10n.gameEndedMessage}</p>
+        </div>
+      </div>
+    );
+  }
+
   if (status === GameStatus.GAME_STATUS_LOADING) {
     return (
-      <div className="game__loading">
-        <p>{l10n.gameIntroductionLoading}</p>
+      <div id="game__status">
+        <div>
+          <p>{l10n.gameIntroductionLoading}</p>
+        </div>
       </div>
     );
   }
 
   if (status === GameStatus.GAME_STATUS_UNSTARTED) {
     return (
-      <div className="game__unstarted">
-        <p>{l10n.gameIntroductionQuote}</p>
-        <button onClick={() => trigger('game:start')} type="button">
-          {l10n.gameIntroductionAction}
-        </button>
+      <div id="game__status">
+        <div>
+          <p>{l10n.gameIntroductionQuote}</p>
+          <button onClick={() => trigger('game:start')} type="button">
+            {l10n.gameIntroductionAction}
+          </button>
+        </div>
       </div>
     );
   }
@@ -51,4 +67,4 @@ const Game: React.FC = () => {
   );
 };
 
-export default Game;
+export default Renderer;
