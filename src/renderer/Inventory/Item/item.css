@@ -5,5 +5,18 @@
   background-color: none;
   cursor: pointer;
   height: var(--size--tile);
+  position: relative;
   width: var(--size--tile);
+}
+
+.inventory__item .inventory__item__count {
+  background-color: var(--color--red-light);
+  border-radius: var(--size--small);
+  display: block;
+  font-weight: bold;
+  height: var(--size--normal);
+  position: absolute;
+  right: var(--size--extra-small);
+  top: var(--size--extra-small);
+  width: var(--size--normal);
 }
