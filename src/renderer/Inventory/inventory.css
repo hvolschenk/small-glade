@@ -4,6 +4,7 @@
   background-color: var(--color--black);
   color: var(--color--white);
   display: none;
+  flex-direction: column;
   height: 100vh;
   left: 0;
   position: fixed;
@@ -13,5 +14,72 @@
 }
 
 #inventory.open {
-  display: block;
+  display: flex;
+}
+
+#inventory__header {
+  display: flex;
+  flex-direction: row;
+  padding: var(--size--small);
+}
+
+#inventory__header h1 {
+  flex-grow: 1;
+}
+
+#inventory__close {
+  background-color: transparent;
+  border: none;
+  color: var(--color--white);
+  cursor: pointer;
+  padding: var(--size--small);
+}
+
+#inventory__content {
+  display: flex;
+  flex-grow: 1;
+}
+
+#inventory__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--size--small);
+  padding: var(--size--normal);
+}
+
+#inventory__selected {
+  padding: var(--size--normal);
+}
+
+@media (orientation: landscape) {
+  #inventory__content {
+    flex-direction: row;
+  }
+
+  #inventory__items {
+    height: 100%;
+    width: 50%;
+  }
+
+  #inventory__selected {
+    height: 100%;
+    width: 50%;
+  }
+}
+
+@media (orientation: portrait) {
+  #inventory__content {
+    flex-direction: column;
+  }
+
+  #inventory__items {
+    height: 50%;
+    width: 100%;
+  }
+
+  #inventory__selected {
+    height: 50%;
+    width: 100%;
+  }
 }

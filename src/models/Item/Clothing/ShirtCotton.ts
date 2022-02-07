@@ -1,9 +1,14 @@
 import { ClothingShirt } from './types';
 
 const shirtCotton: ClothingShirt = {
-  l10nKey: 'itemClothingShirtCotton',
-  name: 'Cotton shirt',
+  category: 'clothing',
+  l10n: {
+    description: 'itemClothingShirtCottonDescription',
+    name: 'itemClothingShirtCottonName',
+  },
   protection: 0,
+  type: 'shirt',
+  variant: 'cotton',
   warmth: 0,
 };
 

@@ -1,9 +1,14 @@
 import { ClothingPants } from './types';
 
 const pantsJeans: ClothingPants = {
-  l10nKey: 'itemClothingPantsJeans',
-  name: 'Jeans',
+  category: 'clothing',
+  l10n: {
+    description: 'itemClothingPantsJeansDescription',
+    name: 'itemClothingPantsJeansName',
+  },
   protection: 0,
+  type: 'pants',
+  variant: 'jeans',
   warmth: 1,
 };
 

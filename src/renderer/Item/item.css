@@ -1,0 +1,46 @@
+@import url('../../variables.css');
+
+.item {
+  height: var(--size--tile);
+  width: var(--size--tile);
+}
+
+.item.item__clothing__hat-beanie-wool {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__jacket-denim {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__pants-jeans {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__shirt-cotton {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__shoes-sneakers {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__socks-cotton {
+  background-color: var(--color--blue);
+}
+
+.item.item__clothing__underwear-cotton {
+  background-color: var(--color--blue);
+}
+
+.item.item__consumable__bearberry {
+  background-color: var(--color--blue);
+}
+
+.item.item__consumable__bottle-water {
+  background-color: var(--color--blue);
+}
+
+.item.item__consumable__crisps-tomato {
+  background-color: var(--color--blue);
+}
