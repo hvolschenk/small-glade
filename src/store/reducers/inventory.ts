@@ -16,6 +16,19 @@ const inventorySlice = createSlice({
     inventoryItemAdd: (state, action: PayloadAction<{ item: Item }>) => {
       state.items.push(action.payload.item);
     },
+    inventoryItemRemove: (state, action: PayloadAction<{ item: Item }>) => {
+      const { category, type, variant } = action.payload.item;
+      const itemIndex = state.items.findIndex(
+        (item) => item.category === category && item.type === type && item.variant === variant,
+      );
+      state.items.splice(itemIndex, 1);
+    },
+    inventorySelectedItemUpdate: (
+      state,
+      action: PayloadAction<{ item: Inventory['selectedItem'] }>,
+    ) => {
+      state.selectedItem = action.payload.item;
+    },
     inventoryToggle: (state) => {
       state.isOpen = !state.isOpen;
     },
@@ -25,6 +38,13 @@ const inventorySlice = createSlice({
 export const selectInventory = (state: RootState): Inventory => state.inventory;
 export const selectInventoryIsOpen = (state: RootState): Inventory['isOpen'] =>
   state.inventory.isOpen;
+export const selectInventorySelectedItem = (state: RootState): Inventory['selectedItem'] =>
+  state.inventory.selectedItem;
 
-export const { inventoryItemAdd, inventoryToggle } = inventorySlice.actions;
+export const {
+  inventoryItemAdd,
+  inventoryItemRemove,
+  inventorySelectedItemUpdate,
+  inventoryToggle,
+} = inventorySlice.actions;
 export default inventorySlice.reducer;

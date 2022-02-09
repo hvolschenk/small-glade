@@ -8,7 +8,6 @@ import { Effect, EventOptions, Validator } from './types';
 export interface InventoryItemAddOptions {
   item: Item;
 }
-
 type Options = EventOptions & InventoryItemAddOptions;
 
 const validateInventoryHasSpace: Validator<Options> = (options) => {

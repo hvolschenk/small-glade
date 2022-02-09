@@ -4,4 +4,5 @@ export interface Inventory {
   capacity: number;
   isOpen: boolean;
   items: Item[];
+  selectedItem?: Item;
 }
