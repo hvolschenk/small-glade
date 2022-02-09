@@ -4,7 +4,10 @@ import GameStart from './GameStart';
 import GameTurn from './GameTurn';
 import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
+import InventorySelectedItemUpdate from './InventorySelectedItemUpdate';
 import InventoryToggle from './InventoryToggle';
+import ItemConsumableDrink from './ItemConsumableDrink';
+import ItemConsumableEat from './ItemConsumableEat';
 import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
 import PlayerVitalsUpdate from './PlayerVitalsUpdate';
@@ -22,7 +25,10 @@ const events = [
   GameTurn,
   InteractableHarvest,
   InventoryItemAdd,
+  InventorySelectedItemUpdate,
   InventoryToggle,
+  ItemConsumableDrink,
+  ItemConsumableEat,
   OutfitToggle,
   PlayerMove,
   PlayerVitalsUpdate,

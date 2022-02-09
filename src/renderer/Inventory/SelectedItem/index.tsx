@@ -1,18 +1,27 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import l10n from '~/src/l10n';
+import { selectInventorySelectedItem } from '~/src/store/reducers/inventory';
 
 import ItemRenderer from '../../Item';
-import { ItemRendererProps } from '../../Item/types';
+import Actions from './Actions';
 
-interface SelectedItemProps extends ItemRendererProps {}
+const SelectedItem: React.FC = () => {
+  const item = useSelector(selectInventorySelectedItem);
 
-const SelectedItem: React.FC<SelectedItemProps> = ({ item }) => (
-  <React.Fragment>
-    <h3>{l10n[item.l10n.name]}</h3>
-    <ItemRenderer item={item} />
-    <p>{l10n[item.l10n.description]}</p>
-  </React.Fragment>
-);
+  if (!item) {
+    return <p>{l10n.inventoryMessageNoItemSelected}</p>;
+  }
+
+  return (
+    <React.Fragment>
+      <h3>{l10n[item.l10n.name]}</h3>
+      <ItemRenderer item={item} />
+      <p>{l10n[item.l10n.description]}</p>
+      <Actions item={item} />
+    </React.Fragment>
+  );
+};
 
 export default SelectedItem;

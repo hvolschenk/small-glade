@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Item as ItemInterface } from '~/src/models/Item/types';
+import { Item } from '~/src/models/Item/types';
 
 import HatBeanieWool from './Clothing/HatBeanieWool';
 import JacketDenim from './Clothing/JacketDenim';
@@ -16,10 +16,10 @@ import { ItemRendererProps } from './types';
 
 import './item.css';
 
-const itemFactory = (item: ItemInterface): React.ComponentType<ItemRendererProps> => {
+const itemFactory = (item: Item): React.ComponentType<ItemRendererProps> => {
   const items: Record<
-    ItemInterface['category'],
-    Record<string, Record<string, React.ComponentType<ItemRendererProps>>>
+    Item['category'],
+    Record<Item['type'], Record<Item['variant'], React.ComponentType<ItemRendererProps>>>
   > = {
     clothing: {
       hat: {

@@ -3,7 +3,6 @@ import React from 'react';
 
 import { useEngine } from '~/src/engine';
 import l10n from '~/src/l10n';
-import { Item } from '~/src/models/Item/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectInventory } from '~/src/store/reducers/inventory';
 
@@ -14,7 +13,6 @@ import { InventoryItem as InventoryItemInterface } from './types';
 import './inventory.css';
 
 const Inventory: React.FC = () => {
-  const [selectedItem, setSelectedItem] = React.useState<Item | null>(null);
   const { trigger } = useEngine();
   const inventory = useSelector(selectInventory);
 
@@ -75,15 +73,13 @@ const Inventory: React.FC = () => {
                   count={count}
                   item={item}
                   key={`${item.category}-${item.type}-${item.variant}`}
-                  onClick={setSelectedItem}
                 />
               ))}
             </React.Fragment>
           )}
         </div>
         <div id="inventory__selected">
-          {selectedItem === null && <p>{l10n.inventoryMessageNoItemSelected}</p>}
-          {selectedItem !== null && <SelectedItem item={selectedItem} />}
+          <SelectedItem />
         </div>
       </div>
     </div>
