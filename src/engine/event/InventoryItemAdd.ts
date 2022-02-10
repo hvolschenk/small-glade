@@ -1,5 +1,5 @@
 import { Item } from '~/src/models/Item/types';
-import { selectInventory } from '~/src/store/reducers/inventory';
+import { selectInventory } from '~/src/store/reducers/inventory/selectors';
 import inventoryItemAdd from '~/src/store/thunks/inventoryItemAdd';
 
 import EventAbstract from './EventAbstract';

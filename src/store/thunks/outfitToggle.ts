@@ -2,7 +2,8 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
 import { GameStatus } from '~/src/models/Game';
 
-import { outfitToggle as outfitToggleAction, selectOutfitIsOpen } from '../reducers/outfit';
+import { outfitToggle as outfitToggleAction } from '../reducers/outfit';
+import { selectOutfitIsOpen } from '../reducers/outfit/selectors';
 import { RootState } from '../types';
 import gameStatusUpdate from './gameStatusUpdate';
 

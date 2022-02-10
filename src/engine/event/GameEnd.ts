@@ -1,5 +1,5 @@
 import { GameStatus } from '~/src/models/Game';
-import { selectPlayerVitals } from '~/src/store/reducers/player';
+import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
 import gameStatusUpdate from '~/src/store/thunks/gameStatusUpdate';
 
 import EventAbstract from './EventAbstract';

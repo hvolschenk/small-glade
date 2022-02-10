@@ -1,5 +1,5 @@
 import { GameStatus } from '~/src/models/Game';
-import { selectGameStatus } from '~/src/store/reducers/game';
+import { selectGameStatus } from '~/src/store/reducers/game/selectors';
 import outfitToggle from '~/src/store/thunks/outfitToggle';
 
 import EventAbstract from './EventAbstract';

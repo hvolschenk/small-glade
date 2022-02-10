@@ -4,7 +4,7 @@ import React from 'react';
 import { useEngine } from '~/src/engine';
 import l10n from '~/src/l10n';
 import { useSelector } from '~/src/store/hooks';
-import { selectInventory } from '~/src/store/reducers/inventory';
+import { selectInventory } from '~/src/store/reducers/inventory/selectors';
 
 import InventoryItem from './Item';
 import SelectedItem from './SelectedItem';

@@ -5,8 +5,6 @@ import startingInventory from '~/src/models/Inventory/StartingInventory';
 import { Inventory } from '~/src/models/Inventory/types';
 import { Item } from '~/src/models/Item/types';
 
-import { RootState } from '../types';
-
 const initialState: Inventory = startingInventory;
 
 const inventorySlice = createSlice({
@@ -34,12 +32,6 @@ const inventorySlice = createSlice({
     },
   },
 });
-
-export const selectInventory = (state: RootState): Inventory => state.inventory;
-export const selectInventoryIsOpen = (state: RootState): Inventory['isOpen'] =>
-  state.inventory.isOpen;
-export const selectInventorySelectedItem = (state: RootState): Inventory['selectedItem'] =>
-  state.inventory.selectedItem;
 
 export const {
   inventoryItemAdd,

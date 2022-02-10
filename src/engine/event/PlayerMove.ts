@@ -1,8 +1,8 @@
 import { Direction } from '~/src/models/Direction';
 import { GameStatus } from '~/src/models/Game';
-import { selectGameStatus } from '~/src/store/reducers/game';
-import { selectMapTiles } from '~/src/store/reducers/map';
-import { selectPlayerPosition } from '~/src/store/reducers/player';
+import { selectGameStatus } from '~/src/store/reducers/game/selectors';
+import { selectMapTiles } from '~/src/store/reducers/map/selectors';
+import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 import playerMove from '~/src/store/thunks/playerMove';
 import positionFromDirection from '~/src/utilities/positionFromDirection';
 

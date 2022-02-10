@@ -3,8 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Weather } from '~/src/models/Weather/types';
 
-import { RootState } from '../types';
-
 const initialState: Weather = {
   conditions: 'sunny',
   temperature: -10,
@@ -28,10 +26,6 @@ const weatherSlice = createSlice({
     },
   },
 });
-
-export const selectWeather = (state: RootState): Weather => state.weather;
-export const selectWeatherTemperature = (state: RootState): Weather['temperature'] =>
-  state.weather.temperature;
 
 export const { weatherConditionsUpdate, weatherTemperatureUpdate } = weatherSlice.actions;
 export default weatherSlice.reducer;

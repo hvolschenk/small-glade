@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useEngine } from '~/src/engine';
 import { ItemConsumableDrinkOptions } from '~/src/engine/event/ItemConsumableDrink';
 import { Consumable } from '~/src/models/Item/Consumable/types';
-import { selectPlayerVitals } from '~/src/store/reducers/player';
+import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
 
 import { ActionsRendererProps } from '../types';
 

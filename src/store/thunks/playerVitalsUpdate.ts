@@ -3,12 +3,10 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 import configuration from '~/src/configuration';
 import { Vitals } from '~/src/models/Player/types';
 
-import { selectOutfitWarmth } from '../reducers/outfit';
-import {
-  playerVitalsUpdate as playerVitalsUpdateAction,
-  selectPlayerVitals,
-} from '../reducers/player';
-import { selectWeatherTemperature } from '../reducers/weather';
+import { selectOutfitWarmth } from '../reducers/outfit/selectors';
+import { playerVitalsUpdate as playerVitalsUpdateAction } from '../reducers/player';
+import { selectPlayerVitals } from '../reducers/player/selectors';
+import { selectWeatherTemperature } from '../reducers/weather/selectors';
 import { RootState } from '../types';
 
 const playerVitalsUpdate =

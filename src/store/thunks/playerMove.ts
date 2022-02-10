@@ -3,7 +3,8 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 import { Direction } from '~/src/models/Direction';
 import positionFromDirection from '~/src/utilities/positionFromDirection';
 
-import { playerPositionUpdate, selectPlayerPosition } from '../reducers/player';
+import { playerPositionUpdate } from '../reducers/player';
+import { selectPlayerPosition } from '../reducers/player/selectors';
 import { RootState } from '../types';
 
 const playerMove =

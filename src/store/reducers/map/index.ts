@@ -3,9 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
-import { Tile } from '~/src/models/Tile/types';
-
-import { RootState } from '../types';
 
 const initialState: Map = {
   animals: [],
@@ -34,19 +31,6 @@ const mapSlice = createSlice({
     },
   },
 });
-
-export const selectMap = (state: RootState): Map => state.map;
-export const selectMapTileAtPosition = (state: RootState, position: Position): null | Tile => {
-  const row = state.map.tiles[position.top];
-  if (row) {
-    const tile = row[position.left];
-    if (tile) {
-      return tile;
-    }
-  }
-  return null;
-};
-export const selectMapTiles = (state: RootState): Map['tiles'] => state.map.tiles;
 
 export const { mapInteractableInteract, mapNameUpdate } = mapSlice.actions;
 export default mapSlice.reducer;
