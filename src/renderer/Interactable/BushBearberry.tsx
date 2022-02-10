@@ -5,7 +5,7 @@ import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarve
 import l10n from '~/src/l10n';
 import bearBerry from '~/src/models/Item/Consumable/Bearberry';
 import { useSelector } from '~/src/store/hooks';
-import { selectPlayerPosition } from '~/src/store/reducers/player';
+import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 import positionsEqual from '~/src/utilities/positionsEqual';
 
 import InteractionOverlay from './InteractionOverlay';

@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Direction } from '~/src/models/Direction';
 import { useSelector } from '~/src/store/hooks';
-import { selectMapTileAtPosition } from '~/src/store/reducers/map';
-import { selectPlayerPosition } from '~/src/store/reducers/player';
+import { selectMapTileAtPosition } from '~/src/store/reducers/map/selectors';
+import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 
 import './movement-controls.css';
 

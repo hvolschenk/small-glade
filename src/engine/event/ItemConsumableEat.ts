@@ -1,5 +1,5 @@
 import { Consumable } from '~/src/models/Item/Consumable/types';
-import { selectPlayerVitals } from '~/src/store/reducers/player';
+import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
 import itemConsumableEat from '~/src/store/thunks/itemConsumableEat';
 
 import EventAbstract from './EventAbstract';

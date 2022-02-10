@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from '~/src/store/hooks';
-import { selectPlayerVitals } from '~/src/store/reducers/player';
+import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
 
 import Vital from './Vital';
 

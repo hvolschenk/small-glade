@@ -2,10 +2,8 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
 import { GameStatus } from '~/src/models/Game';
 
-import {
-  inventoryToggle as inventoryToggleAction,
-  selectInventoryIsOpen,
-} from '../reducers/inventory';
+import { inventoryToggle as inventoryToggleAction } from '../reducers/inventory';
+import { selectInventoryIsOpen } from '../reducers/inventory/selectors';
 import { RootState } from '../types';
 import gameStatusUpdate from './gameStatusUpdate';
 

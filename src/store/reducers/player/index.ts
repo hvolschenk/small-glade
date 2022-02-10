@@ -4,8 +4,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Player, Vitals } from '~/src/models/Player/types';
 import { Position } from '~/src/models/Position';
 
-import { RootState } from '../types';
-
 const initialState: Player = {
   position: { left: 0, top: 0 },
   vitals: {
@@ -28,10 +26,6 @@ const playerSlice = createSlice({
     },
   },
 });
-
-export const selectPlayer = (state: RootState): Player => state.player;
-export const selectPlayerPosition = (state: RootState): Position => state.player.position;
-export const selectPlayerVitals = (state: RootState): Vitals => state.player.vitals;
 
 export const { playerPositionUpdate, playerVitalsUpdate } = playerSlice.actions;
 export default playerSlice.reducer;

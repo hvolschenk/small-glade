@@ -3,7 +3,7 @@ import React from 'react';
 
 import configuration from '~/src/configuration';
 import { useSelector } from '~/src/store/hooks';
-import { selectMap } from '~/src/store/reducers/map';
+import { selectMap } from '~/src/store/reducers/map/selectors';
 
 import Animal from '../Animal';
 import Interactable from '../Interactable';

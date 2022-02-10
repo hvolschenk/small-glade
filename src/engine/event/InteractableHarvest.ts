@@ -1,7 +1,7 @@
 import { Interactable } from '~/src/models/Interactable/types';
 import { Item } from '~/src/models/Item/types';
 import { Position } from '~/src/models/Position';
-import { selectInventory } from '~/src/store/reducers/inventory';
+import { selectInventory } from '~/src/store/reducers/inventory/selectors';
 import mapInteractableInteract from '~/src/store/thunks/mapInteractableInteract';
 
 import EventAbstract from './EventAbstract';

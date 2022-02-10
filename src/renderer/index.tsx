@@ -4,7 +4,7 @@ import { useEngine } from '~/src/engine';
 import l10n from '~/src/l10n';
 import { GameStatus } from '~/src/models/Game';
 import { useSelector } from '~/src/store/hooks';
-import { selectGameStatus } from '~/src/store/reducers/game';
+import { selectGameStatus } from '~/src/store/reducers/game/selectors';
 
 import Controls from './Controls';
 import Inventory from './Inventory';

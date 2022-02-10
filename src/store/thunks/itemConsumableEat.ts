@@ -3,7 +3,8 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 import { Consumable } from '~/src/models/Item/Consumable/types';
 
 import { inventoryItemRemove } from '../reducers/inventory';
-import { playerVitalsUpdate, selectPlayerVitals } from '../reducers/player';
+import { playerVitalsUpdate } from '../reducers/player';
+import { selectPlayerVitals } from '../reducers/player/selectors';
 import { RootState } from '../types';
 
 const itemConsumableEat =

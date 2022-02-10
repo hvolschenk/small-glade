@@ -3,11 +3,8 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 import configuration from '~/src/configuration';
 import { Weather } from '~/src/models/Weather/types';
 
-import {
-  selectWeather,
-  weatherConditionsUpdate,
-  weatherTemperatureUpdate,
-} from '../reducers/weather';
+import { weatherConditionsUpdate, weatherTemperatureUpdate } from '../reducers/weather';
+import { selectWeather } from '../reducers/weather/selectors';
 import { RootState } from '../types';
 
 const getUpdatedConditions = (conditions: Weather['conditions']): Weather['conditions'] => {

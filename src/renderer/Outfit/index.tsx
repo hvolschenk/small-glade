@@ -9,8 +9,8 @@ import {
   selectOutfit,
   selectOutfitProtection,
   selectOutfitWarmth,
-} from '~/src/store/reducers/outfit';
-import { selectWeather } from '~/src/store/reducers/weather';
+} from '~/src/store/reducers/outfit/selectors';
+import { selectWeather } from '~/src/store/reducers/weather/selectors';
 
 import './outfit.css';
 

@@ -5,7 +5,7 @@ import { useEngine } from '~/src/engine';
 import { PlayerMoveOptions } from '~/src/engine/event/PlayerMove';
 import { Direction } from '~/src/models/Direction';
 import { useSelector } from '~/src/store/hooks';
-import { selectPlayerPosition } from '~/src/store/reducers/player';
+import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 
 import MovementControls from './MovementControls';
 
