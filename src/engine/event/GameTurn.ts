@@ -8,6 +8,14 @@ const effectGameEnd: Effect<EventOptions> = (options) => {
   options.trigger('game:end');
 };
 
+const effectMapAnimalsPredatorMove: Effect<EventOptions> = (options) => {
+  options.trigger('map:animals:predator:move');
+};
+
+const effectMapAnimalsPreyMove: Effect<EventOptions> = (options) => {
+  options.trigger('map:animals:prey:move');
+};
+
 const effectPlayerVitalsUpdate: Effect<EventOptions> = (options) => {
   options.trigger('player:vitals:update');
 };
@@ -24,7 +32,13 @@ const validateGameStatusNotEnded: Validator<EventOptions> = (options) => {
 class GameTurn extends EventAbstract {
   public static event: string = 'game:turn';
 
-  effects: Effect<EventOptions>[] = [effectGameEnd, effectPlayerVitalsUpdate, effectWeatherUpdate];
+  effects: Effect<EventOptions>[] = [
+    effectGameEnd,
+    effectPlayerVitalsUpdate,
+    effectMapAnimalsPredatorMove,
+    effectMapAnimalsPreyMove,
+    effectWeatherUpdate,
+  ];
   validators: Validator<EventOptions>[] = [validateGameStatusNotEnded];
 
   // eslint-disable-next-line class-methods-use-this

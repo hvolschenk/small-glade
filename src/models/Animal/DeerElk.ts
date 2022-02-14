@@ -1,6 +1,7 @@
 import { Prey } from './types';
 
 const deerElk: Prey = {
+  category: 'prey',
   fleeRadius: 5,
   health: 30,
   isFleeing: false,
