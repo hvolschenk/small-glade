@@ -8,6 +8,9 @@ import InventorySelectedItemUpdate from './InventorySelectedItemUpdate';
 import InventoryToggle from './InventoryToggle';
 import ItemConsumableDrink from './ItemConsumableDrink';
 import ItemConsumableEat from './ItemConsumableEat';
+import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
+import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
+import MapAnimalsPreyMove from './MapAnimalsPreyMove';
 import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
 import PlayerVitalsUpdate from './PlayerVitalsUpdate';
@@ -29,6 +32,9 @@ const events = [
   InventoryToggle,
   ItemConsumableDrink,
   ItemConsumableEat,
+  MapAnimalsPredatorAggro,
+  MapAnimalsPredatorMove,
+  MapAnimalsPreyMove,
   OutfitToggle,
   PlayerMove,
   PlayerVitalsUpdate,
