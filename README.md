@@ -3,26 +3,10 @@
 _Small Glade_, a survival game.
 
 * [Setup][]
-  * [Setup environment][]
-  * [Start application][]
 * [Architecture][]
 
 ## Setup
 [Setup]: #setup
-
-### Setup environment
-[Setup environment]: #setup-environment
-
-First, set up the necessary environment variables by copying the `.env.example` file to `.env`:
-
-```sh
-$ cp .env.example .env
-```
-
-After copying the file, fill in the necessary values.
-
-### Start application
-[Start application]: #start-application
 
 Start the application through [docker-compose][]:
 
@@ -30,7 +14,15 @@ Start the application through [docker-compose][]:
 $ docker-compose up -d
 ```
 
-The application will run on [http://localhost:4989][]
+The application will run on [http://localhost:4989][].
+
+Dependencies will be installed at build-time into the [Docker][] container. If you need to use
+dependencies locally (like using [ESLint][] or [Prettier][] in your editor) you can install them
+through [npm][]:
+
+```sh
+$ npm install
+```
 
 ## Architecture
 [Architecture]: #architecture
@@ -55,6 +47,10 @@ Where the full state is stored. State using [redux][], updaters using [redux-sag
 
 ---
 
+[Docker]: https://www.docker.com/
+[ESLint]: https://eslint.org/
 [http://localhost:4989]: http://localhost:4989
+[npm]: https://www.npmjs.com/
+[Prettier]: https://prettier.io/
 [redux]: https://redux.js.org/
 [redux-saga]: https://redux-saga.js.org/
