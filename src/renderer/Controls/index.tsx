@@ -9,11 +9,21 @@ const Controls: React.FC = () => {
   const { trigger } = useEngine();
 
   return (
-    <div id="controls">
-      <button className="control" onClick={() => trigger('inventory:toggle')} type="button">
+    <div data-testid="controls" id="controls">
+      <button
+        className="control"
+        data-testid="controls__control--inventory"
+        onClick={() => trigger('inventory:toggle')}
+        type="button"
+      >
         {l10n.controlInventoryShortcut}
       </button>
-      <button className="control" onClick={() => trigger('outfit:toggle')} type="button">
+      <button
+        className="control"
+        data-testid="controls__control--outfit"
+        onClick={() => trigger('outfit:toggle')}
+        type="button"
+      >
         {l10n.controlOutfitShortcut}
       </button>
     </div>
