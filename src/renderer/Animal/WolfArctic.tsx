@@ -7,8 +7,8 @@ import { AnimalRendererProps } from './types';
 const WolfArctic: React.FC<AnimalRendererProps> = ({ animal, style }) => {
   const predator = animal as Predator;
   return (
-    <div className="animal wolf-arctic" style={style}>
-      W{predator.isAggroed && '!'}
+    <div className="animal wolf-arctic" data-testid="animal__wolf-arctic" style={style}>
+      {predator.isAggroed && <span data-testid="animal__wolf-arctic__aggro-indicator">!</span>}
     </div>
   );
 };

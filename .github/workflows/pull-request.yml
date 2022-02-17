@@ -23,3 +23,6 @@ jobs:
       
       - name: Test types
         run: npm run test:types
+      
+      - name: Test (Unit)
+        run: npm run test:scripts
