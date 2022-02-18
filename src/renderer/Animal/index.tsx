@@ -28,9 +28,9 @@ const animalFactory = (animal: AnimalInterface): React.ComponentType<AnimalRende
   return NullRenderer;
 };
 
-const Animal: React.FC<AnimalRendererProps> = ({ animal, style }) => {
+const Animal: React.FC<AnimalRendererProps> = ({ animal, position, style }) => {
   const AnimalRenderer = animalFactory(animal);
-  return <AnimalRenderer animal={animal} style={style} />;
+  return <AnimalRenderer animal={animal} position={position} style={style} />;
 };
 
 export default Animal;

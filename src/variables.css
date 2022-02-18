@@ -16,11 +16,12 @@
 
   --z-index--map: 0;
   --z-index--tile: 5;
-  --z-index--interactable: 10;
-  --z-index--player: 15;
-  --z-index--environment: 20;
-  --z-index--hud: 25;
-  --z-index--control: 30;
-  --z-index--menu: 35;
-  --z-index--end-screen: 40;
+  --z-index--non-interactable: 10;
+  --z-index--interactable: 15;
+  --z-index--player: 20;
+  --z-index--environment: 25;
+  --z-index--hud: 30;
+  --z-index--control: 35;
+  --z-index--menu: 40;
+  --z-index--end-screen: 45;
 }

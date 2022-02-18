@@ -62,6 +62,7 @@ const Map: React.FC = () => {
                 <Animal
                   animal={animal}
                   key={`${rowIndex}-${animalIndex}`}
+                  position={{ left: animalIndex, top: rowIndex }}
                   style={{
                     left: animalIndex * configuration.tileSize(),
                     top: rowIndex * configuration.tileSize(),
