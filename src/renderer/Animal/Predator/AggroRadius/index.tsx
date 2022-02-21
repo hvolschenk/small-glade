@@ -5,22 +5,22 @@ import { Position } from '~/src/models/Position';
 import { useSelector } from '~/src/store/hooks';
 import { selectMapAnimalPredatorAggroRange } from '~/src/store/reducers/map/selectors';
 
-import './predator-aggro-radius.css';
+import './aggro-radius.css';
 
-interface PredatorAggroRadiusProps {
+interface AggroRadiusProps {
   position: Position;
 }
 
-const PredatorAggroRadius: React.FC<PredatorAggroRadiusProps> = ({ position }) => {
+const AggroRadius: React.FC<AggroRadiusProps> = ({ position }) => {
   const positions = useSelector((state) => selectMapAnimalPredatorAggroRange(state, position));
 
   return (
     <React.Fragment>
       {positions.map((tile) => (
         <div
-          className="predator-aggro-radius__position"
-          data-testid="predator-aggro-radius__position"
-          key={`predator-aggro-radius__position__${tile.top}-${tile.left}`}
+          className="predator__aggro-radius__position"
+          data-testid="predator__aggro-radius__position"
+          key={`predator__aggro-radius__position__${tile.top}-${tile.left}`}
           style={{
             left: tile.left * configuration.tileSize(),
             top: tile.top * configuration.tileSize(),
@@ -31,4 +31,4 @@ const PredatorAggroRadius: React.FC<PredatorAggroRadiusProps> = ({ position }) =
   );
 };
 
-export default PredatorAggroRadius;
+export default AggroRadius;

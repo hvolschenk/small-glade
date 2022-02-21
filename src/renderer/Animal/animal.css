@@ -10,10 +10,14 @@
   z-index: var(--z-index--interactable);
 }
 
-.animal.deer-elk {
+.animal .deer-elk {
   background-color: var(--color--brown);
+  height: var(--size--tile);
+  width: var(--size--tile);
 }
 
-.animal.wolf-arctic {
+.animal .wolf-arctic {
   background-color: var(--color--white);
+  height: var(--size--tile);
+  width: var(--size--tile);
 }
