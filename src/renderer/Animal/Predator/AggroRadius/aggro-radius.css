@@ -1,6 +1,6 @@
-@import url('../../../variables.css');
+@import url('../../../../variables.css');
 
-.predator-aggro-radius__position {
+.predator__aggro-radius__position {
   background-color: var(--color--red-light);
   height: var(--size--tile);
   opacity: 0.6;
