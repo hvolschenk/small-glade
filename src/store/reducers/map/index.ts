@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Animal, Predator } from '~/src/models/Animal/types';
+import { Animal, Predator, Prey } from '~/src/models/Animal/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
 
@@ -37,6 +37,17 @@ const mapSlice = createSlice({
       const predator = state.animals[top][left] as Predator;
       predator.isAggroed = isAggroed;
     },
+    mapAnimalPreyFlee: (
+      state,
+      action: PayloadAction<{ isFleeing: Prey['isFleeing']; position: Position }>,
+    ) => {
+      const {
+        isFleeing,
+        position: { left, top },
+      } = action.payload;
+      const prey = state.animals[top][left] as Prey;
+      prey.isFleeing = isFleeing;
+    },
     mapInteractableInteract: (state, action: PayloadAction<{ position: Position }>) => {
       const { left, top } = action.payload.position;
       const row = state.interactables[top];
@@ -53,6 +64,11 @@ const mapSlice = createSlice({
   },
 });
 
-export const { mapAnimalMove, mapAnimalPredatorAggro, mapInteractableInteract, mapNameUpdate } =
-  mapSlice.actions;
+export const {
+  mapAnimalMove,
+  mapAnimalPredatorAggro,
+  mapAnimalPreyFlee,
+  mapInteractableInteract,
+  mapNameUpdate,
+} = mapSlice.actions;
 export default mapSlice.reducer;

@@ -1,29 +1,25 @@
 import { GameStatus } from '~/src/models/Game';
 import { selectGameStatus } from '~/src/store/reducers/game/selectors';
-import mapAnimalsPreyMove from '~/src/store/thunks/mapAnimalsPreyMove';
+import mapAnimalsPreyFlee from '~/src/store/thunks/mapAnimalsPreyFlee';
 
 import EventAbstract from './EventAbstract';
 import { Effect, EventOptions, Validator } from './types';
-
-const effectMapAnimalsPreyFlee: Effect<EventOptions> = (options) => {
-  options.trigger('map:animals:prey:flee');
-};
 
 const validateGameStatusIdle: Validator<EventOptions> = (options) => {
   const status = selectGameStatus(options.getState());
   return status === GameStatus.GAME_STATUS_IDLE;
 };
 
-class MapAnimalsPreyMove extends EventAbstract {
-  public static event: string = 'map:animals:prey:move';
+class MapAnimalsPreyFlee extends EventAbstract {
+  public static event: string = 'map:animals:prey:flee';
 
-  effects: Effect<EventOptions>[] = [effectMapAnimalsPreyFlee];
+  effects: Effect<EventOptions>[] = [];
   validators: Validator<EventOptions>[] = [validateGameStatusIdle];
 
   // eslint-disable-next-line class-methods-use-this
   handler(options: EventOptions): void {
-    options.dispatch(mapAnimalsPreyMove());
+    options.dispatch(mapAnimalsPreyFlee());
   }
 }
 
-export default MapAnimalsPreyMove;
+export default MapAnimalsPreyFlee;

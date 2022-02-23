@@ -11,22 +11,58 @@ const position: Position = {
   top: 11,
 };
 
-let wrapper: RenderResult;
+describe('Default', () => {
+  let wrapper: RenderResult;
 
-beforeEach(() => {
-  wrapper = render(<Predator animal={wolfArctic} position={position} />);
-});
-
-test('Does not render the aggro radius by default', () => {
-  expect(wrapper.queryAllByTestId('predator__aggro-radius__position')).toHaveLength(0);
-});
-
-describe('After clicking the predator', () => {
   beforeEach(() => {
-    fireEvent.click(wrapper.getByTestId('animal__predator'));
+    wrapper = render(<Predator animal={wolfArctic} position={position} />);
   });
 
-  test('Renders the aggro radius', () => {
-    expect(wrapper.queryAllByTestId('predator__aggro-radius__position')).not.toHaveLength(0);
+  test('Does not render the aggro radius by default', () => {
+    expect(wrapper.queryAllByTestId('predator__aggro-radius__position')).toHaveLength(0);
+  });
+
+  describe('After clicking the predator', () => {
+    beforeEach(() => {
+      fireEvent.click(wrapper.getByTestId('animal__predator'));
+    });
+
+    test('Renders the aggro radius', () => {
+      expect(wrapper.queryAllByTestId('predator__aggro-radius__position')).not.toHaveLength(0);
+    });
+
+    describe('Clicking the predator again', () => {
+      beforeEach(() => {
+        fireEvent.click(wrapper.getByTestId('animal__predator'));
+      });
+
+      test('Hides the aggro radius again', () => {
+        expect(wrapper.queryAllByTestId('predator__aggro-radius__position')).toHaveLength(0);
+      });
+    });
+  });
+});
+
+describe('When the animal is not aggroed', () => {
+  let wrapper: RenderResult;
+
+  beforeEach(() => {
+    wrapper = render(<Predator animal={{ ...wolfArctic, isAggroed: false }} position={position} />);
+  });
+
+  test('Does not render the aggro indicator', () => {
+    expect(wrapper.queryByTestId('animal__predator__aggro-indicator')).not.toBeInTheDocument();
+  });
+});
+
+describe('When the animal is aggroed', () => {
+  let wrapper: RenderResult;
+
+  beforeEach(() => {
+    wrapper = render(<Predator animal={{ ...wolfArctic, isAggroed: true }} position={position} />);
+  });
+
+  test('Renders the aggro indicator', () => {
+    expect(wrapper.queryByTestId('animal__predator__aggro-indicator')).toBeInTheDocument();
   });
 });

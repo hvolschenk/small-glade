@@ -10,6 +10,7 @@ import ItemConsumableDrink from './ItemConsumableDrink';
 import ItemConsumableEat from './ItemConsumableEat';
 import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
+import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
 import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
@@ -34,6 +35,7 @@ const events = [
   ItemConsumableEat,
   MapAnimalsPredatorAggro,
   MapAnimalsPredatorMove,
+  MapAnimalsPreyFlee,
   MapAnimalsPreyMove,
   OutfitToggle,
   PlayerMove,

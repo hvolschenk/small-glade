@@ -43,7 +43,9 @@ const Predator: React.FC<PredatorRendererProps> = ({ animal, position, style }) 
         style={style}
         type="button"
       >
-        <PredatorRenderer animal={animal} position={position} style={style} />
+        <PredatorRenderer animal={animal} position={position} style={style}>
+          {animal.isAggroed && <span data-testid="animal__predator__aggro-indicator">!</span>}
+        </PredatorRenderer>
       </button>
       {isSelected && <AggroRadius position={position} />}
     </React.Fragment>

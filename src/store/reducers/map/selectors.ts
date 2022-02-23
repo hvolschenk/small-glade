@@ -53,3 +53,24 @@ export const selectMapAnimalPredatorAggroRange = createSelector(
     return [];
   },
 );
+export const selectMapAnimalPreyFleeRadius = createSelector(
+  [selectMapTiles, selectMapAnimalsPrey, (_, position: Position) => position],
+  (tiles, preyAnimals, position): Position[] => {
+    const preyAnimalsRow = preyAnimals[position.top];
+    if (preyAnimalsRow) {
+      const prey = preyAnimalsRow[position.left];
+      if (prey) {
+        const positions = radiusAroundPosition({ position, radius: prey.fleeRadius });
+        return positions.filter((fleePosition) => {
+          const row = tiles[fleePosition.top];
+          if (row) {
+            const tile = row[fleePosition.left];
+            return Boolean(tile);
+          }
+          return false;
+        });
+      }
+    }
+    return [];
+  },
+);
