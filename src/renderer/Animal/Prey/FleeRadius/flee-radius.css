@@ -1,0 +1,10 @@
+@import url('../../../../variables.css');
+
+.prey__flee-radius__position {
+  background-color: var(--color--yellow-light);
+  height: var(--size--tile);
+  opacity: 0.6;
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--non-interactable);
+}

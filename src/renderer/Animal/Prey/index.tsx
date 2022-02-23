@@ -3,6 +3,7 @@ import React from 'react';
 import { Prey as PreyInterface } from '~/src/models/Animal/types';
 
 import DeerElk from './DeerElk';
+import FleeRadius from './FleeRadius';
 import { PreyRendererProps } from './types';
 
 const preyFactory = (animal: PreyInterface): React.ComponentType<PreyRendererProps> => {
@@ -26,11 +27,27 @@ const preyFactory = (animal: PreyInterface): React.ComponentType<PreyRendererPro
 };
 
 const Prey: React.FC<PreyRendererProps> = ({ animal, position, style }) => {
+  const [isSelected, setIsSelected] = React.useState<boolean>(false);
+  const toggleSelected = React.useCallback(
+    () => setIsSelected(!isSelected),
+    [isSelected, setIsSelected],
+  );
   const PreyRenderer = React.useMemo(() => preyFactory(animal), [animal]);
   return (
-    <div className="animal" style={style}>
-      <PreyRenderer animal={animal} position={position} style={style} />
-    </div>
+    <React.Fragment>
+      <button
+        className="animal"
+        data-testid="animal__prey"
+        onClick={toggleSelected}
+        style={style}
+        type="button"
+      >
+        <PreyRenderer animal={animal} position={position} style={style}>
+          {animal.isFleeing && <span data-testid="animal__prey__fleeing-indicator">!</span>}
+        </PreyRenderer>
+      </button>
+      {isSelected && <FleeRadius position={position} />}
+    </React.Fragment>
   );
 };
 
