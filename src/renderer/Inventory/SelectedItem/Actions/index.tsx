@@ -16,11 +16,11 @@ const actionsFactory = (item: Item): React.ComponentType<ActionsRendererProps> =
       hat: {},
     },
     consumable: {
-      bottle: {
-        water: BottleWater,
-      },
       berry: {
         bearberry: Bearberry,
+      },
+      bottle: {
+        water: BottleWater,
       },
       crisps: {
         tomato: CrispsTomato,

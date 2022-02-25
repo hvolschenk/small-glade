@@ -28,8 +28,8 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
             {
               action: () => {
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
-                  item: bearBerry,
                   interactable,
+                  item: bearBerry,
                   position,
                 });
               },
