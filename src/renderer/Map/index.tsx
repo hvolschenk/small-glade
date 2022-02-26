@@ -1,14 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 
-import configuration from '~/src/configuration';
 import { useSelector } from '~/src/store/hooks';
 import { selectMap } from '~/src/store/reducers/map/selectors';
 
-import Animal from '../Animal';
-import Interactable from '../Interactable';
 import Player from '../Player';
-import Tile from '../Tile';
+import Animals from './Animals';
+import Interactables from './Interactables';
+import Tiles from './Tiles';
 
 import './map.css';
 
@@ -18,62 +17,9 @@ const Map: React.FC = () => {
   return (
     <div id="map">
       <Player />
-      {map.tiles.map((row, rowIndex) => (
-        <React.Fragment key={rowIndex}>
-          {row.map((tile, tileIndex) => (
-            <Tile
-              key={`${rowIndex}-${tileIndex}`}
-              style={{
-                left: tileIndex * configuration.tileSize(),
-                top: rowIndex * configuration.tileSize(),
-              }}
-              tile={tile}
-            >
-              {rowIndex} {tileIndex}
-            </Tile>
-          ))}
-        </React.Fragment>
-      ))}
-      {map.interactables.map((row, rowIndex) => (
-        <React.Fragment key={rowIndex}>
-          {row.map((interactable, interactableIndex) => {
-            if (interactable) {
-              return (
-                <Interactable
-                  interactable={interactable}
-                  key={`${rowIndex}-${interactableIndex}`}
-                  position={{ left: interactableIndex, top: rowIndex }}
-                  style={{
-                    left: interactableIndex * configuration.tileSize(),
-                    top: rowIndex * configuration.tileSize(),
-                  }}
-                />
-              );
-            }
-            return null;
-          })}
-        </React.Fragment>
-      ))}
-      {map.animals.map((row, rowIndex) => (
-        <React.Fragment key={rowIndex}>
-          {row.map((animal, animalIndex) => {
-            if (animal) {
-              return (
-                <Animal
-                  animal={animal}
-                  key={`${rowIndex}-${animalIndex}`}
-                  position={{ left: animalIndex, top: rowIndex }}
-                  style={{
-                    left: animalIndex * configuration.tileSize(),
-                    top: rowIndex * configuration.tileSize(),
-                  }}
-                />
-              );
-            }
-            return null;
-          })}
-        </React.Fragment>
-      ))}
+      <Animals animals={map.animals} />
+      <Interactables interactables={map.interactables} />
+      <Tiles tiles={map.tiles} />
     </div>
   );
 };
