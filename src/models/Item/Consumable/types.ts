@@ -5,3 +5,15 @@ export interface Consumable extends Item {
   fullness: number;
   hydration: number;
 }
+
+export interface ConsumableBerry extends Consumable {
+  type: 'berry';
+}
+
+export interface ConsumableBottle extends Consumable {
+  type: 'bottle';
+}
+
+export interface ConsumableCrisps extends Consumable {
+  type: 'crisps';
+}

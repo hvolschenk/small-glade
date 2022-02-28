@@ -1,6 +1,6 @@
-import { Consumable } from './types';
+import { ConsumableBottle } from './types';
 
-const bottleWater: Consumable = {
+const bottleWater: ConsumableBottle = {
   category: 'consumable',
   fullness: 0,
   hydration: 50,

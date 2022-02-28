@@ -1,6 +1,6 @@
-import { Consumable } from './types';
+import { ConsumableBerry } from './types';
 
-const bearBerry: Consumable = {
+const bearBerry: ConsumableBerry = {
   category: 'consumable',
   fullness: 10,
   hydration: 0,
