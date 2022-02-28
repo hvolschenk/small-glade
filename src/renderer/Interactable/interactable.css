@@ -11,3 +11,18 @@
   background-color: var(--color--red-light);
   opacity: 0.2;
 }
+
+.interactable.fuel-stick {
+  background-color: var(--color--brown);
+  opacity: 0.2;
+}
+
+.interactable.starter-matches {
+  background-color: var(--color--blue);
+  opacity: 0.2;
+}
+
+.interactable.tinder-newspaper {
+  background-color: var(--color--white);
+  opacity: 0.2;
+}

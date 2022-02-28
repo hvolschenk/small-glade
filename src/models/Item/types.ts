@@ -6,7 +6,7 @@ interface ItemL10n {
 }
 
 export interface Item {
-  category: 'clothing' | 'consumable';
+  category: 'clothing' | 'consumable' | 'fire';
   l10n: ItemL10n;
   type: string;
   variant: string;

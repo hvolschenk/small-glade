@@ -6,6 +6,7 @@ export interface L10n {
   gameIntroductionLoading: string;
   gameIntroductionQuote: string;
   interactableActionHarvest: string;
+  interactableActionPickUp: string;
   inventoryMessageNoItems: string;
   inventoryMessageNoItemSelected: string;
   inventoryTitle: string;
@@ -29,6 +30,12 @@ export interface L10n {
   itemConsumableBottleWaterName: string;
   itemConsumableCrispsTomatoDescription: string;
   itemConsumableCrispsTomatoName: string;
+  itemFireFuelStickDescription: string;
+  itemFireFuelStickName: string;
+  itemFireStarterMatchesDescription: string;
+  itemFireStarterMatchesName: string;
+  itemFireTinderNewspaperDescription: string;
+  itemFireTinderNewspaperName: string;
   outfitItemTypeHat: string;
   outfitItemTypeJacket: string;
   outfitItemTypePants: string;

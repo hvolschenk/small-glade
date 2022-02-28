@@ -26,6 +26,7 @@ const actionsFactory = (item: Item): React.ComponentType<ActionsRendererProps> =
         tomato: CrispsTomato,
       },
     },
+    fire: {},
   };
   const types = actions[item.category];
   if (types) {

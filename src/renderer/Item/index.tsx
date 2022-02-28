@@ -12,6 +12,9 @@ import UnderwearCotton from './Clothing/UnderwearCotton';
 import Bearberry from './Consumable/Bearberry';
 import BottleWater from './Consumable/BottleWater';
 import CrispsTomato from './Consumable/CrispsTomato';
+import FuelStick from './Fire/FuelStick';
+import StarterMatches from './Fire/StarterMatches';
+import TinderNewspaper from './Fire/TinderNewspaper';
 import { ItemRendererProps } from './types';
 
 import './item.css';
@@ -53,6 +56,17 @@ const itemFactory = (item: Item): React.ComponentType<ItemRendererProps> => {
       },
       crisps: {
         tomato: CrispsTomato,
+      },
+    },
+    fire: {
+      fuel: {
+        stick: FuelStick,
+      },
+      starter: {
+        matches: StarterMatches,
+      },
+      tinder: {
+        newspaper: TinderNewspaper,
       },
     },
   };

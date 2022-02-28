@@ -44,3 +44,15 @@
 .item.item__consumable__crisps-tomato {
   background-color: var(--color--blue);
 }
+
+.item.item__fire__fuel-stick {
+  background-color: var(--color--blue);
+}
+
+.item.item__fire__starter-matches {
+  background-color: var(--color--blue);
+}
+
+.item.item__fire__tinder-newspaper {
+  background-color: var(--color--blue);
+}
