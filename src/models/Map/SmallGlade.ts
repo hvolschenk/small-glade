@@ -1,6 +1,9 @@
 import deerElk from '../Animal/DeerElk';
 import wolfArctic from '../Animal/WolfArctic';
 import bushBearberry from '../Interactable/BushBearberry';
+import fuelStick from '../Interactable/FuelStick';
+import starterMatches from '../Interactable/StarterMatches';
+import tinderNewspaper from '../Interactable/TinderNewspaper';
 import placeholderEmpty from '../Tile/PlaceholderEmpty';
 import rockBasic from '../Tile/RockBasic';
 import treeBirch from '../Tile/TreeBirch';
@@ -24,8 +27,12 @@ const smallGlade: Map = {
   ],
   identifier: 'small-glade',
   interactables: [
-    [, , bushBearberry],
+    [, , bushBearberry, fuelStick, tinderNewspaper],
     [, , , , , , , , , bushBearberry],
+    [],
+    [],
+    [],
+    [, , starterMatches],
   ],
   name: 'Small glade',
   tiles: [

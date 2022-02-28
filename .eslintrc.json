@@ -33,7 +33,8 @@
     ],
     "no-sparse-arrays": "off",
     "react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
-    "react/jsx-fragments": ["error", "element"]
+    "react/jsx-fragments": ["error", "element"],
+    "sort-keys": ["error", "asc", { "caseSensitive": false }]
   },
   "settings": {
     "import/resolver": {

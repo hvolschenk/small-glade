@@ -1,6 +1,6 @@
-import { Consumable } from './types';
+import { ConsumableCrisps } from './types';
 
-const crispsTomato: Consumable = {
+const crispsTomato: ConsumableCrisps = {
   category: 'consumable',
   fullness: 25,
   hydration: 0,

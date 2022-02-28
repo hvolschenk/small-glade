@@ -6,8 +6,8 @@ module.exports = {
     'tsx',
   ],
   moduleNameMapper: {
-    '~/src/(.*)': '<rootDir>/src/$1',
     '\\.s?css$': '<rootDir>/.jest/style-mock.js',
+    '~/src/(.*)': '<rootDir>/src/$1',
   },
   roots: ['<rootDir>/src'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.js'],

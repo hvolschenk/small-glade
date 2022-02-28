@@ -3,6 +3,9 @@ import React from 'react';
 import { Interactable as InteractableInterface } from '~/src/models/Interactable/types';
 
 import BushBearberry from './BushBearberry';
+import FuelStick from './FuelStick';
+import StarterMatches from './StarterMatches';
+import TinderNewspaper from './TinderNewspaper';
 import { InteractableRendererProps } from './types';
 
 import './interactable.css';
@@ -16,6 +19,15 @@ const interactableFactory = (
   > = {
     bush: {
       'bear-berry': BushBearberry,
+    },
+    fuel: {
+      stick: FuelStick,
+    },
+    starter: {
+      matches: StarterMatches,
+    },
+    tinder: {
+      newspaper: TinderNewspaper,
     },
   };
   const variants = interactables[interactable.type];

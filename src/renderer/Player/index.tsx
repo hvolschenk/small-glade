@@ -29,6 +29,7 @@ const Player: React.FC = () => {
         ArrowLeft: 'left',
         ArrowRight: 'right',
         ArrowUp: 'up',
+        // eslint-disable-next-line sort-keys
         a: 'left',
         d: 'right',
         s: 'down',

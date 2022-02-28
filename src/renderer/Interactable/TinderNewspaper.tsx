@@ -3,7 +3,7 @@ import React from 'react';
 import { useEngine } from '~/src/engine';
 import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarvest';
 import l10n from '~/src/l10n';
-import bearBerry from '~/src/models/Item/Consumable/Bearberry';
+import tinderNewspaper from '~/src/models/Item/Fire/TinderNewspaper';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 import positionsEqual from '~/src/utilities/positionsEqual';
@@ -11,7 +11,11 @@ import positionsEqual from '~/src/utilities/positionsEqual';
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
-const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
+const TinderNewspaper: React.FC<InteractableRendererProps> = ({
+  interactable,
+  position,
+  style,
+}) => {
   const { trigger } = useEngine();
   const playerPosition = useSelector(selectPlayerPosition);
 
@@ -21,7 +25,7 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
 
   return (
     <React.Fragment>
-      <div className="interactable bush-bearberry" style={style} />
+      <div className="interactable tinder-newspaper" style={style} />
       {positionsEqual(playerPosition, position) && (
         <InteractionOverlay
           actions={[
@@ -29,11 +33,11 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
               action: () => {
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
                   interactable,
-                  item: bearBerry,
+                  item: tinderNewspaper,
                   position,
                 });
               },
-              title: l10n.interactableActionHarvest,
+              title: l10n.interactableActionPickUp,
             },
           ]}
         />
@@ -42,4 +46,4 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
   );
 };
 
-export default BushBearberry;
+export default TinderNewspaper;

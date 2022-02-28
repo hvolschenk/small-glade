@@ -16,16 +16,17 @@ const actionsFactory = (item: Item): React.ComponentType<ActionsRendererProps> =
       hat: {},
     },
     consumable: {
-      bottle: {
-        water: BottleWater,
-      },
       berry: {
         bearberry: Bearberry,
+      },
+      bottle: {
+        water: BottleWater,
       },
       crisps: {
         tomato: CrispsTomato,
       },
     },
+    fire: {},
   };
   const types = actions[item.category];
   if (types) {
