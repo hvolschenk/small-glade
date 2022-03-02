@@ -1,7 +1,7 @@
 @import url('../../variables.css');
 
 #player {
-  background-color: var(--color--red-light);
+  background-image: url('/src/images/character.png');
   height: var(--size--tile);
   position: absolute;
   width: var(--size--tile);

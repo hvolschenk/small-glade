@@ -12,11 +12,11 @@
 }
 
 .tile.rock-basic {
-  background-color: var(--color--gray);
+  background-image: url('/src/images/rock.png');
 }
 
 .tile.tree-birch {
-  background-color: var(--color--green-light);
+  background-image: url('/src/images/tree.png');
 }
 
 .tile.water-basic {
