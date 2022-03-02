@@ -6,53 +6,53 @@
 }
 
 .item.item__clothing__hat-beanie-wool {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/beanie.png');
 }
 
 .item.item__clothing__jacket-denim {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/denim-jacket.png');
 }
 
 .item.item__clothing__pants-jeans {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/jeans.png');
 }
 
 .item.item__clothing__shirt-cotton {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/tshirt.png');
 }
 
 .item.item__clothing__shoes-sneakers {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/sneakers.png');
 }
 
 .item.item__clothing__socks-cotton {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/socks.png');
 }
 
 .item.item__clothing__underwear-cotton {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/boxers.png');
 }
 
 .item.item__consumable__bearberry {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/berries.png');
 }
 
 .item.item__consumable__bottle-water {
-  background-color: var(--color--blue);
+  background-image: url('/src//images/water-bottle.png');
 }
 
 .item.item__consumable__crisps-tomato {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/crisps-tomato.png');
 }
 
 .item.item__fire__fuel-stick {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/stick.png');
 }
 
 .item.item__fire__starter-matches {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/matches.png');
 }
 
 .item.item__fire__tinder-newspaper {
-  background-color: var(--color--blue);
+  background-image: url('/src/images/newspaper.png');
 }

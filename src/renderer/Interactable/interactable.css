@@ -8,21 +8,17 @@
 }
 
 .interactable.bush-bearberry {
-  background-color: var(--color--red-light);
-  opacity: 0.2;
+  background-image: url('/src/images/bush.png');
 }
 
 .interactable.fuel-stick {
-  background-color: var(--color--brown);
-  opacity: 0.2;
+  background-image: url('/src/images/stick.png');
 }
 
 .interactable.starter-matches {
-  background-color: var(--color--blue);
-  opacity: 0.2;
+  background-image: url('/src/images/matches.png');
 }
 
 .interactable.tinder-newspaper {
-  background-color: var(--color--white);
-  opacity: 0.2;
+  background-image: url('/src/images/newspaper.png');
 }

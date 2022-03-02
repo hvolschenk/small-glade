@@ -11,13 +11,13 @@
 }
 
 .animal .deer-elk {
-  background-color: var(--color--brown);
+  background-image: url('/src/images/deer.png');
   height: var(--size--tile);
   width: var(--size--tile);
 }
 
 .animal .wolf-arctic {
-  background-color: var(--color--white);
+  background-image: url('/src/images/wolf.png');
   height: var(--size--tile);
   width: var(--size--tile);
 }

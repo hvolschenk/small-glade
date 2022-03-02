@@ -2,7 +2,7 @@
 
 .inventory__item {
   border: none;
-  background-color: none;
+  background-color: transparent;
   cursor: pointer;
   height: var(--size--tile);
   position: relative;
