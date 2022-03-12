@@ -1,0 +1,15 @@
+@import url('../../../variables.css');
+
+#outfit__selected-item__item {
+  display: flex;
+}
+
+.outfit__selected-item__option {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.outfit__selected-item__option.selected {
+  border: 1px solid var(--color--white);
+}

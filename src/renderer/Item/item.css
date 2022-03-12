@@ -29,6 +29,10 @@
   background-image: url('/src/images/socks.png');
 }
 
+.item.item__clothing__socks-wool {
+  background-image: url('/src/images/socks-wool.png');
+}
+
 .item.item__clothing__underwear-cotton {
   background-image: url('/src/images/boxers.png');
 }

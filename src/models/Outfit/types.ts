@@ -13,6 +13,7 @@ export interface Outfit {
   isOpen: boolean;
   jacket: ClothingJacket;
   pants: ClothingPants;
+  selectedType: keyof Omit<Outfit, 'isOpen' | 'selectedType'>;
   shirt: ClothingShirt;
   shoes: ClothingShoes;
   socks: ClothingSocks;

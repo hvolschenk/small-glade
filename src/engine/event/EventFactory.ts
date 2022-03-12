@@ -12,6 +12,8 @@ import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
+import OutfitItemWear from './OutfitItemWear';
+import OutfitSelectedTypeUpdate from './OutfitSelectedTypeUpdate';
 import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
 import PlayerVitalsUpdate from './PlayerVitalsUpdate';
@@ -37,6 +39,8 @@ const events = [
   MapAnimalsPredatorMove,
   MapAnimalsPreyFlee,
   MapAnimalsPreyMove,
+  OutfitItemWear,
+  OutfitSelectedTypeUpdate,
   OutfitToggle,
   PlayerMove,
   PlayerVitalsUpdate,

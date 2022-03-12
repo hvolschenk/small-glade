@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Item } from '~/src/models/Item/types';
+import { Item as ItemInterface } from '~/src/models/Item/types';
 
 import HatBeanieWool from './Clothing/HatBeanieWool';
 import JacketDenim from './Clothing/JacketDenim';
@@ -8,6 +8,7 @@ import PantsJeans from './Clothing/PantsJeans';
 import ShirtCotton from './Clothing/ShirtCotton';
 import ShoesSneakers from './Clothing/ShoesSneakers';
 import SocksCotton from './Clothing/SocksCotton';
+import SocksWool from './Clothing/SocksWool';
 import UnderwearCotton from './Clothing/UnderwearCotton';
 import Bearberry from './Consumable/Bearberry';
 import BottleWater from './Consumable/BottleWater';
@@ -19,10 +20,13 @@ import { ItemRendererProps } from './types';
 
 import './item.css';
 
-const itemFactory = (item: Item): React.ComponentType<ItemRendererProps> => {
+const itemFactory = (item: ItemInterface): React.ComponentType<ItemRendererProps> => {
   const items: Record<
-    Item['category'],
-    Record<Item['type'], Record<Item['variant'], React.ComponentType<ItemRendererProps>>>
+    ItemInterface['category'],
+    Record<
+      ItemInterface['type'],
+      Record<ItemInterface['variant'], React.ComponentType<ItemRendererProps>>
+    >
   > = {
     clothing: {
       hat: {
@@ -42,6 +46,7 @@ const itemFactory = (item: Item): React.ComponentType<ItemRendererProps> => {
       },
       socks: {
         cotton: SocksCotton,
+        wool: SocksWool,
       },
       underwear: {
         cotton: UnderwearCotton,
@@ -84,9 +89,9 @@ const itemFactory = (item: Item): React.ComponentType<ItemRendererProps> => {
   return NullRenderer;
 };
 
-const InventoryItem: React.FC<ItemRendererProps> = ({ item }) => {
+const Item: React.FC<ItemRendererProps> = ({ item }) => {
   const ItemRenderer = itemFactory(item);
   return <ItemRenderer item={item} />;
 };
 
-export default InventoryItem;
+export default Item;

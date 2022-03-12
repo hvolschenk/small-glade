@@ -12,6 +12,7 @@ const baseOutfit: Outfit = {
   isOpen: false,
   jacket: jacketDenim,
   pants: pantsJeans,
+  selectedType: 'hat',
   shirt: shirtCotton,
   shoes: shoesSneakers,
   socks: socksCotton,
