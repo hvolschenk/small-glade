@@ -82,6 +82,9 @@ const Inventory: React.FC = () => {
           <SelectedItem />
         </div>
       </div>
+      <div id="inventory__footer">
+        Capacity: {inventoryItems.length}/{inventory.capacity}
+      </div>
     </div>
   );
 };

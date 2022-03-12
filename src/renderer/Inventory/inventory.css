@@ -83,3 +83,7 @@
     width: 100%;
   }
 }
+
+#inventory__footer {
+  padding: var(--size--small);
+}
