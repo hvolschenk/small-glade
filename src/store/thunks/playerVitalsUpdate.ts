@@ -26,7 +26,7 @@ const playerVitalsUpdate =
     let { health, warmth } = vitals;
     const fullness = Math.max(0, vitals.fullness - fullnessLossPerTurn());
     const hydration = Math.max(0, vitals.hydration - hydrationLossPerTurn());
-    if (outfitWarmth > temperature) {
+    if (outfitWarmth + temperature >= 0) {
       warmth = Math.min(warmth + warmthLossPerTurn(), 100);
     } else {
       warmth = Math.max(0, warmth - warmthLossPerTurn());

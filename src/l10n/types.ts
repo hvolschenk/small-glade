@@ -22,6 +22,8 @@ export interface L10n {
   itemClothingShoesSneakersName: string;
   itemClothingSocksCottonDescription: string;
   itemClothingSocksCottonName: string;
+  itemClothingSocksWoolDescription: string;
+  itemClothingSocksWoolName: string;
   itemClothingUnderwearCottonDescription: string;
   itemClothingUnderwearCottonName: string;
   itemConsumableBearberryDescription: string;

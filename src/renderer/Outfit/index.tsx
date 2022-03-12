@@ -12,16 +12,10 @@ import {
 } from '~/src/store/reducers/outfit/selectors';
 import { selectWeather } from '~/src/store/reducers/weather/selectors';
 
-import './outfit.css';
+import Item from './Item';
+import SelectedItem from './SelectedItem';
 
-const weatherConditionsText = (conditions: Weather['conditions']): string => {
-  const texts: Record<Weather['conditions'], string> = {
-    overcast: l10n.weatherConditionsOvercast,
-    snowing: l10n.weatherConditionsSnowing,
-    sunny: l10n.weatherConditionsSunny,
-  };
-  return texts[conditions];
-};
+import './outfit.css';
 
 const Outfit: React.FC = () => {
   const { trigger } = useEngine();
@@ -39,6 +33,15 @@ const Outfit: React.FC = () => {
     [trigger],
   );
 
+  const conditionsText = React.useMemo(() => {
+    const texts: Record<Weather['conditions'], string> = {
+      overcast: l10n.weatherConditionsOvercast,
+      snowing: l10n.weatherConditionsSnowing,
+      sunny: l10n.weatherConditionsSunny,
+    };
+    return texts[weather.conditions];
+  }, [weather]);
+
   React.useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
@@ -46,40 +49,39 @@ const Outfit: React.FC = () => {
 
   return (
     <div className={classnames({ open: outfit.isOpen })} id="outfit">
-      <p>
-        {l10n.outfitItemTypeHat}: {l10n[outfit.hat.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypeJacket}: {l10n[outfit.jacket.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypePants}: {l10n[outfit.pants.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypeShirt}: {l10n[outfit.shirt.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypeShoes}: {l10n[outfit.shoes.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypeSocks}: {l10n[outfit.socks.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitItemTypeUnderwear}: {l10n[outfit.underwear.l10n.name]}
-      </p>
-      <p>
-        {l10n.outfitStatisticProtection}: {protection}
-      </p>
-      <p>
+      <div id="outfit__header">
+        <h1>Outfit</h1>
+        <button
+          id="outfit__close"
+          onClick={() => {
+            trigger('outfit:toggle');
+          }}
+          type="button"
+        >
+          X
+        </button>
+      </div>
+      <div id="outfit__content">
+        <div id="outfit__items">
+          <Item type="hat" />
+          <Item type="shirt" />
+          <Item type="jacket" />
+          <Item type="underwear" />
+          <Item type="pants" />
+          <Item type="socks" />
+          <Item type="shoes" />
+        </div>
+        <div id="outfit__selected">
+          <SelectedItem />
+        </div>
+      </div>
+      <div id="outfit__footer">
+        {l10n.outfitStatisticProtection}: {protection}.&nbsp;
         {l10n.outfitStatisticWarmth}: {warmth}
-      </p>
-      <br />
-      <p>
-        {l10n.weatherTemperature}: {weather.temperature}
-      </p>
-      <p>
-        {l10n.weatherConditions}: {weatherConditionsText(weather.conditions)}
-      </p>
+        <br />
+        {l10n.weatherTemperature}: {weather.temperature}.&nbsp;
+        {l10n.weatherConditions}: {conditionsText}
+      </div>
     </div>
   );
 };

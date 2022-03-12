@@ -3,6 +3,7 @@ import { Item } from '../types';
 export interface Clothing extends Item {
   category: 'clothing';
   protection: number;
+  type: 'hat' | 'jacket' | 'pants' | 'shirt' | 'shoes' | 'socks' | 'underwear';
   warmth: number;
 }
 

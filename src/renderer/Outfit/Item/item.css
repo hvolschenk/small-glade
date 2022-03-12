@@ -1,0 +1,10 @@
+@import url('../../../variables.css');
+
+.outfit-item {
+  background-color: transparent;
+  border: none;
+  color: var(--color--white);
+  cursor: pointer;
+  height: var(--size--tile);
+  width: var(--size--tile);
+}

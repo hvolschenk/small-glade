@@ -26,6 +26,8 @@ const en: L10n = {
   itemClothingShoesSneakersName: 'Sneakers',
   itemClothingSocksCottonDescription: 'Thin socks made from cotton. Decent, but not great.',
   itemClothingSocksCottonName: 'Cotton socks',
+  itemClothingSocksWoolDescription: 'Socks made from wool. Soft and warm.',
+  itemClothingSocksWoolName: 'Wool socks',
   itemClothingUnderwearCottonDescription: 'Cotton underwear. Stylish and thin.',
   itemClothingUnderwearCottonName: 'Cotton underwear',
   itemConsumableBearberryDescription: 'A wild, edible berry.',

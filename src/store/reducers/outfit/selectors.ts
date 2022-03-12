@@ -16,6 +16,10 @@ export const selectOutfitProtection = createSelector([selectOutfit], (outfit) =>
     underwear.protection
   );
 });
+export const selectOutfitSelectedType = createSelector(
+  [selectOutfit],
+  (outfit) => outfit.selectedType,
+);
 export const selectOutfitWarmth = createSelector([selectOutfit], (outfit) => {
   const { hat, jacket, pants, shirt, shoes, socks, underwear } = outfit;
   return (

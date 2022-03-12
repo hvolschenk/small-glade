@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import { useEngine } from '~/src/engine';
 import { ItemConsumableEatOptions } from '~/src/engine/event/ItemConsumableEat';
 import { Consumable } from '~/src/models/Item/Consumable/types';
+import { useSelector } from '~/src/store/hooks';
 import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
 
 import { ActionsRendererProps } from '../types';
