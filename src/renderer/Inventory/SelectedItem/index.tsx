@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import l10n from '~/src/l10n';
+import { useSelector } from '~/src/store/hooks';
 import { selectInventorySelectedItem } from '~/src/store/reducers/inventory/selectors';
 
 import ItemRenderer from '../../Item';
