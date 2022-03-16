@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useEngine } from '~/src/engine';
 import { ItemConsumableEatOptions } from '~/src/engine/event/ItemConsumableEat';
+import l10n from '~/src/l10n';
 import { Consumable } from '~/src/models/Item/Consumable/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
@@ -18,7 +19,7 @@ const Bearberry: React.FC<ActionsRendererProps> = ({ item }) => {
 
   return (
     <button disabled={vitals.fullness === 100} onClick={onClick} type="button">
-      Eat
+      {l10n.inventoryItemActionEat} (1)
     </button>
   );
 };

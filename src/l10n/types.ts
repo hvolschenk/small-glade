@@ -8,6 +8,8 @@ export interface L10n {
   gameIntroductionQuote: string;
   interactableActionHarvest: string;
   interactableActionPickUp: string;
+  inventoryItemActionDrink: string;
+  inventoryItemActionEat: string;
   inventoryMessageNoItems: string;
   inventoryMessageNoItemSelected: string;
   inventoryTitle: string;
