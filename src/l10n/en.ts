@@ -3,6 +3,7 @@ import { L10n } from './types';
 const en: L10n = {
   controlInventoryShortcut: 'I',
   controlOutfitShortcut: 'O',
+  controlPauseMenuShortcut: 'Esc',
   gameEndedMessage: 'Game over',
   gameIntroductionAction: 'Shit!',
   gameIntroductionLoading: 'Loading',

@@ -1,5 +1,6 @@
 import GameEnd from './GameEnd';
 import GameLoadDone from './GameLoadDone';
+import GamePauseMenuToggle from './GamePauseMenuToggle';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
 import InteractableHarvest from './InteractableHarvest';
@@ -27,6 +28,7 @@ interface BuildProps {
 const events = [
   GameEnd,
   GameLoadDone,
+  GamePauseMenuToggle,
   GameStart,
   GameTurn,
   InteractableHarvest,

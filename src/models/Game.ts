@@ -7,5 +7,6 @@ export enum GameStatus {
 }
 
 export interface Game {
+  isPauseMenuOpen: boolean;
   status: GameStatus;
 }
