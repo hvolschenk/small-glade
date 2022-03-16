@@ -1,0 +1,29 @@
+@import url('../../variables.css');
+
+#pause-menu__container {
+  align-items: center;
+  background-color: var(--color--black);
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--z-index--menu);
+}
+
+#pause-menu__container.open {
+  display: flex;
+}
+
+#pause-menu__container > button {
+  background-color: var(--color--gray-light);
+  border: none;
+  color: var(--color--black);
+  cursor: pointer;
+  margin: var(--size--small);
+  padding: var(--size--small);
+  width: 50%;
+}

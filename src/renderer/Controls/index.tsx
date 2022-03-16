@@ -12,6 +12,14 @@ const Controls: React.FC = () => {
     <div data-testid="controls" id="controls">
       <button
         className="control"
+        data-testid="controls__control--pause-menu"
+        onClick={() => trigger('game:pause-menu:toggle')}
+        type="button"
+      >
+        {l10n.controlPauseMenuShortcut}
+      </button>
+      <button
+        className="control"
         data-testid="controls__control--inventory"
         onClick={() => trigger('inventory:toggle')}
         type="button"
