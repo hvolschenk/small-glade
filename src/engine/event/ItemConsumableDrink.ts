@@ -11,6 +11,10 @@ export interface ItemConsumableDrinkOptions {
 }
 type Options = EventOptions & ItemConsumableDrinkOptions;
 
+const effectGameTurn: Effect<Options> = (options) => {
+  options.trigger('game:turn');
+};
+
 const effectInventorySelectedItemUpdate: Effect<Options> = (options) => {
   options.trigger<InventorySelectedItemUpdateOptions>('inventory:selected-item:update', {
     item: undefined,
@@ -25,7 +29,7 @@ const validateHydrationNotMaximum: Validator<Options> = (options) => {
 class ItemConsumableDrink extends EventAbstract<Options> {
   public static event: string = 'item:consumable:drink';
 
-  effects: Effect<Options>[] = [effectInventorySelectedItemUpdate];
+  effects: Effect<Options>[] = [effectGameTurn, effectInventorySelectedItemUpdate];
   validators: Validator<Options>[] = [validateHydrationNotMaximum];
 
   // eslint-disable-next-line class-methods-use-this

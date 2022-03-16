@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useEngine } from '~/src/engine';
 import { ItemConsumableDrinkOptions } from '~/src/engine/event/ItemConsumableDrink';
+import l10n from '~/src/l10n';
 import { Consumable } from '~/src/models/Item/Consumable/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerVitals } from '~/src/store/reducers/player/selectors';
@@ -18,7 +19,7 @@ const BottleWater: React.FC<ActionsRendererProps> = ({ item }) => {
 
   return (
     <button disabled={vitals.hydration === 100} onClick={onClick} type="button">
-      Drink
+      {l10n.inventoryItemActionDrink} (1)
     </button>
   );
 };

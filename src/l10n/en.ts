@@ -10,6 +10,8 @@ const en: L10n = {
   gameIntroductionQuote: 'What the hell happened? Where am I?',
   interactableActionHarvest: 'Harvest',
   interactableActionPickUp: 'Pick up',
+  inventoryItemActionDrink: 'Drink',
+  inventoryItemActionEat: 'Eat',
   inventoryMessageNoItems: 'No items in inventory.',
   inventoryMessageNoItemSelected: 'No item selected.',
   inventoryTitle: 'Inventory',
