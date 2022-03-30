@@ -18,6 +18,7 @@ export const selectMapAnimalsPrey = createSelector([selectMapAnimals], (animals)
     row.map((animal) => (animal?.category === 'prey' ? (animal as Prey) : undefined)),
   ),
 );
+export const selectMapFires = createSelector([selectMap], (map) => map.fires);
 export const selectMapTileAtPosition = createSelector(
   [selectMap, (_, position: Position) => position],
   (map, position) => {

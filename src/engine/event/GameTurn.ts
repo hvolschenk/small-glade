@@ -16,6 +16,10 @@ const effectMapAnimalsPreyMove: Effect<EventOptions> = (options) => {
   options.trigger('map:animals:prey:move');
 };
 
+const effectMapFiresDurationUpdate: Effect<EventOptions> = (options) => {
+  options.trigger('map:fires:duration:update');
+};
+
 const effectPlayerVitalsUpdate: Effect<EventOptions> = (options) => {
   options.trigger('player:vitals:update');
 };
@@ -37,6 +41,7 @@ class GameTurn extends EventAbstract {
     effectPlayerVitalsUpdate,
     effectMapAnimalsPredatorMove,
     effectMapAnimalsPreyMove,
+    effectMapFiresDurationUpdate,
     effectWeatherUpdate,
   ];
   validators: Validator<EventOptions>[] = [validateGameStatusNotEnded];

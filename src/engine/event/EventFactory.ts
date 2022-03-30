@@ -1,6 +1,8 @@
+import FireStart from './FireStart';
 import GameEnd from './GameEnd';
 import GameLoadDone from './GameLoadDone';
 import GamePauseMenuToggle from './GamePauseMenuToggle';
+import GameRadialMenuToggle from './GameRadialMenuToggle';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
 import InteractableHarvest from './InteractableHarvest';
@@ -13,6 +15,7 @@ import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
+import MapFiresDurationUpdate from './MapFiresDurationUpdate';
 import OutfitItemWear from './OutfitItemWear';
 import OutfitSelectedTypeUpdate from './OutfitSelectedTypeUpdate';
 import OutfitToggle from './OutfitToggle';
@@ -26,9 +29,11 @@ interface BuildProps {
 }
 
 const events = [
+  FireStart,
   GameEnd,
   GameLoadDone,
   GamePauseMenuToggle,
+  GameRadialMenuToggle,
   GameStart,
   GameTurn,
   InteractableHarvest,
@@ -41,6 +46,7 @@ const events = [
   MapAnimalsPredatorMove,
   MapAnimalsPreyFlee,
   MapAnimalsPreyMove,
+  MapFiresDurationUpdate,
   OutfitItemWear,
   OutfitSelectedTypeUpdate,
   OutfitToggle,

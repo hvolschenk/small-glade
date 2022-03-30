@@ -1,0 +1,17 @@
+@import url('../../variables.css');
+
+.fire__action {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: var(--size--tile);
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--interactable);
+}
+
+.fire {
+  background-image: url('/src/images/fire.png');
+  height: var(--size--tile);
+  width: var(--size--tile);
+}

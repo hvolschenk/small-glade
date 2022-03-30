@@ -20,6 +20,14 @@ const Controls: React.FC = () => {
       </button>
       <button
         className="control"
+        data-testid="controls__control--radial-menu"
+        onClick={() => trigger('game:radial-menu:toggle')}
+        type="button"
+      >
+        {l10n.controlRadialMenuShortcut}
+      </button>
+      <button
+        className="control"
         data-testid="controls__control--inventory"
         onClick={() => trigger('inventory:toggle')}
         type="button"

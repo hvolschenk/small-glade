@@ -5,14 +5,15 @@ import { Vitals } from '~/src/models/Player/types';
 
 import { selectOutfitWarmth } from '../reducers/outfit/selectors';
 import { playerVitalsUpdate as playerVitalsUpdateAction } from '../reducers/player';
-import { selectPlayerVitals } from '../reducers/player/selectors';
-import { selectWeatherTemperature } from '../reducers/weather/selectors';
+import { selectPlayerPosition, selectPlayerVitals } from '../reducers/player/selectors';
+import { selectTemperatureAtPosition } from '../reducers/selectors';
 import { RootState } from '../types';
 
 const playerVitalsUpdate =
   (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {
     const outfitWarmth = selectOutfitWarmth(getState());
-    const temperature = selectWeatherTemperature(getState());
+    const playerPosition = selectPlayerPosition(getState());
+    const temperature = selectTemperatureAtPosition(getState(), playerPosition);
     const {
       fullnessHealthLossPerTurn,
       fullnessLossPerTurn,

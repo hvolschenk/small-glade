@@ -11,6 +11,7 @@ import Inventory from './Inventory';
 import Map from './Map';
 import Outfit from './Outfit';
 import PauseMenu from './PauseMenu';
+import RadialMenu from './RadialMenu';
 import Vitals from './Vitals';
 
 import './renderer.css';
@@ -65,6 +66,7 @@ const Renderer: React.FC = () => {
       <Vitals />
       <Controls />
       <PauseMenu />
+      <RadialMenu />
     </React.Fragment>
   );
 };

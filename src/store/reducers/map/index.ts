@@ -2,11 +2,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Animal, Predator, Prey } from '~/src/models/Animal/types';
+import { Fire } from '~/src/models/Fire/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
 
 const initialState: Map = {
   animals: [],
+  fires: [],
   identifier: '',
   interactables: [],
   name: '',
@@ -48,6 +50,15 @@ const mapSlice = createSlice({
       const prey = state.animals[top][left] as Prey;
       prey.isFleeing = isFleeing;
     },
+    mapFireDurationUpdate: (
+      state,
+      action: PayloadAction<{ duration: Fire['duration']; index: number }>,
+    ) => {
+      state.fires[action.payload.index].duration = action.payload.duration;
+    },
+    mapFireStart: (state, action: PayloadAction<{ fire: Fire }>) => {
+      state.fires.push(action.payload.fire);
+    },
     mapInteractableInteract: (state, action: PayloadAction<{ position: Position }>) => {
       const { left, top } = action.payload.position;
       const row = state.interactables[top];
@@ -68,6 +79,8 @@ export const {
   mapAnimalMove,
   mapAnimalPredatorAggro,
   mapAnimalPreyFlee,
+  mapFireDurationUpdate,
+  mapFireStart,
   mapInteractableInteract,
   mapNameUpdate,
 } = mapSlice.actions;
