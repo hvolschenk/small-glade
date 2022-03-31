@@ -1,0 +1,47 @@
+@import url('../../variables.css');
+
+#radial-menu {
+  background-color: var(--color--black);
+  color: var(--color--white);
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--z-index--menu);
+}
+
+#radial-menu.open {
+  display: flex;
+}
+
+#radial-menu__header {
+  display: flex;
+  flex-direction: row;
+  padding: var(--size--small);
+}
+
+#radial-menu__header h1 {
+  flex-grow: 1;
+}
+
+#radial-menu__close {
+  background-color: transparent;
+  border: none;
+  color: var(--color--white);
+  cursor: pointer;
+  padding: var(--size--small);
+}
+
+#radial-menu__content {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.radial-menu__action {
+  height: var(--size--tile);
+}

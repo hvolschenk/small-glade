@@ -2,6 +2,11 @@ export interface L10n {
   controlInventoryShortcut: string;
   controlOutfitShortcut: string;
   controlPauseMenuShortcut: string;
+  controlRadialMenuShortcut: string;
+  fireActionStart: string;
+  fireFuel: string;
+  fireStarter: string;
+  fireTinder: string;
   gameEndedMessage: string;
   gameIntroductionAction: string;
   gameIntroductionLoading: string;
@@ -50,6 +55,8 @@ export interface L10n {
   outfitItemTypeUnderwear: string;
   outfitStatisticProtection: string;
   outfitStatisticWarmth: string;
+  radialMenuActionFire: string;
+  radialMenuTitle: string;
   weatherConditions: string;
   weatherConditionsOvercast: string;
   weatherConditionsSnowing: string;

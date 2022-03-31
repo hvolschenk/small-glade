@@ -25,6 +25,7 @@ const smallGlade: Map = {
     [],
     [, , , wolfArctic],
   ],
+  fires: [],
   identifier: 'small-glade',
   interactables: [
     [, , bushBearberry, fuelStick, tinderNewspaper],

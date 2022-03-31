@@ -1,0 +1,36 @@
+@import url('../../../../variables.css');
+
+#radial-menu__fire {
+  display: flex;
+}
+
+.radial-menu__fire__item {
+  display: flex;
+  margin: var(--size--normal);
+}
+
+.radial-menu__fire__item--empty {
+  background-color: var(--color--gray);
+  height: var(--size--tile);
+  width: var(--size--tile);
+}
+
+@media (orientation: landscape) {
+  #radial-menu__fire {
+    flex-direction: row;
+  }
+
+  .radial-menu__fire__item {
+    flex-direction: column;
+  }
+}
+
+@media (orientation: portrait) {
+  #radial-menu__fire {
+    flex-direction: column;
+  }
+
+  .radial-menu__fire__item {
+    flex-direction: row;
+  }
+}

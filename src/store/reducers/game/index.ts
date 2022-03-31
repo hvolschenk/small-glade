@@ -5,6 +5,7 @@ import { Game, GameStatus } from '~/src/models/Game';
 
 const initialState: Game = {
   isPauseMenuOpen: false,
+  isRadialMenuOpen: false,
   status: GameStatus.GAME_STATUS_LOADING,
 };
 
@@ -15,11 +16,14 @@ const gameSlice = createSlice({
     gamePauseMenuToggle: (state) => {
       state.isPauseMenuOpen = !state.isPauseMenuOpen;
     },
+    gameRadialMenuToggle: (state) => {
+      state.isRadialMenuOpen = !state.isRadialMenuOpen;
+    },
     gameStatusUpdate: (state, action: PayloadAction<{ status: GameStatus }>) => {
       state.status = action.payload.status;
     },
   },
 });
 
-export const { gamePauseMenuToggle, gameStatusUpdate } = gameSlice.actions;
+export const { gamePauseMenuToggle, gameRadialMenuToggle, gameStatusUpdate } = gameSlice.actions;
 export default gameSlice.reducer;
