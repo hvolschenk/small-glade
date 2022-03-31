@@ -6,12 +6,13 @@
   "scripts": {
     "build": "parcel build index.html",
     "start": "parcel index.html",
-    "test": "npm run test:format && npm run test:lint && npm run test:types && npm run test:scripts",
+    "test": "test:vulnerabilities && npm run test:format && npm run test:lint && npm run test:types && npm run test:scripts",
     "test:format": "prettier --check ./src",
     "test:format:fix": "prettier --write ./src",
     "test:lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx .",
     "test:scripts": "jest",
-    "test:types": "tsc --noEmit"
+    "test:types": "tsc --noEmit",
+    "test:vulnerabilities": "npm audit"
   },
   "repository": {
     "type": "git",
