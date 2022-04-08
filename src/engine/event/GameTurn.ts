@@ -8,6 +8,10 @@ const effectGameEnd: Effect<EventOptions> = (options) => {
   options.trigger('game:end');
 };
 
+const effectGameTurnsSurvivedIncrease: Effect<EventOptions> = (options) => {
+  options.trigger('game:turns-survived:increase');
+};
+
 const effectMapAnimalsPredatorMove: Effect<EventOptions> = (options) => {
   options.trigger('map:animals:predator:move');
 };
@@ -43,6 +47,7 @@ class GameTurn extends EventAbstract {
     effectMapAnimalsPreyMove,
     effectMapFiresDurationUpdate,
     effectWeatherUpdate,
+    effectGameTurnsSurvivedIncrease,
   ];
   validators: Validator<EventOptions>[] = [validateGameStatusNotEnded];
 

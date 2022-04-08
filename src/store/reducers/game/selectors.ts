@@ -12,3 +12,4 @@ export const selectGameIsRadialMenuOpen = createSelector(
   (game) => game.isRadialMenuOpen,
 );
 export const selectGameStatus = createSelector([selectGame], (game) => game.status);
+export const selectGameTurnsSurvived = createSelector([selectGame], (game) => game.turnsSurvived);

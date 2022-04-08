@@ -1,0 +1,8 @@
+@import url('../../variables.css');
+
+#turns-survived {
+  position: fixed;
+  right: var(--size--small);
+  top: var(---size--small);
+  z-index: var(--z-index--hud);
+}

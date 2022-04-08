@@ -5,6 +5,7 @@ import GamePauseMenuToggle from './GamePauseMenuToggle';
 import GameRadialMenuToggle from './GameRadialMenuToggle';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
+import GameTurnsSurvivedIncrease from './GameTurnsSurvivedIncrease';
 import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
 import InventorySelectedItemUpdate from './InventorySelectedItemUpdate';
@@ -36,6 +37,7 @@ const events = [
   GameRadialMenuToggle,
   GameStart,
   GameTurn,
+  GameTurnsSurvivedIncrease,
   InteractableHarvest,
   InventoryItemAdd,
   InventorySelectedItemUpdate,

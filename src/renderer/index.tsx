@@ -12,6 +12,7 @@ import Map from './Map';
 import Outfit from './Outfit';
 import PauseMenu from './PauseMenu';
 import RadialMenu from './RadialMenu';
+import TurnsSurvived from './TurnsSurvived';
 import Vitals from './Vitals';
 
 import './renderer.css';
@@ -67,6 +68,7 @@ const Renderer: React.FC = () => {
       <Controls />
       <PauseMenu />
       <RadialMenu />
+      <TurnsSurvived />
     </React.Fragment>
   );
 };
