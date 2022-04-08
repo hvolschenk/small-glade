@@ -10,4 +10,5 @@ export interface Game {
   isPauseMenuOpen: boolean;
   isRadialMenuOpen: boolean;
   status: GameStatus;
+  turnsSurvived: number;
 }
