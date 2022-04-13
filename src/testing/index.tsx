@@ -6,7 +6,11 @@ import { Provider as ReactReduxProvider } from 'react-redux';
 import { Provider as EngineProvider } from '~/src/engine';
 import { store } from '~/src/store';
 
-const TestWrapper: React.FC = ({ children }) => (
+interface TestWrapperProps {
+  children: React.ReactNode;
+}
+
+const TestWrapper: React.FC<TestWrapperProps> = ({ children }) => (
   <ReactReduxProvider store={store}>
     <EngineProvider>{children}</EngineProvider>
   </ReactReduxProvider>
