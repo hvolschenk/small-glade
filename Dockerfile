@@ -1,5 +1,5 @@
 # Please always stick to the latest named LTS version
-FROM node:fermium-alpine
+FROM node:gallium-alpine
 
 # Enable chokidar polling for filesystems that do not support inotify
 # I think this is only necessary on Windows
