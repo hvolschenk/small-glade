@@ -1,4 +1,7 @@
 .npm/
+.parcel-cache/
+.vscode/
+coverage/
 node_modules/
 
 .ash_history
