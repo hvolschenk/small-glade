@@ -17,7 +17,7 @@ USER node
 RUN mkdir -p $HOME/application
 WORKDIR $HOME/application
 COPY --chown=node:node package.json package-lock.json* ./
-RUN npm install --no-optional
+RUN npm install
 ENV PATH $HOME/application/node_modules/.bin:$PATH
 
 # Copy application source code into the container
