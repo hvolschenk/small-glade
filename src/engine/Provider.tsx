@@ -7,7 +7,11 @@ import EngineContext from './context';
 import EventFactory from './event/EventFactory';
 import { Engine } from './types';
 
-const EngineProvider: React.FC = ({ children }) => {
+interface EngineProviderProps {
+  children: React.ReactNode;
+}
+
+const EngineProvider: React.FC<EngineProviderProps> = ({ children }) => {
   const dispatch = useDispatch();
 
   const trigger: Engine['trigger'] = React.useCallback((triggerEvent, triggerOptions) => {
