@@ -17,6 +17,8 @@ import FuelStick from './Fire/FuelStick';
 import StarterMatches from './Fire/StarterMatches';
 import TinderNewspaper from './Fire/TinderNewspaper';
 import { ItemRendererProps } from './types';
+import FistsBare from './Weapon/FistsBare';
+import KnifeHunting from './Weapon/KnifeHunting';
 
 import './item.css';
 
@@ -72,6 +74,14 @@ const itemFactory = (item: ItemInterface): React.ComponentType<ItemRendererProps
       },
       tinder: {
         newspaper: TinderNewspaper,
+      },
+    },
+    weapon: {
+      fists: {
+        bare: FistsBare,
+      },
+      knife: {
+        hunting: KnifeHunting,
       },
     },
   };

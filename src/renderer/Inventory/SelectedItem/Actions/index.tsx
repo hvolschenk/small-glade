@@ -27,6 +27,7 @@ const actionsFactory = (item: Item): React.ComponentType<ActionsRendererProps> =
       },
     },
     fire: {},
+    weapon: {},
   };
   const types = actions[item.category];
   if (types) {

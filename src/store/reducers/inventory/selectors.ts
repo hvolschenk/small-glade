@@ -9,6 +9,10 @@ export const selectInventoryIsOpen = createSelector(
   [selectInventory],
   (inventory) => inventory.isOpen,
 );
+export const selectInventoryItemsOfCategory = createSelector(
+  [selectInventory, (_, category: Item['category']) => category],
+  (inventory, category) => inventory.items.filter((item) => item.category === category),
+);
 export const selectInventoryItemsOfType = createSelector(
   [
     selectInventory,

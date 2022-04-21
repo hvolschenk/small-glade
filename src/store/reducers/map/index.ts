@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Animal, Predator, Prey } from '~/src/models/Animal/types';
+import { Animal, Predator, PredatorStatus, Prey, PreyStatus } from '~/src/models/Animal/types';
 import { Fire } from '~/src/models/Fire/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
@@ -28,27 +28,27 @@ const mapSlice = createSlice({
       state.animals[topOld][leftOld] = undefined;
       state.animals[topNew][leftNew] = action.payload.animal;
     },
-    mapAnimalPredatorAggro: (
+    mapAnimalPredatorStatus: (
       state,
-      action: PayloadAction<{ isAggroed: Predator['isAggroed']; position: Position }>,
+      action: PayloadAction<{ position: Position; status: PredatorStatus }>,
     ) => {
       const {
-        isAggroed,
         position: { left, top },
+        status,
       } = action.payload;
       const predator = state.animals[top][left] as Predator;
-      predator.isAggroed = isAggroed;
+      predator.status = status;
     },
-    mapAnimalPreyFlee: (
+    mapAnimalPreyStatus: (
       state,
-      action: PayloadAction<{ isFleeing: Prey['isFleeing']; position: Position }>,
+      action: PayloadAction<{ position: Position; status: PreyStatus }>,
     ) => {
       const {
-        isFleeing,
         position: { left, top },
+        status,
       } = action.payload;
       const prey = state.animals[top][left] as Prey;
-      prey.isFleeing = isFleeing;
+      prey.status = status;
     },
     mapFireDurationUpdate: (
       state,
@@ -77,8 +77,8 @@ const mapSlice = createSlice({
 
 export const {
   mapAnimalMove,
-  mapAnimalPredatorAggro,
-  mapAnimalPreyFlee,
+  mapAnimalPredatorStatus,
+  mapAnimalPreyStatus,
   mapFireDurationUpdate,
   mapFireStart,
   mapInteractableInteract,

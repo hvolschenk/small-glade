@@ -1,0 +1,27 @@
+@import url('../../../../variables.css');
+
+.attack-defense {
+  background-color: var(--color--black);
+  color: var(--color--white);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: var(--z-index--uniterruptable-menu);
+}
+
+.attack-defense__weapons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--size--small);
+  padding: var(--size--normal);
+}
+
+.attack-defense__weapon {
+  background-color: transparent;
+  border: none;
+  color: var(--color--white);
+  cursor: pointer;
+}

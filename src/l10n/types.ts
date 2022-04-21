@@ -1,4 +1,6 @@
 export interface L10n {
+  animalAttackChooseWeapon: string;
+  animalAttackTitle: string;
   animalDeerElkName: string;
   animalWolfArcticName: string;
   controlInventoryShortcut: string;
@@ -48,6 +50,10 @@ export interface L10n {
   itemFireStarterMatchesName: string;
   itemFireTinderNewspaperDescription: string;
   itemFireTinderNewspaperName: string;
+  itemWeaponFistsBareDescription: string;
+  itemWeaponFistsBareName: string;
+  itemWeaponKnifeHuntingDescription: string;
+  itemWeaponKnifeHuntingName: string;
   outfitItemTypeHat: string;
   outfitItemTypeJacket: string;
   outfitItemTypePants: string;

@@ -60,3 +60,11 @@
 .item.item__fire__tinder-newspaper {
   background-image: url('/src/images/newspaper.png');
 }
+
+.item.item__weapon__fists-bare {
+  background-image: url('/src/images/fists-bare.png');
+}
+
+.item.item__weapon__knife-hunting {
+  background-image: url('/src/images/knife-hunting.png');
+}
