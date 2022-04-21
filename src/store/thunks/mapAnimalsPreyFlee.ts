@@ -1,9 +1,10 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
+import { PreyStatus } from '~/src/models/Animal/types';
 import { Position } from '~/src/models/Position';
 import radiusAroundPosition from '~/src/utilities/radiusAroundPosition';
 
-import { mapAnimalPreyFlee } from '../reducers/map';
+import { mapAnimalPreyStatus } from '../reducers/map';
 import { selectMapAnimalsPrey } from '../reducers/map/selectors';
 import { selectPlayerPosition } from '../reducers/player/selectors';
 import { RootState } from '../types';
@@ -21,11 +22,15 @@ const mapAnimalsPreyFlee =
             radius: prey.fleeRadius,
           });
           const isFleeing = fleeRadius.some(
-            (aggroPosition) =>
-              aggroPosition.left === playerPosition.left &&
-              aggroPosition.top === playerPosition.top,
+            (fleePosition) =>
+              fleePosition.left === playerPosition.left && fleePosition.top === playerPosition.top,
           );
-          dispatch(mapAnimalPreyFlee({ isFleeing, position }));
+          dispatch(
+            mapAnimalPreyStatus({
+              position,
+              status: isFleeing ? PreyStatus.FLEEING : PreyStatus.IDLE,
+            }),
+          );
         }
       });
     });

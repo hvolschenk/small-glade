@@ -1,6 +1,10 @@
 import { L10n } from './types';
 
 const en: L10n = {
+  animalAttackChooseWeapon: 'Choose weapon.',
+  animalAttackTitle: '{animalName} attack!',
+  animalDeerElkName: 'Elk',
+  animalWolfArcticName: 'Arctic wolf',
   controlInventoryShortcut: 'I',
   controlOutfitShortcut: 'O',
   controlPauseMenuShortcut: 'Esc',
@@ -51,6 +55,10 @@ const en: L10n = {
   itemFireTinderNewspaperDescription:
     'A newspaper. More useful as tinder than source of information.',
   itemFireTinderNewspaperName: 'Newspaper',
+  itemWeaponFistsBareDescription: 'Low damage, but if that is all you have ...',
+  itemWeaponFistsBareName: 'Bare fists',
+  itemWeaponKnifeHuntingDescription: 'Great for hunting and preparing game.',
+  itemWeaponKnifeHuntingName: 'Hunting knife',
   outfitItemTypeHat: 'Hat',
   outfitItemTypeJacket: 'Jacket',
   outfitItemTypePants: 'Pants',

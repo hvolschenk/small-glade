@@ -9,6 +9,10 @@ const effectMapAnimalsPredatorAggro: Effect<EventOptions> = (options) => {
   options.trigger('map:animals:predator:aggro');
 };
 
+const effectMapAnimalsPredatorFlee: Effect<EventOptions> = (options) => {
+  options.trigger('map:animals:predator:flee');
+};
+
 const validateGameStatusIdle: Validator<EventOptions> = (options) => {
   const status = selectGameStatus(options.getState());
   return status === GameStatus.GAME_STATUS_IDLE;
@@ -17,7 +21,7 @@ const validateGameStatusIdle: Validator<EventOptions> = (options) => {
 class MapAnimalsPredatorMove extends EventAbstract {
   public static event: string = 'map:animals:predator:move';
 
-  effects: Effect<EventOptions>[] = [effectMapAnimalsPredatorAggro];
+  effects: Effect<EventOptions>[] = [effectMapAnimalsPredatorAggro, effectMapAnimalsPredatorFlee];
   validators: Validator<EventOptions>[] = [validateGameStatusIdle];
 
   // eslint-disable-next-line class-methods-use-this

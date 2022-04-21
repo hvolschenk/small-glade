@@ -1,7 +1,9 @@
 import FireStart from './FireStart';
 import GameEnd from './GameEnd';
+import GameIdle from './GameIdle';
 import GameLoadDone from './GameLoadDone';
 import GamePauseMenuToggle from './GamePauseMenuToggle';
+import GamePlayerDecision from './GamePlayerDecision';
 import GameRadialMenuToggle from './GameRadialMenuToggle';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
@@ -13,6 +15,8 @@ import InventoryToggle from './InventoryToggle';
 import ItemConsumableDrink from './ItemConsumableDrink';
 import ItemConsumableEat from './ItemConsumableEat';
 import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
+import MapAnimalsPredatorDefend from './MapAnimalsPredatorDefend';
+import MapAnimalsPredatorFlee from './MapAnimalsPredatorFlee';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
@@ -32,8 +36,10 @@ interface BuildProps {
 const events = [
   FireStart,
   GameEnd,
+  GameIdle,
   GameLoadDone,
   GamePauseMenuToggle,
+  GamePlayerDecision,
   GameRadialMenuToggle,
   GameStart,
   GameTurn,
@@ -45,6 +51,8 @@ const events = [
   ItemConsumableDrink,
   ItemConsumableEat,
   MapAnimalsPredatorAggro,
+  MapAnimalsPredatorDefend,
+  MapAnimalsPredatorFlee,
   MapAnimalsPredatorMove,
   MapAnimalsPreyFlee,
   MapAnimalsPreyMove,

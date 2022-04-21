@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { PredatorStatus } from '~/src/models/Animal/types';
 import wolfArctic from '~/src/models/Animal/WolfArctic';
 import { Position } from '~/src/models/Position';
 import { fireEvent, render, RenderResult } from '~/src/testing';
@@ -43,15 +44,18 @@ describe('Default', () => {
   });
 });
 
-describe('When the animal is not aggroed', () => {
+describe('When the animal is idle', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Predator animal={{ ...wolfArctic, isAggroed: false }} position={position} />);
+    wrapper = render(
+      <Predator animal={{ ...wolfArctic, status: PredatorStatus.IDLE }} position={position} />,
+    );
   });
 
   test('Does not render the aggro indicator', () => {
     expect(wrapper.queryByTestId('animal__predator__aggro-indicator')).not.toBeInTheDocument();
+    expect(wrapper.queryByTestId('animal__predator__fleeing-indicator')).not.toBeInTheDocument();
   });
 });
 
@@ -59,10 +63,26 @@ describe('When the animal is aggroed', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Predator animal={{ ...wolfArctic, isAggroed: true }} position={position} />);
+    wrapper = render(
+      <Predator animal={{ ...wolfArctic, status: PredatorStatus.AGGROED }} position={position} />,
+    );
   });
 
   test('Renders the aggro indicator', () => {
     expect(wrapper.queryByTestId('animal__predator__aggro-indicator')).toBeInTheDocument();
+  });
+});
+
+describe('When the animal is fleeing', () => {
+  let wrapper: RenderResult;
+
+  beforeEach(() => {
+    wrapper = render(
+      <Predator animal={{ ...wolfArctic, status: PredatorStatus.FLEEING }} position={position} />,
+    );
+  });
+
+  test('Renders the aggro indicator', () => {
+    expect(wrapper.queryByTestId('animal__predator__fleeing-indicator')).toBeInTheDocument();
   });
 });

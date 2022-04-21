@@ -9,34 +9,31 @@ import { selectMapAnimalsPredator } from '../reducers/map/selectors';
 import { selectPlayerPosition } from '../reducers/player/selectors';
 import { RootState } from '../types';
 
-const mapAnimalsPredatorAggro =
+const mapAnimalsPredatorFlee =
   (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {
-    const predators = selectMapAnimalsPredator(getState());
     const playerPosition = selectPlayerPosition(getState());
+    const predators = selectMapAnimalsPredator(getState());
     predators.forEach((row, rowIndex) => {
       row.forEach((predator, predatorIndex) => {
         if (predator) {
-          if (predator.status !== PredatorStatus.FLEEING) {
+          if (predator.status === PredatorStatus.FLEEING) {
             const position: Position = { left: predatorIndex, top: rowIndex };
-            const aggroRange = radiusAroundPosition({
+            const fleeRadius = radiusAroundPosition({
               position,
-              radius: predator.aggroRadius,
+              radius: predator.fleeRadius,
             });
-            const isAggroed = aggroRange.some(
-              (aggroPosition) =>
-                aggroPosition.left === playerPosition.left &&
-                aggroPosition.top === playerPosition.top,
+            const isFleeing = fleeRadius.some(
+              (fleePosition) =>
+                fleePosition.left === playerPosition.left &&
+                fleePosition.top === playerPosition.top,
             );
-            dispatch(
-              mapAnimalPredatorStatus({
-                position,
-                status: isAggroed ? PredatorStatus.AGGROED : PredatorStatus.IDLE,
-              }),
-            );
+            if (!isFleeing) {
+              dispatch(mapAnimalPredatorStatus({ position, status: PredatorStatus.IDLE }));
+            }
           }
         }
       });
     });
   };
 
-export default mapAnimalsPredatorAggro;
+export default mapAnimalsPredatorFlee;

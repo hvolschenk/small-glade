@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Prey as PreyInterface } from '~/src/models/Animal/types';
+import { Prey as PreyInterface, PreyStatus } from '~/src/models/Animal/types';
 
 import DeerElk from './DeerElk';
 import FleeRadius from './FleeRadius';
@@ -43,7 +43,9 @@ const Prey: React.FC<PreyRendererProps> = ({ animal, position, style }) => {
         type="button"
       >
         <PreyRenderer animal={animal} position={position} style={style}>
-          {animal.isFleeing && <span data-testid="animal__prey__fleeing-indicator">!</span>}
+          {animal.status === PreyStatus.FLEEING && (
+            <span data-testid="animal__prey__fleeing-indicator">!</span>
+          )}
         </PreyRenderer>
       </button>
       {isSelected && <FleeRadius position={position} />}

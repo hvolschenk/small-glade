@@ -1,6 +1,7 @@
 import React from 'react';
 
 import deerElk from '~/src/models/Animal/DeerElk';
+import { PreyStatus } from '~/src/models/Animal/types';
 import { Position } from '~/src/models/Position';
 import { fireEvent, render, RenderResult } from '~/src/testing';
 
@@ -47,7 +48,7 @@ describe('When the prey animal is not fleeing', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Prey animal={{ ...deerElk, isFleeing: false }} position={position} />);
+    wrapper = render(<Prey animal={{ ...deerElk, status: PreyStatus.IDLE }} position={position} />);
   });
 
   test('Does not display the fleeing indicator', () => {
@@ -59,7 +60,9 @@ describe('When the prey animal is fleeing', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Prey animal={{ ...deerElk, isFleeing: true }} position={position} />);
+    wrapper = render(
+      <Prey animal={{ ...deerElk, status: PreyStatus.FLEEING }} position={position} />,
+    );
   });
 
   test('Displays the fleeing indicator', () => {

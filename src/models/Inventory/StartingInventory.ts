@@ -9,6 +9,7 @@ import underwearCotton from '../Item/Clothing/UnderwearCotton';
 import bearBerry from '../Item/Consumable/Bearberry';
 import bottleWater from '../Item/Consumable/BottleWater';
 import crispsTomato from '../Item/Consumable/CrispsTomato';
+import fistsBare from '../Item/Weapon/FistsBare';
 import { Inventory } from './types';
 
 const startingInventory: Inventory = {
@@ -18,6 +19,7 @@ const startingInventory: Inventory = {
     bearBerry,
     bottleWater,
     crispsTomato,
+    fistsBare,
     hatBeanieWool,
     jacketDenim,
     pantsJeans,

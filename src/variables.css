@@ -24,5 +24,6 @@
   --z-index--hud: 30;
   --z-index--control: 35;
   --z-index--menu: 40;
-  --z-index--end-screen: 45;
+  --z-index--uniterruptable-menu: 45;
+  --z-index--end-screen: 50;
 }
