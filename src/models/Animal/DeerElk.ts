@@ -5,7 +5,9 @@ const deerElk: Prey = {
   fleeRadius: 3,
   health: 30,
   isFleeing: false,
-  name: 'Elk',
+  l10n: {
+    name: 'animalDeerElkName',
+  },
   type: 'deer',
   variant: 'elk',
 };

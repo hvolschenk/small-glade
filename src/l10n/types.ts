@@ -1,4 +1,6 @@
 export interface L10n {
+  animalDeerElkName: string;
+  animalWolfArcticName: string;
   controlInventoryShortcut: string;
   controlOutfitShortcut: string;
   controlPauseMenuShortcut: string;

@@ -1,6 +1,8 @@
 import { L10n } from './types';
 
 const en: L10n = {
+  animalDeerElkName: 'Elk',
+  animalWolfArcticName: 'Arctic wolf',
   controlInventoryShortcut: 'I',
   controlOutfitShortcut: 'O',
   controlPauseMenuShortcut: 'Esc',

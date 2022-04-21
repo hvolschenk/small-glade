@@ -6,7 +6,9 @@ const wolfArctic: Predator = {
   damage: 30,
   health: 50,
   isAggroed: false,
-  name: 'Arctic wolf',
+  l10n: {
+    name: 'animalWolfArcticName',
+  },
   type: 'wolf',
   variant: 'arctic',
 };
