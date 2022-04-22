@@ -3,7 +3,7 @@ import React from 'react';
 import { useEngine } from '~/src/engine';
 import { MapAnimalsPredatorDefendOptions } from '~/src/engine/event/MapAnimalsPredatorDefend';
 import l10n from '~/src/l10n';
-import { Predator } from '~/src/models/Animal/types';
+import { Predator } from '~/src/models/Animal/Predator/types';
 import { Weapon } from '~/src/models/Item/Weapon/types';
 import { Position } from '~/src/models/Position';
 import Item from '~/src/renderer/Item';

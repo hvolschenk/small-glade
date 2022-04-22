@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Predator as PredatorInterface, PredatorStatus } from '~/src/models/Animal/types';
+import { Predator as PredatorInterface, PredatorStatus } from '~/src/models/Animal/Predator/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
 import positionsEqual from '~/src/utilities/positionsEqual';

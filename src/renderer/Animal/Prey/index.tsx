@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Prey as PreyInterface, PreyStatus } from '~/src/models/Animal/types';
+import { Prey as PreyInterface, PreyStatus } from '~/src/models/Animal/Prey/types';
 
 import DeerElk from './DeerElk';
 import FleeRadius from './FleeRadius';

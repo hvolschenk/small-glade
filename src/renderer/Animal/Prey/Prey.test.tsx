@@ -1,7 +1,7 @@
 import React from 'react';
 
-import deerElk from '~/src/models/Animal/DeerElk';
-import { PreyStatus } from '~/src/models/Animal/types';
+import deerElk from '~/src/models/Animal/Prey/DeerElk';
+import { PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Position } from '~/src/models/Position';
 import { fireEvent, render, RenderResult } from '~/src/testing';
 

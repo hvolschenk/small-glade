@@ -1,6 +1,6 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import { Predator, PredatorStatus } from '~/src/models/Animal/types';
+import { Predator, PredatorStatus } from '~/src/models/Animal/Predator/types';
 import { GameStatus } from '~/src/models/Game';
 import { Position } from '~/src/models/Position';
 import { mapAnimalPredatorStatus } from '~/src/store/reducers/map';

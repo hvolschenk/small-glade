@@ -1,6 +1,6 @@
 import React from 'react';
 
-import wolfArctic from '~/src/models/Animal/WolfArctic';
+import wolfArctic from '~/src/models/Animal/Predator/WolfArctic';
 import { Position } from '~/src/models/Position';
 import { render, RenderResult } from '~/src/testing';
 

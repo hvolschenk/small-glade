@@ -1,6 +1,6 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import { PreyStatus } from '~/src/models/Animal/types';
+import { PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Position } from '~/src/models/Position';
 
 import { selectMapAnimalsPrey } from '../reducers/map/selectors';

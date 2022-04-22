@@ -1,6 +1,6 @@
 import React from 'react';
 
-import deerElk from '~/src/models/Animal/DeerElk';
+import deerElk from '~/src/models/Animal/Prey/DeerElk';
 import { Position } from '~/src/models/Position';
 import { render, RenderResult } from '~/src/testing';
 

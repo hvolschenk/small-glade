@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { PredatorStatus } from '~/src/models/Animal/types';
-import wolfArctic from '~/src/models/Animal/WolfArctic';
+import { PredatorStatus } from '~/src/models/Animal/Predator/types';
+import wolfArctic from '~/src/models/Animal/Predator/WolfArctic';
 import { Position } from '~/src/models/Position';
 import { fireEvent, render, RenderResult } from '~/src/testing';
 
