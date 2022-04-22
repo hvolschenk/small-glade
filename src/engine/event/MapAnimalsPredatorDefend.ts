@@ -1,4 +1,4 @@
-import { Predator } from '~/src/models/Animal/types';
+import { Predator } from '~/src/models/Animal/Predator/types';
 import { Position } from '~/src/models/Position';
 import mapAnimalsPredatorDefend from '~/src/store/thunks/mapAnimalsPredatorDefend';
 

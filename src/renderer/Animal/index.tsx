@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Predator as PredatorInterface, Prey as PreyInterface } from '~/src/models/Animal/types';
+import { Predator as PredatorInterface } from '~/src/models/Animal/Predator/types';
+import { Prey as PreyInterface } from '~/src/models/Animal/Prey/types';
 
 import Predator from './Predator';
 import Prey from './Prey';

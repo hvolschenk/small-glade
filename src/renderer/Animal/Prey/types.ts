@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Prey } from '~/src/models/Animal/types';
+import { Prey } from '~/src/models/Animal/Prey/types';
 
 import { AnimalRendererProps } from '../types';
 

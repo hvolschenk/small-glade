@@ -1,6 +1,6 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
-import { PredatorStatus } from '~/src/models/Animal/types';
+import { PredatorStatus } from '~/src/models/Animal/Predator/types';
 import { Position } from '~/src/models/Position';
 import radiusAroundPosition from '~/src/utilities/radiusAroundPosition';
 

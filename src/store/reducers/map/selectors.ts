@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { Predator, Prey } from '~/src/models/Animal/types';
+import { Predator } from '~/src/models/Animal/Predator/types';
+import { Prey } from '~/src/models/Animal/Prey/types';
 import { Position } from '~/src/models/Position';
 import radiusAroundPosition from '~/src/utilities/radiusAroundPosition';
 

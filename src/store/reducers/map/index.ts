@@ -1,7 +1,9 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Animal, Predator, PredatorStatus, Prey, PreyStatus } from '~/src/models/Animal/types';
+import { Predator, PredatorStatus } from '~/src/models/Animal/Predator/types';
+import { Prey, PreyStatus } from '~/src/models/Animal/Prey/types';
+import { Animal } from '~/src/models/Animal/types';
 import { Fire } from '~/src/models/Fire/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';

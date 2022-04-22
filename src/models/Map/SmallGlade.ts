@@ -1,5 +1,5 @@
-import deerElk from '../Animal/DeerElk';
-import wolfArctic from '../Animal/WolfArctic';
+import wolfArctic from '../Animal/Predator/WolfArctic';
+import deerElk from '../Animal/Prey/DeerElk';
 import bushBearberry from '../Interactable/BushBearberry';
 import fuelStick from '../Interactable/FuelStick';
 import starterMatches from '../Interactable/StarterMatches';
