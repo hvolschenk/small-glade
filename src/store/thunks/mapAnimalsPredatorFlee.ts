@@ -1,7 +1,6 @@
 import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
 import { PredatorStatus } from '~/src/models/Animal/Predator/types';
-import { Position } from '~/src/models/Position';
 import radiusAroundPosition from '~/src/utilities/radiusAroundPosition';
 
 import { mapAnimalPredatorStatus } from '../reducers/map';
@@ -13,26 +12,23 @@ const mapAnimalsPredatorFlee =
   (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {
     const playerPosition = selectPlayerPosition(getState());
     const predators = selectMapAnimalsPredator(getState());
-    predators.forEach((row, rowIndex) => {
-      row.forEach((predator, predatorIndex) => {
-        if (predator) {
-          if (predator.status === PredatorStatus.FLEEING) {
-            const position: Position = { left: predatorIndex, top: rowIndex };
-            const fleeRadius = radiusAroundPosition({
-              position,
-              radius: predator.fleeRadius,
-            });
-            const isFleeing = fleeRadius.some(
-              (fleePosition) =>
-                fleePosition.left === playerPosition.left &&
-                fleePosition.top === playerPosition.top,
-            );
-            if (!isFleeing) {
-              dispatch(mapAnimalPredatorStatus({ position, status: PredatorStatus.IDLE }));
-            }
-          }
+
+    predators.forEach((predator) => {
+      if (predator.status === PredatorStatus.FLEEING) {
+        const fleeRadius = radiusAroundPosition({
+          position: predator.position,
+          radius: predator.fleeRadius,
+        });
+        const isFleeing = fleeRadius.some(
+          (fleePosition) =>
+            fleePosition.left === playerPosition.left && fleePosition.top === playerPosition.top,
+        );
+        if (!isFleeing) {
+          dispatch(
+            mapAnimalPredatorStatus({ position: predator.position, status: PredatorStatus.IDLE }),
+          );
         }
-      });
+      }
     });
   };
 

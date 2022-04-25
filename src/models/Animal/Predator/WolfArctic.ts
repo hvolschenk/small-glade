@@ -9,6 +9,7 @@ const wolfArctic: Predator = {
   l10n: {
     name: 'animalWolfArcticName',
   },
+  position: { left: 0, top: 0 },
   status: PredatorStatus.IDLE,
   type: 'wolf',
   variant: 'arctic',

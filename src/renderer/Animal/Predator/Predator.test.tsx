@@ -16,7 +16,7 @@ describe('Default', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Predator animal={wolfArctic} position={position} />);
+    wrapper = render(<Predator animal={{ ...wolfArctic, position }} />);
   });
 
   test('Does not render the aggro radius by default', () => {
@@ -49,7 +49,7 @@ describe('When the animal is idle', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <Predator animal={{ ...wolfArctic, status: PredatorStatus.IDLE }} position={position} />,
+      <Predator animal={{ ...wolfArctic, position, status: PredatorStatus.IDLE }} />,
     );
   });
 
@@ -64,7 +64,7 @@ describe('When the animal is aggroed', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <Predator animal={{ ...wolfArctic, status: PredatorStatus.AGGROED }} position={position} />,
+      <Predator animal={{ ...wolfArctic, position, status: PredatorStatus.AGGROED }} />,
     );
   });
 
@@ -78,7 +78,7 @@ describe('When the animal is fleeing', () => {
 
   beforeEach(() => {
     wrapper = render(
-      <Predator animal={{ ...wolfArctic, status: PredatorStatus.FLEEING }} position={position} />,
+      <Predator animal={{ ...wolfArctic, position, status: PredatorStatus.FLEEING }} />,
     );
   });
 

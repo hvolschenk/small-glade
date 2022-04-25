@@ -9,12 +9,12 @@ import { AnimalRendererProps } from './types';
 
 import './animal.css';
 
-const Animal: React.FC<AnimalRendererProps> = ({ animal, position, style }) => {
+const Animal: React.FC<AnimalRendererProps> = ({ animal, style }) => {
   switch (animal.category) {
     case 'predator':
-      return <Predator animal={animal as PredatorInterface} position={position} style={style} />;
+      return <Predator animal={animal as PredatorInterface} style={style} />;
     case 'prey':
-      return <Prey animal={animal as PreyInterface} position={position} style={style} />;
+      return <Prey animal={animal as PreyInterface} style={style} />;
     default:
       return null;
   }

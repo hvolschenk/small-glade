@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
-import { MapAnimalsPredatorDefendOptions } from '~/src/engine/event/MapAnimalsPredatorDefend';
+import { MapAnimalPredatorDefendOptions } from '~/src/engine/event/MapAnimalPredatorDefend';
 import l10n from '~/src/l10n';
 import { Predator } from '~/src/models/Animal/Predator/types';
 import { Weapon } from '~/src/models/Item/Weapon/types';
-import { Position } from '~/src/models/Position';
 import Item from '~/src/renderer/Item';
 import { useSelector } from '~/src/store/hooks';
 import { selectInventoryItemsOfCategory } from '~/src/store/reducers/inventory/selectors';
@@ -14,10 +13,9 @@ import './attack-defense.css';
 
 interface AttackDefenseProps {
   animal: Predator;
-  position: Position;
 }
 
-const AttackDefense: React.FC<AttackDefenseProps> = ({ animal, position }) => {
+const AttackDefense: React.FC<AttackDefenseProps> = ({ animal }) => {
   const { trigger } = useEngine();
   const weapons: Weapon[] = useSelector((state) =>
     selectInventoryItemsOfCategory(state, 'weapon'),
@@ -28,8 +26,7 @@ const AttackDefense: React.FC<AttackDefenseProps> = ({ animal, position }) => {
   }, []);
 
   const onClick = React.useCallback(() => {
-    trigger<MapAnimalsPredatorDefendOptions>('map:animals:predator:defend', {
-      position,
+    trigger<MapAnimalPredatorDefendOptions>('map:animal:predator:defend', {
       predator: animal,
     });
   }, []);

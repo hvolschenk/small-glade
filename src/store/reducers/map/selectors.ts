@@ -9,15 +9,13 @@ import { RootState } from '../../types';
 
 export const selectMap = (state: RootState) => state.map;
 export const selectMapAnimals = createSelector([selectMap], (map) => map.animals);
-export const selectMapAnimalsPredator = createSelector([selectMapAnimals], (animals) =>
-  animals.map((row) =>
-    row.map((animal) => (animal?.category === 'predator' ? (animal as Predator) : undefined)),
-  ),
+export const selectMapAnimalsPredator = createSelector(
+  [selectMapAnimals],
+  (animals) => animals.filter((animal) => animal.category === 'predator') as Predator[],
 );
-export const selectMapAnimalsPrey = createSelector([selectMapAnimals], (animals) =>
-  animals.map((row) =>
-    row.map((animal) => (animal?.category === 'prey' ? (animal as Prey) : undefined)),
-  ),
+export const selectMapAnimalsPrey = createSelector(
+  [selectMapAnimals],
+  (animals) => animals.filter((animal) => animal.category === 'prey') as Prey[],
 );
 export const selectMapFires = createSelector([selectMap], (map) => map.fires);
 export const selectMapTileAtPosition = createSelector(
@@ -35,44 +33,32 @@ export const selectMapTileAtPosition = createSelector(
 );
 export const selectMapTiles = createSelector([selectMap], (map) => map.tiles);
 export const selectMapAnimalPredatorAggroRange = createSelector(
-  [selectMapTiles, selectMapAnimalsPredator, (_, position: Position) => position],
-  (tiles, predators, position): Position[] => {
-    const predatorsRow = predators[position.top];
-    if (predatorsRow) {
-      const predator = predatorsRow[position.left];
-      if (predator) {
-        const positions = radiusAroundPosition({ position, radius: predator.aggroRadius });
-        return positions.filter((aggroPosition) => {
-          const row = tiles[aggroPosition.top];
-          if (row) {
-            const tile = row[aggroPosition.left];
-            return Boolean(tile);
-          }
-          return false;
-        });
+  [selectMapTiles, (_, predator: Predator) => predator],
+  (tiles, predator) => {
+    const { aggroRadius, position } = predator;
+    const positions = radiusAroundPosition({ position, radius: aggroRadius });
+    return positions.filter((aggroPosition) => {
+      const row = tiles[aggroPosition.top];
+      if (row) {
+        const tile = row[aggroPosition.left];
+        return Boolean(tile);
       }
-    }
-    return [];
+      return false;
+    });
   },
 );
 export const selectMapAnimalPreyFleeRadius = createSelector(
-  [selectMapTiles, selectMapAnimalsPrey, (_, position: Position) => position],
-  (tiles, preyAnimals, position): Position[] => {
-    const preyAnimalsRow = preyAnimals[position.top];
-    if (preyAnimalsRow) {
-      const prey = preyAnimalsRow[position.left];
-      if (prey) {
-        const positions = radiusAroundPosition({ position, radius: prey.fleeRadius });
-        return positions.filter((fleePosition) => {
-          const row = tiles[fleePosition.top];
-          if (row) {
-            const tile = row[fleePosition.left];
-            return Boolean(tile);
-          }
-          return false;
-        });
+  [selectMapTiles, (_, prey: Prey) => prey],
+  (tiles, prey) => {
+    const { fleeRadius, position } = prey;
+    const positions = radiusAroundPosition({ position, radius: fleeRadius });
+    return positions.filter((fleePosition) => {
+      const row = tiles[fleePosition.top];
+      if (row) {
+        const tile = row[fleePosition.left];
+        return Boolean(tile);
       }
-    }
-    return [];
+      return false;
+    });
   },
 );

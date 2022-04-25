@@ -2,7 +2,6 @@ import { AnyAction, ThunkAction } from '@reduxjs/toolkit';
 
 import { Animal } from '~/src/models/Animal/types';
 import { Direction } from '~/src/models/Direction';
-import { Position } from '~/src/models/Position';
 import positionFromDirection from '~/src/utilities/positionFromDirection';
 
 import { mapAnimalMove as mapAnimalMoveAction } from '../reducers/map';
@@ -40,20 +39,20 @@ const calculateDirections = (
 };
 
 const mapAnimalFlee =
-  (animal: Animal, position: Position): ThunkAction<void, RootState, void, AnyAction> =>
+  (animal: Animal): ThunkAction<void, RootState, void, AnyAction> =>
   (dispatch, getState) => {
     const positionPlayer = selectPlayerPosition(getState());
-    const differenceHorizontal = positionPlayer.left - position.left;
-    const differenceVertical = positionPlayer.top - position.top;
+    const differenceHorizontal = positionPlayer.left - animal.position.left;
+    const differenceVertical = positionPlayer.top - animal.position.top;
     const directions = calculateDirections(differenceHorizontal, differenceVertical);
     directions.some((direction) => {
-      const positionPossible = positionFromDirection({ direction, position });
+      const positionPossible = positionFromDirection({ direction, position: animal.position });
       const tile = selectMapTileAtPosition(getState(), positionPossible);
       if (tile && tile.isAccessible) {
         dispatch(
           mapAnimalMoveAction({
             animal,
-            positions: { new: positionPossible, old: position },
+            positionNew: positionPossible,
           }),
         );
         return true;

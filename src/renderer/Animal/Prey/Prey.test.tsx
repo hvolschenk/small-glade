@@ -16,7 +16,7 @@ describe('Default', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Prey animal={deerElk} position={position} />);
+    wrapper = render(<Prey animal={{ ...deerElk, position }} />);
   });
 
   test('Does not render the flee radius by default', () => {
@@ -48,7 +48,7 @@ describe('When the prey animal is not fleeing', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(<Prey animal={{ ...deerElk, status: PreyStatus.IDLE }} position={position} />);
+    wrapper = render(<Prey animal={{ ...deerElk, position, status: PreyStatus.IDLE }} />);
   });
 
   test('Does not display the fleeing indicator', () => {
@@ -60,9 +60,7 @@ describe('When the prey animal is fleeing', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    wrapper = render(
-      <Prey animal={{ ...deerElk, status: PreyStatus.FLEEING }} position={position} />,
-    );
+    wrapper = render(<Prey animal={{ ...deerElk, position, status: PreyStatus.FLEEING }} />);
   });
 
   test('Displays the fleeing indicator', () => {

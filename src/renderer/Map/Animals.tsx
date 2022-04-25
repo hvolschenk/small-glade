@@ -12,25 +12,15 @@ interface AnimalsInterface {
 
 const Animals: React.FC<AnimalsInterface> = ({ animals }) => (
   <React.Fragment>
-    {animals.map((row, rowIndex) => (
-      <React.Fragment key={rowIndex}>
-        {row.map((animal, animalIndex) => {
-          if (animal) {
-            return (
-              <Animal
-                animal={animal}
-                key={`${rowIndex}-${animalIndex}`}
-                position={{ left: animalIndex, top: rowIndex }}
-                style={{
-                  left: animalIndex * configuration.tileSize(),
-                  top: rowIndex * configuration.tileSize(),
-                }}
-              />
-            );
-          }
-          return null;
-        })}
-      </React.Fragment>
+    {animals.map((animal) => (
+      <Animal
+        animal={animal}
+        key={`${animal.category}-${animal.type}-${animal.variant}-${animal.position.top}-${animal.position.left}`}
+        style={{
+          left: animal.position.left * configuration.tileSize(),
+          top: animal.position.top * configuration.tileSize(),
+        }}
+      />
     ))}
   </React.Fragment>
 );

@@ -7,6 +7,7 @@ const deerElk: Prey = {
   l10n: {
     name: 'animalDeerElkName',
   },
+  position: { left: 0, top: 0 },
   status: PreyStatus.IDLE,
   type: 'deer',
   variant: 'elk',
