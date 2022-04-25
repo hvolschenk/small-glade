@@ -11,7 +11,7 @@ const position: Position = { left: 3, top: 11 };
 let wrapper: RenderResult;
 
 beforeEach(() => {
-  wrapper = render(<WolfArctic animal={wolfArctic} position={position} />);
+  wrapper = render(<WolfArctic animal={{ ...wolfArctic, position }} />);
 });
 
 test('Vanity test', () => {

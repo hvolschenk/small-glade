@@ -1,18 +1,18 @@
 import React from 'react';
 
 import configuration from '~/src/configuration';
-import { Position } from '~/src/models/Position';
+import { Prey } from '~/src/models/Animal/Prey/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectMapAnimalPreyFleeRadius } from '~/src/store/reducers/map/selectors';
 
 import './flee-radius.css';
 
 interface FleeRadiusProps {
-  position: Position;
+  animal: Prey;
 }
 
-const FleeRadius: React.FC<FleeRadiusProps> = ({ position }) => {
-  const positions = useSelector((state) => selectMapAnimalPreyFleeRadius(state, position));
+const FleeRadius: React.FC<FleeRadiusProps> = ({ animal }) => {
+  const positions = useSelector((state) => selectMapAnimalPreyFleeRadius(state, animal));
 
   return (
     <React.Fragment>

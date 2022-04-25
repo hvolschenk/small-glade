@@ -30,7 +30,7 @@ const predatorFactory = (animal: PredatorInterface): React.ComponentType<Predato
   return NullRenderer;
 };
 
-const Predator: React.FC<PredatorRendererProps> = ({ animal, position, style }) => {
+const Predator: React.FC<PredatorRendererProps> = ({ animal, style }) => {
   const [isSelected, setIsSelected] = React.useState<boolean>(false);
   const playerPosition = useSelector(selectPlayerPosition);
   const toggleSelected = React.useCallback(
@@ -38,8 +38,9 @@ const Predator: React.FC<PredatorRendererProps> = ({ animal, position, style }) 
     [isSelected, setIsSelected],
   );
   const isAttacking = React.useMemo(
-    () => positionsEqual(playerPosition, position) && animal.status === PredatorStatus.AGGROED,
-    [animal, playerPosition, position],
+    () =>
+      positionsEqual(playerPosition, animal.position) && animal.status === PredatorStatus.AGGROED,
+    [animal, playerPosition],
   );
   const PredatorRenderer = React.useMemo(() => predatorFactory(animal), [animal]);
 
@@ -52,7 +53,7 @@ const Predator: React.FC<PredatorRendererProps> = ({ animal, position, style }) 
         style={style}
         type="button"
       >
-        <PredatorRenderer animal={animal} position={position} style={style}>
+        <PredatorRenderer animal={animal} style={style}>
           {animal.status === PredatorStatus.AGGROED && (
             <span data-testid="animal__predator__aggro-indicator">!</span>
           )}
@@ -61,8 +62,8 @@ const Predator: React.FC<PredatorRendererProps> = ({ animal, position, style }) 
           )}
         </PredatorRenderer>
       </button>
-      {isSelected && <AggroRadius position={position} />}
-      {isAttacking && <AttackDefense animal={animal} position={position} />}
+      {isSelected && <AggroRadius animal={animal} />}
+      {isAttacking && <AttackDefense animal={animal} />}
     </React.Fragment>
   );
 };

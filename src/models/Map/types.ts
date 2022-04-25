@@ -4,7 +4,7 @@ import { Interactable } from '../Interactable/types';
 import { Tile } from '../Tile/types';
 
 export interface Map {
-  animals: (Animal | undefined)[][];
+  animals: Animal[];
   fires: Fire[];
   identifier: string;
   interactables: (Interactable | undefined)[][];

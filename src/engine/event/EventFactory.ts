@@ -14,8 +14,8 @@ import InventorySelectedItemUpdate from './InventorySelectedItemUpdate';
 import InventoryToggle from './InventoryToggle';
 import ItemConsumableDrink from './ItemConsumableDrink';
 import ItemConsumableEat from './ItemConsumableEat';
+import MapAnimalPredatorDefend from './MapAnimalPredatorDefend';
 import MapAnimalsPredatorAggro from './MapAnimalsPredatorAggro';
-import MapAnimalsPredatorDefend from './MapAnimalsPredatorDefend';
 import MapAnimalsPredatorFlee from './MapAnimalsPredatorFlee';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
@@ -50,8 +50,8 @@ const events = [
   InventoryToggle,
   ItemConsumableDrink,
   ItemConsumableEat,
+  MapAnimalPredatorDefend,
   MapAnimalsPredatorAggro,
-  MapAnimalsPredatorDefend,
   MapAnimalsPredatorFlee,
   MapAnimalsPredatorMove,
   MapAnimalsPreyFlee,

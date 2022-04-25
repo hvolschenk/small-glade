@@ -1,18 +1,18 @@
 import React from 'react';
 
 import configuration from '~/src/configuration';
-import { Position } from '~/src/models/Position';
+import { Predator } from '~/src/models/Animal/Predator/types';
 import { useSelector } from '~/src/store/hooks';
 import { selectMapAnimalPredatorAggroRange } from '~/src/store/reducers/map/selectors';
 
 import './aggro-radius.css';
 
 interface AggroRadiusProps {
-  position: Position;
+  animal: Predator;
 }
 
-const AggroRadius: React.FC<AggroRadiusProps> = ({ position }) => {
-  const positions = useSelector((state) => selectMapAnimalPredatorAggroRange(state, position));
+const AggroRadius: React.FC<AggroRadiusProps> = ({ animal }) => {
+  const positions = useSelector((state) => selectMapAnimalPredatorAggroRange(state, animal));
 
   return (
     <React.Fragment>

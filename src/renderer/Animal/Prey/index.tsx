@@ -26,7 +26,7 @@ const preyFactory = (animal: PreyInterface): React.ComponentType<PreyRendererPro
   return NullRenderer;
 };
 
-const Prey: React.FC<PreyRendererProps> = ({ animal, position, style }) => {
+const Prey: React.FC<PreyRendererProps> = ({ animal, style }) => {
   const [isSelected, setIsSelected] = React.useState<boolean>(false);
   const toggleSelected = React.useCallback(
     () => setIsSelected(!isSelected),
@@ -42,13 +42,13 @@ const Prey: React.FC<PreyRendererProps> = ({ animal, position, style }) => {
         style={style}
         type="button"
       >
-        <PreyRenderer animal={animal} position={position} style={style}>
+        <PreyRenderer animal={animal} style={style}>
           {animal.status === PreyStatus.FLEEING && (
             <span data-testid="animal__prey__fleeing-indicator">!</span>
           )}
         </PreyRenderer>
       </button>
-      {isSelected && <FleeRadius position={position} />}
+      {isSelected && <FleeRadius animal={animal} />}
     </React.Fragment>
   );
 };
