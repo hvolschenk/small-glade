@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import wolfArctic from '../Animal/Predator/WolfArctic';
 import deerElk from '../Animal/Prey/DeerElk';
 import { Animal } from '../Animal/types';
@@ -14,6 +16,7 @@ import { Map } from './types';
 
 const animal = (animalModel: Animal, left: Position['left'], top: Position['top']) => ({
   ...animalModel,
+  id: uuidv4(),
   position: { left, top },
 });
 

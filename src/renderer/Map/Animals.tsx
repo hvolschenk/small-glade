@@ -15,7 +15,7 @@ const Animals: React.FC<AnimalsInterface> = ({ animals }) => (
     {animals.map((animal) => (
       <Animal
         animal={animal}
-        key={`${animal.category}-${animal.type}-${animal.variant}-${animal.position.top}-${animal.position.left}`}
+        key={animal.id}
         style={{
           left: animal.position.left * configuration.tileSize(),
           top: animal.position.top * configuration.tileSize(),

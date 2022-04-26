@@ -9,6 +9,7 @@ interface AnimalL10n {
 export interface Animal {
   category: 'predator' | 'prey';
   health: number;
+  id: string;
   l10n: AnimalL10n;
   position: Position;
   type: string;

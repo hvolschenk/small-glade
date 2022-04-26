@@ -24,9 +24,7 @@ const mapAnimalsPredatorFlee =
             fleePosition.left === playerPosition.left && fleePosition.top === playerPosition.top,
         );
         if (!isFleeing) {
-          dispatch(
-            mapAnimalPredatorStatus({ position: predator.position, status: PredatorStatus.IDLE }),
-          );
+          dispatch(mapAnimalPredatorStatus({ predator, status: PredatorStatus.IDLE }));
         }
       }
     });

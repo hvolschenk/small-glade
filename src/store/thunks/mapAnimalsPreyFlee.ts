@@ -23,7 +23,7 @@ const mapAnimalsPreyFlee =
       );
       dispatch(
         mapAnimalPreyStatus({
-          position: prey.position,
+          prey,
           status: isFleeing ? PreyStatus.FLEEING : PreyStatus.IDLE,
         }),
       );

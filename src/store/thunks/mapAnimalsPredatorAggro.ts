@@ -24,7 +24,7 @@ const mapAnimalsPredatorAggro =
         );
         dispatch(
           mapAnimalPredatorStatus({
-            position: predator.position,
+            predator,
             status: isAggroed ? PredatorStatus.AGGROED : PredatorStatus.IDLE,
           }),
         );
