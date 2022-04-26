@@ -4,6 +4,7 @@ const deerElk: Prey = {
   category: 'prey',
   fleeRadius: 3,
   health: 30,
+  id: '00000000-0000-0000-0000-000000000000',
   l10n: {
     name: 'animalDeerElkName',
   },

@@ -1,13 +1,12 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { PredatorStatus } from '~/src/models/Animal/Predator/types';
-import { PreyStatus } from '~/src/models/Animal/Prey/types';
+import { Predator, PredatorStatus } from '~/src/models/Animal/Predator/types';
+import { Prey, PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Animal } from '~/src/models/Animal/types';
 import { Fire } from '~/src/models/Fire/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
-import positionsEqual from '~/src/utilities/positionsEqual';
 
 const initialState: Map = {
   animals: [],
@@ -23,40 +22,25 @@ const mapSlice = createSlice({
   name: 'map',
   reducers: {
     mapAnimalMove: (state, action: PayloadAction<{ animal: Animal; positionNew: Position }>) => {
-      state.animals = state.animals.map((animal) => {
-        if (positionsEqual(animal.position, action.payload.animal.position)) {
-          return { ...animal, position: action.payload.positionNew };
-        }
-        return animal;
-      });
+      const animalToMove = state.animals.find((animal) => animal.id === action.payload.animal.id);
+      if (animalToMove) {
+        animalToMove.position = action.payload.positionNew;
+      }
     },
     mapAnimalPredatorStatus: (
       state,
-      action: PayloadAction<{ position: Position; status: PredatorStatus }>,
+      action: PayloadAction<{ predator: Predator; status: PredatorStatus }>,
     ) => {
-      state.animals = state.animals.map((animal) => {
-        if (
-          positionsEqual(action.payload.position, animal.position) &&
-          animal.category === 'predator'
-        ) {
-          return { ...animal, status: action.payload.status };
-        }
-        return animal;
-      });
+      const predator = state.animals.find((animal) => animal.id === action.payload.predator.id);
+      if (predator) {
+        (predator as Predator).status = action.payload.status;
+      }
     },
-    mapAnimalPreyStatus: (
-      state,
-      action: PayloadAction<{ position: Position; status: PreyStatus }>,
-    ) => {
-      state.animals = state.animals.map((animal) => {
-        if (
-          positionsEqual(action.payload.position, animal.position) &&
-          animal.category === 'prey'
-        ) {
-          return { ...animal, status: action.payload.status };
-        }
-        return animal;
-      });
+    mapAnimalPreyStatus: (state, action: PayloadAction<{ prey: Prey; status: PreyStatus }>) => {
+      const prey = state.animals.find((animal) => animal.id === action.payload.prey.id);
+      if (prey) {
+        (prey as Prey).status = action.payload.status;
+      }
     },
     mapFireDurationUpdate: (
       state,

@@ -29,7 +29,7 @@ const mapAnimalPredatorDefend =
     // set predator to fleeing
     dispatch(
       mapAnimalPredatorStatus({
-        position: predator.position,
+        predator,
         status: PredatorStatus.FLEEING,
       }),
     );
