@@ -11,7 +11,7 @@ import positionsEqual from '~/src/utilities/positionsEqual';
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
-const StarterMatches: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
+const StarterMatches: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const { trigger } = useEngine();
   const playerPosition = useSelector(selectPlayerPosition);
 
@@ -22,7 +22,7 @@ const StarterMatches: React.FC<InteractableRendererProps> = ({ interactable, pos
   return (
     <React.Fragment>
       <div className="interactable starter-matches" style={style} />
-      {positionsEqual(playerPosition, position) && (
+      {positionsEqual(playerPosition, interactable.position) && (
         <InteractionOverlay
           actions={[
             {
@@ -30,7 +30,6 @@ const StarterMatches: React.FC<InteractableRendererProps> = ({ interactable, pos
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
                   interactable,
                   item: starterMatches,
-                  position,
                 });
               },
               title: l10n.interactableActionPickUp,

@@ -11,7 +11,7 @@ import positionsEqual from '~/src/utilities/positionsEqual';
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
-const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
+const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const { trigger } = useEngine();
   const playerPosition = useSelector(selectPlayerPosition);
 
@@ -22,7 +22,7 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
   return (
     <React.Fragment>
       <div className="interactable bush-bearberry" style={style} />
-      {positionsEqual(playerPosition, position) && (
+      {positionsEqual(playerPosition, interactable.position) && (
         <InteractionOverlay
           actions={[
             {
@@ -30,7 +30,6 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, posi
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
                   interactable,
                   item: bearBerry,
-                  position,
                 });
               },
               title: l10n.interactableActionHarvest,

@@ -1,6 +1,5 @@
 import { Interactable } from '~/src/models/Interactable/types';
 import { Item } from '~/src/models/Item/types';
-import { Position } from '~/src/models/Position';
 import { selectInventory } from '~/src/store/reducers/inventory/selectors';
 import mapInteractableInteract from '~/src/store/thunks/mapInteractableInteract';
 
@@ -11,7 +10,6 @@ import { Effect, EventOptions, Validator } from './types';
 export interface InteractableHarvestOptions {
   item: Item;
   interactable: Interactable;
-  position: Position;
 }
 
 type Options = EventOptions & InteractableHarvestOptions;
@@ -33,7 +31,7 @@ class InteractableHarvest extends EventAbstract<Options> {
 
   // eslint-disable-next-line class-methods-use-this
   handler(options: Options): void {
-    options.dispatch(mapInteractableInteract(options.position));
+    options.dispatch(mapInteractableInteract(options.interactable));
   }
 }
 

@@ -11,7 +11,7 @@ import positionsEqual from '~/src/utilities/positionsEqual';
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
-const FuelStick: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
+const FuelStick: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const { trigger } = useEngine();
   const playerPosition = useSelector(selectPlayerPosition);
 
@@ -22,7 +22,7 @@ const FuelStick: React.FC<InteractableRendererProps> = ({ interactable, position
   return (
     <React.Fragment>
       <div className="interactable fuel-stick" style={style} />
-      {positionsEqual(playerPosition, position) && (
+      {positionsEqual(playerPosition, interactable.position) && (
         <InteractionOverlay
           actions={[
             {
@@ -30,7 +30,6 @@ const FuelStick: React.FC<InteractableRendererProps> = ({ interactable, position
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
                   interactable,
                   item: fuelStick,
-                  position,
                 });
               },
               title: l10n.interactableActionPickUp,
