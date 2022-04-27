@@ -5,6 +5,7 @@ import { Predator, PredatorStatus } from '~/src/models/Animal/Predator/types';
 import { Prey, PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Animal } from '~/src/models/Animal/types';
 import { Fire } from '~/src/models/Fire/types';
+import { Interactable } from '~/src/models/Interactable/types';
 import { Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
 
@@ -51,14 +52,12 @@ const mapSlice = createSlice({
     mapFireStart: (state, action: PayloadAction<{ fire: Fire }>) => {
       state.fires.push(action.payload.fire);
     },
-    mapInteractableInteract: (state, action: PayloadAction<{ position: Position }>) => {
-      const { left, top } = action.payload.position;
-      const row = state.interactables[top];
-      if (row) {
-        const interactable = row[left];
-        if (interactable) {
-          interactable.hasBeenInteractedWith = true;
-        }
+    mapInteractableInteract: (state, action: PayloadAction<{ interactable: Interactable }>) => {
+      const interactableToInteract = state.interactables.find(
+        (interactable) => interactable.id === action.payload.interactable.id,
+      );
+      if (interactableToInteract) {
+        interactableToInteract.hasBeenInteractedWith = true;
       }
     },
     mapNameUpdate: (state, action: PayloadAction<{ name: Map['name'] }>) => {

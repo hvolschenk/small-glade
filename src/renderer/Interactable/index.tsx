@@ -41,9 +41,9 @@ const interactableFactory = (
   return NullRenderer;
 };
 
-const Interactable: React.FC<InteractableRendererProps> = ({ interactable, position, style }) => {
+const Interactable: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const InteractableRenderer = interactableFactory(interactable);
-  return <InteractableRenderer interactable={interactable} position={position} style={style} />;
+  return <InteractableRenderer interactable={interactable} style={style} />;
 };
 
 export default Interactable;

@@ -7,6 +7,7 @@ import bushBearberry from '../Interactable/BushBearberry';
 import fuelStick from '../Interactable/FuelStick';
 import starterMatches from '../Interactable/StarterMatches';
 import tinderNewspaper from '../Interactable/TinderNewspaper';
+import { Interactable } from '../Interactable/types';
 import { Position } from '../Position';
 import placeholderEmpty from '../Tile/PlaceholderEmpty';
 import rockBasic from '../Tile/RockBasic';
@@ -20,17 +21,26 @@ const animal = (animalModel: Animal, top: Position['top'], left: Position['left'
   position: { left, top },
 });
 
+const interactable = (
+  interactableModel: Interactable,
+  top: Position['top'],
+  left: Position['left'],
+) => ({
+  ...interactableModel,
+  id: uuidv4(),
+  position: { left, top },
+});
+
 const smallGlade: Map = {
   animals: [animal(deerElk, 3, 11), animal(wolfArctic, 11, 4)],
   fires: [],
   identifier: 'small-glade',
   interactables: [
-    [, , bushBearberry, fuelStick, tinderNewspaper],
-    [, , , , , , , , , bushBearberry],
-    [],
-    [],
-    [],
-    [, , starterMatches],
+    interactable(bushBearberry, 0, 2),
+    interactable(fuelStick, 0, 3),
+    interactable(tinderNewspaper, 0, 4),
+    interactable(bushBearberry, 1, 9),
+    interactable(starterMatches, 5, 3),
   ],
   name: 'Small glade',
   tiles: [

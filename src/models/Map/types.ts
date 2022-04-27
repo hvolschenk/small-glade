@@ -7,7 +7,7 @@ export interface Map {
   animals: Animal[];
   fires: Fire[];
   identifier: string;
-  interactables: (Interactable | undefined)[][];
+  interactables: Interactable[];
   name: string;
   tiles: Tile[][];
 }

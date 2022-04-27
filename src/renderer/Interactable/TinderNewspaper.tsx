@@ -11,11 +11,7 @@ import positionsEqual from '~/src/utilities/positionsEqual';
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
-const TinderNewspaper: React.FC<InteractableRendererProps> = ({
-  interactable,
-  position,
-  style,
-}) => {
+const TinderNewspaper: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const { trigger } = useEngine();
   const playerPosition = useSelector(selectPlayerPosition);
 
@@ -26,7 +22,7 @@ const TinderNewspaper: React.FC<InteractableRendererProps> = ({
   return (
     <React.Fragment>
       <div className="interactable tinder-newspaper" style={style} />
-      {positionsEqual(playerPosition, position) && (
+      {positionsEqual(playerPosition, interactable.position) && (
         <InteractionOverlay
           actions={[
             {
@@ -34,7 +30,6 @@ const TinderNewspaper: React.FC<InteractableRendererProps> = ({
                 trigger<InteractableHarvestOptions>('interactable:harvest', {
                   interactable,
                   item: tinderNewspaper,
-                  position,
                 });
               },
               title: l10n.interactableActionPickUp,

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 
 import configuration from '~/src/configuration';
@@ -12,25 +11,15 @@ interface InteractablesProps {
 
 const Interactables: React.FC<InteractablesProps> = ({ interactables }) => (
   <React.Fragment>
-    {interactables.map((row, rowIndex) => (
-      <React.Fragment key={rowIndex}>
-        {row.map((interactable, interactableIndex) => {
-          if (interactable) {
-            return (
-              <Interactable
-                interactable={interactable}
-                key={`${rowIndex}-${interactableIndex}`}
-                position={{ left: interactableIndex, top: rowIndex }}
-                style={{
-                  left: interactableIndex * configuration.tileSize(),
-                  top: rowIndex * configuration.tileSize(),
-                }}
-              />
-            );
-          }
-          return null;
-        })}
-      </React.Fragment>
+    {interactables.map((interactable) => (
+      <Interactable
+        interactable={interactable}
+        key={interactable.id}
+        style={{
+          left: interactable.position.left * configuration.tileSize(),
+          top: interactable.position.top * configuration.tileSize(),
+        }}
+      />
     ))}
   </React.Fragment>
 );
