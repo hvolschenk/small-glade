@@ -15,10 +15,7 @@ const inventorySlice = createSlice({
       state.items.push(action.payload.item);
     },
     inventoryItemRemove: (state, action: PayloadAction<{ item: Item }>) => {
-      const { category, type, variant } = action.payload.item;
-      const itemIndex = state.items.findIndex(
-        (item) => item.category === category && item.type === type && item.variant === variant,
-      );
+      const itemIndex = state.items.findIndex((item) => item.id === action.payload.item.id);
       state.items.splice(itemIndex, 1);
     },
     inventorySelectedItemUpdate: (
