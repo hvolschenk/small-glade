@@ -14,14 +14,14 @@ import treeBirch from '../Tile/TreeBirch';
 import waterBasic from '../Tile/WaterBasic';
 import { Map } from './types';
 
-const animal = (animalModel: Animal, left: Position['left'], top: Position['top']) => ({
+const animal = (animalModel: Animal, top: Position['top'], left: Position['left']) => ({
   ...animalModel,
   id: uuidv4(),
   position: { left, top },
 });
 
 const smallGlade: Map = {
-  animals: [animal(deerElk, 11, 3), animal(wolfArctic, 3, 11)],
+  animals: [animal(deerElk, 3, 11), animal(wolfArctic, 11, 4)],
   fires: [],
   identifier: 'small-glade',
   interactables: [
