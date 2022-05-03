@@ -15,6 +15,7 @@ const initialState: Map = {
   identifier: '',
   interactables: [],
   name: '',
+  startingPositions: [],
   tiles: [],
 };
 

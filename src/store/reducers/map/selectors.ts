@@ -18,6 +18,10 @@ export const selectMapAnimalsPrey = createSelector(
   (animals) => animals.filter((animal) => animal.category === 'prey') as Prey[],
 );
 export const selectMapFires = createSelector([selectMap], (map) => map.fires);
+export const selectMapStartingPositions = createSelector(
+  [selectMap],
+  (map) => map.startingPositions,
+);
 export const selectMapTileAtPosition = createSelector(
   [selectMap, (_, position: Position) => position],
   (map, position) => {

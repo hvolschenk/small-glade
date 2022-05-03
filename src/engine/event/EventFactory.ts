@@ -25,6 +25,7 @@ import OutfitItemWear from './OutfitItemWear';
 import OutfitSelectedTypeUpdate from './OutfitSelectedTypeUpdate';
 import OutfitToggle from './OutfitToggle';
 import PlayerMove from './PlayerMove';
+import PlayerPositionUpdate from './PlayerPositionUpdate';
 import PlayerVitalsUpdate from './PlayerVitalsUpdate';
 import { Event as EventInterface } from './types';
 import WeatherUpdate from './WeatherUpdate';
@@ -61,6 +62,7 @@ const events = [
   OutfitSelectedTypeUpdate,
   OutfitToggle,
   PlayerMove,
+  PlayerPositionUpdate,
   PlayerVitalsUpdate,
   WeatherUpdate,
 ];
