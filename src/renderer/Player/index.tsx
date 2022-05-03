@@ -27,6 +27,7 @@ const Player: React.FC = () => {
 
   const handleKeyDown = React.useCallback(
     (event: KeyboardEvent) => {
+      event.preventDefault();
       const movementControls: Record<string, Direction> = {
         ArrowDown: 'down',
         ArrowLeft: 'left',
