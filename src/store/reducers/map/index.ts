@@ -6,12 +6,14 @@ import { Prey, PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Animal } from '~/src/models/Animal/types';
 import { Fire } from '~/src/models/Fire/types';
 import { Interactable } from '~/src/models/Interactable/types';
-import { Map } from '~/src/models/Map/types';
+import { FogOfWarStatus, Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
+import positionsEqual from '~/src/utilities/positionsEqual';
 
 const initialState: Map = {
   animals: [],
   fires: [],
+  fogOfWar: [],
   identifier: '',
   interactables: [],
   name: '',
@@ -53,6 +55,20 @@ const mapSlice = createSlice({
     mapFireStart: (state, action: PayloadAction<{ fire: Fire }>) => {
       state.fires.push(action.payload.fire);
     },
+    mapFogOfWarUpdateVisible: (state, action: PayloadAction<{ positions: Position[] }>) => {
+      state.fogOfWar = state.fogOfWar.map((row, rowIndex) =>
+        row.map((tile, tileIndex) => {
+          const tilePosition: Position = { left: tileIndex, top: rowIndex };
+          const isVisible = action.payload.positions.some((position) =>
+            positionsEqual(position, tilePosition),
+          );
+          if (isVisible) {
+            return FogOfWarStatus.VISIBLE;
+          }
+          return tile === FogOfWarStatus.VISIBLE ? FogOfWarStatus.EXPLORED : tile;
+        }),
+      );
+    },
     mapInteractableInteract: (state, action: PayloadAction<{ interactable: Interactable }>) => {
       const interactableToInteract = state.interactables.find(
         (interactable) => interactable.id === action.payload.interactable.id,
@@ -73,6 +89,7 @@ export const {
   mapAnimalPreyStatus,
   mapFireDurationUpdate,
   mapFireStart,
+  mapFogOfWarUpdateVisible,
   mapInteractableInteract,
   mapNameUpdate,
 } = mapSlice.actions;

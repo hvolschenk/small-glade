@@ -11,7 +11,7 @@ import placeholderEmpty from '../Tile/PlaceholderEmpty';
 import rockBasic from '../Tile/RockBasic';
 import treeBirch from '../Tile/TreeBirch';
 import waterBasic from '../Tile/WaterBasic';
-import { Map } from './types';
+import { FogOfWarStatus, Map } from './types';
 
 const animal = (animalModel: Animal, top: Position['top'], left: Position['left']) => ({
   ...animalModel,
@@ -35,9 +35,14 @@ const r = rockBasic;
 const t = treeBirch;
 const w = waterBasic;
 
+const fogOfWar = new Array(39)
+  .fill(undefined)
+  .map(() => new Array(55).fill(FogOfWarStatus.UNEXPLORED, 0, 55));
+
 const smallGlade: Map = {
   animals: [animal(wolfArctic, 1, 21), animal(deerElk, 22, 17), animal(deerElk, 20, 49)],
   fires: [],
+  fogOfWar,
   identifier: 'small-glade',
   interactables: [
     interactable(bushBearberry, 5, 2),

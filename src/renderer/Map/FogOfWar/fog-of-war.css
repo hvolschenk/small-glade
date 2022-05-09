@@ -1,0 +1,22 @@
+@import url('../../../variables.css');
+
+.fog-of-war {
+  background-color: var(--color--black);
+  height: var(--size--tile);
+  position: absolute;
+  width: var(--size--tile);
+  z-index: var(--z-index--fog-of-war);
+}
+
+.fog-of-war--explored {
+  opacity: 0.5;
+}
+
+.fog-of-war--unexplored {
+  opacity: 1;
+}
+
+.fog-of-war--visible {
+  opacity: 0;
+  z-index: var(--z-index--map);
+}

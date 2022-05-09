@@ -7,6 +7,7 @@ import { selectMap } from '~/src/store/reducers/map/selectors';
 import Player from '../Player';
 import Animals from './Animals';
 import Fires from './Fires';
+import FogOfWar from './FogOfWar';
 import Interactables from './Interactables';
 import Tiles from './Tiles';
 
@@ -22,6 +23,7 @@ const Map: React.FC = () => {
       <Fires fires={map.fires} />
       <Interactables interactables={map.interactables} />
       <Tiles tiles={map.tiles} />
+      <FogOfWar />
     </div>
   );
 };

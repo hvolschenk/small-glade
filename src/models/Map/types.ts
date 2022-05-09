@@ -4,9 +4,16 @@ import { Interactable } from '../Interactable/types';
 import { Position } from '../Position';
 import { Tile } from '../Tile/types';
 
+export enum FogOfWarStatus {
+  EXPLORED = 'EXPLORED',
+  UNEXPLORED = 'UNEXPLORED',
+  VISIBLE = 'VISIBLE',
+}
+
 export interface Map {
   animals: Animal[];
   fires: Fire[];
+  fogOfWar: FogOfWarStatus[][];
   identifier: string;
   interactables: Interactable[];
   name: string;

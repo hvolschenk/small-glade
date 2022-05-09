@@ -18,6 +18,10 @@ const effectGameTurn: Effect<Options> = (options) => {
   options.trigger('game:turn');
 };
 
+const effectMapFogOfWarUpdateVisible: Effect<Options> = (options) => {
+  options.trigger('map:fog-of-war:update-visible');
+};
+
 const validateGameStatusIdle: Validator<Options> = (options) => {
   const status = selectGameStatus(options.getState());
   return status === GameStatus.GAME_STATUS_IDLE;
@@ -64,7 +68,7 @@ const validateTileAccessible: Validator<Options> = (options) => {
 class PlayerMove extends EventAbstract<Options> {
   public static event: string = 'player:move';
 
-  effects: Effect<Options>[] = [effectGameTurn];
+  effects: Effect<Options>[] = [effectGameTurn, effectMapFogOfWarUpdateVisible];
   validators: Validator<Options>[] = [
     validateGameStatusIdle,
     validateInMapBounds,

@@ -1,3 +1,6 @@
+// The vision radius of the player
+const PLAYER_VISION_RADIUS = 5;
+
 // The size (height/width) of a tile on-screen (in pixels).
 // Unfortunately this value cannot be propogated to css,
 // because of that this value needs to be updated in `variables.css`, too.
@@ -24,6 +27,9 @@ const WEATHER_TEMPERATURE_LIMIT_UPPER = 1;
 // -----------------------------------------------------------------------------
 
 const configuration = {
+  player: {
+    visionRadius: () => PLAYER_VISION_RADIUS,
+  },
   tileSize: () => TILE_SIZE,
   vitals: {
     fullnessHealthLossPerTurn: () => VITALS_FULLNESS_HEALTH_LOSS_PER_TURN,
