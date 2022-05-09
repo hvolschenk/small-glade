@@ -9,10 +9,14 @@ export interface PlayerPositionUpdateOptions {
 }
 type Options = EventOptions & PlayerPositionUpdateOptions;
 
+const effectMapFogOfWarUpdateVisible: Effect<Options> = (options) => {
+  options.trigger('map:fog-of-war:update-visible');
+};
+
 class PlayerPositionUpdate extends EventAbstract<Options> {
   public static event: string = 'player:position:update';
 
-  effects: Effect<Options>[] = [];
+  effects: Effect<Options>[] = [effectMapFogOfWarUpdateVisible];
   validators: Validator<Options>[] = [];
 
   // eslint-disable-next-line class-methods-use-this

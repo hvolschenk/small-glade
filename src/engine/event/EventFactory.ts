@@ -21,6 +21,7 @@ import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
 import MapFiresDurationUpdate from './MapFiresDurationUpdate';
+import MapFogOfWarUpdateVisible from './MapFogOfWarUpdateVisible';
 import OutfitItemWear from './OutfitItemWear';
 import OutfitSelectedTypeUpdate from './OutfitSelectedTypeUpdate';
 import OutfitToggle from './OutfitToggle';
@@ -58,6 +59,7 @@ const events = [
   MapAnimalsPreyFlee,
   MapAnimalsPreyMove,
   MapFiresDurationUpdate,
+  MapFogOfWarUpdateVisible,
   OutfitItemWear,
   OutfitSelectedTypeUpdate,
   OutfitToggle,

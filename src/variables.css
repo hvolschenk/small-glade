@@ -21,9 +21,10 @@
   --z-index--interactable: 15;
   --z-index--player: 20;
   --z-index--environment: 25;
-  --z-index--hud: 30;
-  --z-index--control: 35;
-  --z-index--menu: 40;
-  --z-index--uniterruptable-menu: 45;
-  --z-index--end-screen: 50;
+  --z-index--fog-of-war: 30;
+  --z-index--hud: 35;
+  --z-index--control: 40;
+  --z-index--menu: 45;
+  --z-index--uniterruptable-menu: 50;
+  --z-index--end-screen: 55;
 }
