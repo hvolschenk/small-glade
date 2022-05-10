@@ -8,7 +8,6 @@ import { Fire } from '~/src/models/Fire/types';
 import { Interactable } from '~/src/models/Interactable/types';
 import { FogOfWarStatus, Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
-import positionsEqual from '~/src/utilities/positionsEqual';
 
 const initialState: Map = {
   animals: [],
@@ -56,18 +55,12 @@ const mapSlice = createSlice({
       state.fires.push(action.payload.fire);
     },
     mapFogOfWarUpdateVisible: (state, action: PayloadAction<{ positions: Position[] }>) => {
-      state.fogOfWar = state.fogOfWar.map((row, rowIndex) =>
-        row.map((tile, tileIndex) => {
-          const tilePosition: Position = { left: tileIndex, top: rowIndex };
-          const isVisible = action.payload.positions.some((position) =>
-            positionsEqual(position, tilePosition),
-          );
-          if (isVisible) {
-            return FogOfWarStatus.VISIBLE;
-          }
-          return tile === FogOfWarStatus.VISIBLE ? FogOfWarStatus.EXPLORED : tile;
-        }),
+      state.fogOfWar = state.fogOfWar.map((row) =>
+        row.map((tile) => (tile === FogOfWarStatus.VISIBLE ? FogOfWarStatus.EXPLORED : tile)),
       );
+      action.payload.positions.forEach((position) => {
+        state.fogOfWar[position.top][position.left] = FogOfWarStatus.VISIBLE;
+      });
     },
     mapInteractableInteract: (state, action: PayloadAction<{ interactable: Interactable }>) => {
       const interactableToInteract = state.interactables.find(
