@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { Predator } from '~/src/models/Animal/Predator/types';
 import { Prey } from '~/src/models/Animal/Prey/types';
+import { FogOfWarStatus } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
 import radiusAroundPosition from '~/src/utilities/radiusAroundPosition';
 
@@ -19,6 +20,19 @@ export const selectMapAnimalsPrey = createSelector(
 );
 export const selectMapFires = createSelector([selectMap], (map) => map.fires);
 export const selectMapFogOfWar = createSelector([selectMap], (map) => map.fogOfWar);
+export const selectMapFogOfWarPositionVisible = createSelector(
+  [selectMapFogOfWar, (_, position: Position) => position],
+  (fogOfWar, position) => {
+    const row = fogOfWar[position.top];
+    if (row) {
+      const tile = row[position.left];
+      if (tile) {
+        return tile === FogOfWarStatus.VISIBLE;
+      }
+    }
+    return false;
+  },
+);
 export const selectMapStartingPositions = createSelector(
   [selectMap],
   (map) => map.startingPositions,
