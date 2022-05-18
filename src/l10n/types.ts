@@ -63,6 +63,7 @@ export interface L10n {
   outfitItemTypeUnderwear: string;
   outfitStatisticProtection: string;
   outfitStatisticWarmth: string;
+  outfitTitle: string;
   radialMenuActionFire: string;
   radialMenuTitle: string;
   weatherConditions: string;

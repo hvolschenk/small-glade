@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
@@ -6,11 +5,10 @@ import l10n from '~/src/l10n';
 import { useSelector } from '~/src/store/hooks';
 import { selectInventory } from '~/src/store/reducers/inventory/selectors';
 
+import FullScreenMenu from '../components/FullScreenMenu';
 import InventoryItem from './Item';
 import SelectedItem from './SelectedItem';
 import { InventoryItem as InventoryItemInterface } from './types';
-
-import './inventory.css';
 
 const Inventory: React.FC = () => {
   const { trigger } = useEngine();
@@ -48,24 +46,16 @@ const Inventory: React.FC = () => {
   }, [handleKeyDown]);
 
   return (
-    <div className={classnames({ open: inventory.isOpen })} id="inventory">
-      <div id="inventory__header">
-        <h1>{l10n.inventoryTitle}</h1>
-        <button
-          id="inventory__close"
-          onClick={() => {
-            trigger('inventory:toggle');
-          }}
-          type="button"
-        >
-          X
-        </button>
-      </div>
-      <div id="inventory__content">
-        <div id="inventory__items">
-          {inventoryItems.length === 0 && (
-            <p className="inventory__items__error">{l10n.inventoryMessageNoItems}</p>
-          )}
+    <FullScreenMenu
+      footer={
+        <React.Fragment>
+          Capacity: {inventoryItems.length}/{inventory.capacity}
+        </React.Fragment>
+      }
+      isOpen={inventory.isOpen}
+      list={
+        <React.Fragment>
+          {inventoryItems.length === 0 && <p>{l10n.inventoryMessageNoItems}</p>}
           {inventoryItems.length > 0 && (
             <React.Fragment>
               {inventoryItems.map(({ count, item }) => (
@@ -77,15 +67,14 @@ const Inventory: React.FC = () => {
               ))}
             </React.Fragment>
           )}
-        </div>
-        <div id="inventory__selected">
-          <SelectedItem />
-        </div>
-      </div>
-      <div id="inventory__footer">
-        Capacity: {inventoryItems.length}/{inventory.capacity}
-      </div>
-    </div>
+        </React.Fragment>
+      }
+      onClose={() => {
+        trigger('inventory:toggle');
+      }}
+      selected={<SelectedItem />}
+      title={l10n.inventoryTitle}
+    />
   );
 };
 
