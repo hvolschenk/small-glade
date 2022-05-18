@@ -72,7 +72,7 @@ const Outfit: React.FC = () => {
         trigger('outfit:toggle');
       }}
       selected={<SelectedItem />}
-      title="Outfit"
+      title={l10n.outfitTitle}
     />
   );
 };

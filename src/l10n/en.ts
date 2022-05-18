@@ -68,6 +68,7 @@ const en: L10n = {
   outfitItemTypeUnderwear: 'Underwear',
   outfitStatisticProtection: 'Protection',
   outfitStatisticWarmth: 'Warmth',
+  outfitTitle: 'Outfit',
   radialMenuActionFire: 'Make fire',
   radialMenuTitle: 'Radial',
   weatherConditions: 'Conditions',
