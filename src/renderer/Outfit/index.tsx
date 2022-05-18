@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import React from 'react';
 
 import { useEngine } from '~/src/engine';
@@ -12,10 +11,9 @@ import {
 } from '~/src/store/reducers/outfit/selectors';
 import { selectWeather } from '~/src/store/reducers/weather/selectors';
 
+import FullScreenMenu from '../components/FullScreenMenu';
 import Item from './Item';
 import SelectedItem from './SelectedItem';
-
-import './outfit.css';
 
 const Outfit: React.FC = () => {
   const { trigger } = useEngine();
@@ -48,21 +46,19 @@ const Outfit: React.FC = () => {
   }, [handleKeyDown]);
 
   return (
-    <div className={classnames({ open: outfit.isOpen })} id="outfit">
-      <div id="outfit__header">
-        <h1>Outfit</h1>
-        <button
-          id="outfit__close"
-          onClick={() => {
-            trigger('outfit:toggle');
-          }}
-          type="button"
-        >
-          X
-        </button>
-      </div>
-      <div id="outfit__content">
-        <div id="outfit__items">
+    <FullScreenMenu
+      footer={
+        <React.Fragment>
+          {l10n.outfitStatisticProtection}: {protection}.&nbsp;
+          {l10n.outfitStatisticWarmth}: {warmth}
+          <br />
+          {l10n.weatherTemperature}: {weather.temperature}.&nbsp;
+          {l10n.weatherConditions}: {conditionsText}
+        </React.Fragment>
+      }
+      isOpen={outfit.isOpen}
+      list={
+        <React.Fragment>
           <Item type="hat" />
           <Item type="shirt" />
           <Item type="jacket" />
@@ -70,19 +66,14 @@ const Outfit: React.FC = () => {
           <Item type="pants" />
           <Item type="socks" />
           <Item type="shoes" />
-        </div>
-        <div id="outfit__selected">
-          <SelectedItem />
-        </div>
-      </div>
-      <div id="outfit__footer">
-        {l10n.outfitStatisticProtection}: {protection}.&nbsp;
-        {l10n.outfitStatisticWarmth}: {warmth}
-        <br />
-        {l10n.weatherTemperature}: {weather.temperature}.&nbsp;
-        {l10n.weatherConditions}: {conditionsText}
-      </div>
-    </div>
+        </React.Fragment>
+      }
+      onClose={() => {
+        trigger('outfit:toggle');
+      }}
+      selected={<SelectedItem />}
+      title="Outfit"
+    />
   );
 };
 
