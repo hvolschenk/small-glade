@@ -3,6 +3,14 @@ export interface L10n {
   animalAttackTitle: string;
   animalDeerElkName: string;
   animalWolfArcticName: string;
+  containerActionPickUp: string;
+  containerActionSearch: string;
+  containerEmpty: string;
+  containerFooterInventoryCapacity: string;
+  containerTitle: string;
+  containerTypeBackpack: string;
+  containerTypeSack: string;
+  containerTypeTrunk: string;
   controlInventoryShortcut: string;
   controlOutfitShortcut: string;
   controlPauseMenuShortcut: string;

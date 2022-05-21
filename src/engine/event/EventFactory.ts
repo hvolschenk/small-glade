@@ -20,6 +20,7 @@ import MapAnimalsPredatorFlee from './MapAnimalsPredatorFlee';
 import MapAnimalsPredatorMove from './MapAnimalsPredatorMove';
 import MapAnimalsPreyFlee from './MapAnimalsPreyFlee';
 import MapAnimalsPreyMove from './MapAnimalsPreyMove';
+import MapContainerItemPickUp from './MapContainerItemPickUp';
 import MapFiresDurationUpdate from './MapFiresDurationUpdate';
 import MapFogOfWarUpdateVisible from './MapFogOfWarUpdateVisible';
 import OutfitItemWear from './OutfitItemWear';
@@ -58,6 +59,7 @@ const events = [
   MapAnimalsPredatorMove,
   MapAnimalsPreyFlee,
   MapAnimalsPreyMove,
+  MapContainerItemPickUp,
   MapFiresDurationUpdate,
   MapFogOfWarUpdateVisible,
   OutfitItemWear,

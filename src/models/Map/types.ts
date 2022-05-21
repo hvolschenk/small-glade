@@ -1,4 +1,5 @@
 import { Animal } from '../Animal/types';
+import { Container } from '../Container/types';
 import { Fire } from '../Fire/types';
 import { Interactable } from '../Interactable/types';
 import { Position } from '../Position';
@@ -12,6 +13,7 @@ export enum FogOfWarStatus {
 
 export interface Map {
   animals: Animal[];
+  containers: Container[];
   fires: Fire[];
   fogOfWar: FogOfWarStatus[][];
   identifier: string;

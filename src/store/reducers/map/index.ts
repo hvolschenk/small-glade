@@ -4,13 +4,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Predator, PredatorStatus } from '~/src/models/Animal/Predator/types';
 import { Prey, PreyStatus } from '~/src/models/Animal/Prey/types';
 import { Animal } from '~/src/models/Animal/types';
+import { Container } from '~/src/models/Container/types';
 import { Fire } from '~/src/models/Fire/types';
 import { Interactable } from '~/src/models/Interactable/types';
+import { Item } from '~/src/models/Item/types';
 import { FogOfWarStatus, Map } from '~/src/models/Map/types';
 import { Position } from '~/src/models/Position';
 
 const initialState: Map = {
   animals: [],
+  containers: [],
   fires: [],
   fogOfWar: [],
   identifier: '',
@@ -44,6 +47,20 @@ const mapSlice = createSlice({
       if (prey) {
         (prey as Prey).status = action.payload.status;
       }
+    },
+    mapContainerItemRemove: (
+      state,
+      action: PayloadAction<{ container: Container; item: Item }>,
+    ) => {
+      state.containers = state.containers.map((container) => {
+        if (container.id === action.payload.container.id) {
+          return {
+            ...container,
+            items: container.items.filter((item) => item.id !== action.payload.item.id),
+          };
+        }
+        return container;
+      });
     },
     mapFireDurationUpdate: (
       state,
@@ -80,6 +97,7 @@ export const {
   mapAnimalMove,
   mapAnimalPredatorStatus,
   mapAnimalPreyStatus,
+  mapContainerItemRemove,
   mapFireDurationUpdate,
   mapFireStart,
   mapFogOfWarUpdateVisible,
