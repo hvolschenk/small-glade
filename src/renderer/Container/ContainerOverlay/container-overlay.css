@@ -1,0 +1,16 @@
+@import url('../../../variables.css');
+
+.container-overlay__action--open {
+  position: fixed;
+  right: 0;
+  top: var(--size--normal);
+  z-index: var(--z-index--control);
+}
+
+.container-overlay__item__action--select {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: var(--size--tile);
+  width: var(--size--tile);
+}

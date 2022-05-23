@@ -3,9 +3,15 @@ import { v4 as uuidv4 } from 'uuid';
 import wolfArctic from '../Animal/Predator/WolfArctic';
 import deerElk from '../Animal/Prey/DeerElk';
 import { Animal } from '../Animal/types';
+import backpack from '../Container/Backpack';
+import trunk from '../Container/Trunk';
+import { Container } from '../Container/types';
 import bushBearberry from '../Interactable/BushBearberry';
 import fuelStick from '../Interactable/FuelStick';
 import { Interactable } from '../Interactable/types';
+import starterMatches from '../Item/Fire/StarterMatches';
+import tinderNewspaper from '../Item/Fire/TinderNewspaper';
+import { Item } from '../Item/types';
 import { Position } from '../Position';
 import placeholderEmpty from '../Tile/PlaceholderEmpty';
 import rockBasic from '../Tile/RockBasic';
@@ -19,12 +25,30 @@ const animal = (animalModel: Animal, top: Position['top'], left: Position['left'
   position: { left, top },
 });
 
+const container = (
+  containerModel: Container,
+  top: Position['top'],
+  left: Position['left'],
+  items: Item[] = [],
+) => ({
+  ...containerModel,
+  id: uuidv4(),
+  items,
+  position: { left, top },
+});
+
 const interactable = (
   interactableModel: Interactable,
   top: Position['top'],
   left: Position['left'],
 ) => ({
   ...interactableModel,
+  id: uuidv4(),
+  position: { left, top },
+});
+
+const item = (itemModel: Item, top: Position['top'], left: Position['left']) => ({
+  ...itemModel,
   id: uuidv4(),
   position: { left, top },
 });
@@ -41,6 +65,10 @@ const fogOfWar = new Array(39)
 
 const smallGlade: Map = {
   animals: [animal(wolfArctic, 1, 21), animal(deerElk, 22, 17), animal(deerElk, 20, 49)],
+  containers: [
+    container(backpack, 5, 5, [item(starterMatches, 0, 0), item(tinderNewspaper, 0, 0)]),
+    container(trunk, 26, 35, [item(starterMatches, 0, 0), item(tinderNewspaper, 0, 0)]),
+  ],
   fires: [],
   fogOfWar,
   identifier: 'small-glade',
