@@ -48,6 +48,9 @@ const mapSlice = createSlice({
         (prey as Prey).status = action.payload.status;
       }
     },
+    mapContainerAdd: (state, action: PayloadAction<{ container: Container }>) => {
+      state.containers.push(action.payload.container);
+    },
     mapContainerItemRemove: (
       state,
       action: PayloadAction<{ container: Container; item: Item }>,
@@ -97,6 +100,7 @@ export const {
   mapAnimalMove,
   mapAnimalPredatorStatus,
   mapAnimalPreyStatus,
+  mapContainerAdd,
   mapContainerItemRemove,
   mapFireDurationUpdate,
   mapFireStart,

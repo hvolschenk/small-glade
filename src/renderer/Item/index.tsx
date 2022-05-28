@@ -13,9 +13,13 @@ import UnderwearCotton from './Clothing/UnderwearCotton';
 import Bearberry from './Consumable/Bearberry';
 import BottleWater from './Consumable/BottleWater';
 import CrispsTomato from './Consumable/CrispsTomato';
+import MeatDeerCooked from './Consumable/MeatDeerCooked';
+import MeatDeerUncooked from './Consumable/MeatDeerUncooked';
 import FuelStick from './Fire/FuelStick';
 import StarterMatches from './Fire/StarterMatches';
 import TinderNewspaper from './Fire/TinderNewspaper';
+import Gut from './Material/Gut';
+import HideDeer from './Material/HideDeer';
 import { ItemRendererProps } from './types';
 import FistsBare from './Weapon/FistsBare';
 import KnifeHunting from './Weapon/KnifeHunting';
@@ -64,6 +68,10 @@ const itemFactory = (item: ItemInterface): React.ComponentType<ItemRendererProps
       crisps: {
         tomato: CrispsTomato,
       },
+      meat: {
+        'deer-cooked': MeatDeerCooked,
+        'deer-uncooked': MeatDeerUncooked,
+      },
     },
     fire: {
       fuel: {
@@ -74,6 +82,14 @@ const itemFactory = (item: ItemInterface): React.ComponentType<ItemRendererProps
       },
       tinder: {
         newspaper: TinderNewspaper,
+      },
+    },
+    material: {
+      gut: {
+        default: Gut,
+      },
+      hide: {
+        deer: HideDeer,
       },
     },
     weapon: {

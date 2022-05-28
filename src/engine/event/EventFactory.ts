@@ -8,6 +8,7 @@ import GameRadialMenuToggle from './GameRadialMenuToggle';
 import GameStart from './GameStart';
 import GameTurn from './GameTurn';
 import GameTurnsSurvivedIncrease from './GameTurnsSurvivedIncrease';
+import InteractableCarcassDeerElkHarvest from './InteractableCarcassDeerElkHarvest';
 import InteractableHarvest from './InteractableHarvest';
 import InventoryItemAdd from './InventoryItemAdd';
 import InventorySelectedItemUpdate from './InventorySelectedItemUpdate';
@@ -47,6 +48,7 @@ const events = [
   GameStart,
   GameTurn,
   GameTurnsSurvivedIncrease,
+  InteractableCarcassDeerElkHarvest,
   InteractableHarvest,
   InventoryItemAdd,
   InventorySelectedItemUpdate,

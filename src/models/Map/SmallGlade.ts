@@ -7,6 +7,7 @@ import backpack from '../Container/Backpack';
 import trunk from '../Container/Trunk';
 import { Container } from '../Container/types';
 import bushBearberry from '../Interactable/BushBearberry';
+import carcassDeerElk from '../Interactable/CarcassDeerElk';
 import fuelStick from '../Interactable/FuelStick';
 import { Interactable } from '../Interactable/types';
 import starterMatches from '../Item/Fire/StarterMatches';
@@ -109,6 +110,7 @@ const smallGlade: Map = {
     interactable(fuelStick, 23, 6),
     interactable(fuelStick, 24, 4),
     interactable(fuelStick, 24, 7),
+    interactable(carcassDeerElk, 24, 27),
     interactable(fuelStick, 25, 7),
     interactable(fuelStick, 25, 43),
     interactable(fuelStick, 26, 41),

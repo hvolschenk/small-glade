@@ -4,6 +4,7 @@ import './interaction-overlay.css';
 
 interface InteractinoOverlayAction {
   action: () => void;
+  disabled?: boolean;
   title: string;
 }
 
@@ -15,7 +16,7 @@ const InteractionOverlay: React.FC<InteractionOverlayProps> = ({ actions }) => (
   <div id="interaction-overlay">
     <div className="interaction-overlay__content">
       {actions.map((action) => (
-        <button key={action.title} onClick={action.action} type="button">
+        <button disabled={action.disabled} key={action.title} onClick={action.action} type="button">
           {action.title}
         </button>
       ))}
