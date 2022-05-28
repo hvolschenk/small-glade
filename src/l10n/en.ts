@@ -58,7 +58,7 @@ const en: L10n = {
   itemConsumableCrispsTomatoName: 'Tomato crisps',
   itemFireFuelStickDescription: "A stick. Good for fuel, but won't last long",
   itemFireFuelStickName: 'Stick',
-  itemFireStarterMatchesDescription: 'A pack of matches, very useful for starting fires',
+  itemFireStarterMatchesDescription: 'A pack of matches, very useful for starting fires.',
   itemFireStarterMatchesName: 'Matches',
   itemFireTinderNewspaperDescription:
     'A newspaper. More useful as tinder than source of information.',
