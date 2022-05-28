@@ -13,6 +13,7 @@ import bottleWater from '../Item/Consumable/BottleWater';
 import crispsTomato from '../Item/Consumable/CrispsTomato';
 import { Item } from '../Item/types';
 import fistsBare from '../Item/Weapon/FistsBare';
+import knifeHunting from '../Item/Weapon/KnifeHunting';
 import { Inventory } from './types';
 
 const item = (itemModel: Item): Item => ({
@@ -30,6 +31,7 @@ const startingInventory: Inventory = {
     item(fistsBare),
     item(hatBeanieWool),
     item(jacketDenim),
+    item(knifeHunting),
     item(pantsJeans),
     item(shirtCotton),
     item(shoesSneakers),

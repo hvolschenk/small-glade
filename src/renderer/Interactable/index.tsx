@@ -3,6 +3,7 @@ import React from 'react';
 import { Interactable as InteractableInterface } from '~/src/models/Interactable/types';
 
 import BushBearberry from './BushBearberry';
+import CarcassDeerElk from './CarcassDeerElk';
 import FuelStick from './FuelStick';
 import StarterMatches from './StarterMatches';
 import TinderNewspaper from './TinderNewspaper';
@@ -19,6 +20,9 @@ const interactableFactory = (
   > = {
     bush: {
       'bear-berry': BushBearberry,
+    },
+    carcass: {
+      'deer-elk': CarcassDeerElk,
     },
     fuel: {
       stick: FuelStick,

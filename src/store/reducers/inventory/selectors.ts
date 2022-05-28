@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { Item } from '~/src/models/Item/types';
+import { Weapon } from '~/src/models/Item/Weapon/types';
 
 import { RootState } from '../../types';
 
@@ -25,4 +26,8 @@ export const selectInventoryItemsOfType = createSelector(
 export const selectInventorySelectedItem = createSelector(
   [selectInventory],
   (inventory) => inventory.selectedItem,
+);
+export const selectInventoryWeaponsHarvesting = createSelector(
+  [(state) => selectInventoryItemsOfCategory(state, 'weapon')],
+  (weapons) => weapons.filter((weapon) => (weapon as Weapon).canHarvest) as Weapon[],
 );

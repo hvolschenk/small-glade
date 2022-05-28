@@ -11,6 +11,10 @@
   background-image: url('/src/images/bush.png');
 }
 
+.interactable.carcass-deer-elk {
+  background-image: url('/src/images/carcass-deer-elk.png');
+}
+
 .interactable.fuel-stick {
   background-image: url('/src/images/stick.png');
 }

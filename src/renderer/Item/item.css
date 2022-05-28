@@ -49,6 +49,14 @@
   background-image: url('/src/images/crisps-tomato.png');
 }
 
+.item.item__consumable__meat-deer-cooked {
+  background-image: url('/src/images/meat-deer-cooked.png');
+}
+
+.item.item__consumable__meat-deer-uncooked {
+  background-image: url('/src/images/meat-deer-uncooked.png');
+}
+
 .item.item__fire__fuel-stick {
   background-image: url('/src/images/stick.png');
 }
@@ -59,6 +67,14 @@
 
 .item.item__fire__tinder-newspaper {
   background-image: url('/src/images/newspaper.png');
+}
+
+.item.item__material__gut-default {
+  background-image: url('/src/images/gut.png');
+}
+
+.item.item__material__hide-deer {
+  background-image: url('/src/images/hide-deer.png');
 }
 
 .item.item__weapon__fists-bare {

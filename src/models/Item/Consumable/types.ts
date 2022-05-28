@@ -4,7 +4,7 @@ export interface Consumable extends Item {
   category: 'consumable';
   fullness: number;
   hydration: number;
-  type: 'berry' | 'bottle' | 'crisps';
+  type: 'berry' | 'bottle' | 'crisps' | 'meat';
 }
 
 export interface ConsumableBerry extends Consumable {
@@ -17,4 +17,8 @@ export interface ConsumableBottle extends Consumable {
 
 export interface ConsumableCrisps extends Consumable {
   type: 'crisps';
+}
+
+export interface ConsumableMeat extends Consumable {
+  type: 'meat';
 }

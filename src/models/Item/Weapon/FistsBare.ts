@@ -1,6 +1,8 @@
 import { Weapon } from './types';
 
 const fistsBare: Weapon = {
+  canDefend: true,
+  canHarvest: false,
   category: 'weapon',
   damage: 1,
   id: '00000000-0000-0000-0000-000000000000',
