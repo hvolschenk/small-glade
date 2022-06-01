@@ -8,6 +8,7 @@ const fuelStick: FireFuel = {
     description: 'itemFireFuelStickDescription',
     name: 'itemFireFuelStickName',
   },
+  position: { left: 0, top: 0 },
   type: 'fuel',
   variant: 'stick',
 };

@@ -10,6 +10,7 @@ const fistsBare: Weapon = {
     description: 'itemWeaponFistsBareDescription',
     name: 'itemWeaponFistsBareName',
   },
+  position: { left: 0, top: 0 },
   type: 'fists',
   variant: 'bare',
 };

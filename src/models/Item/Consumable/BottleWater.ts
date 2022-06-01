@@ -9,6 +9,7 @@ const bottleWater: ConsumableBottle = {
     description: 'itemConsumableBottleWaterDescription',
     name: 'itemConsumableBottleWaterName',
   },
+  position: { left: 0, top: 0 },
   type: 'bottle',
   variant: 'water',
 };

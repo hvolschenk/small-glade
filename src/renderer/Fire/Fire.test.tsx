@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Fire as FireInterface } from '~/src/models/Fire/types';
+import fireBasic from '~/src/models/Fire/Basic';
+import fireFactory from '~/src/models/Fire/factory';
 import { store } from '~/src/store';
 import { mapFireStart } from '~/src/store/reducers/map';
 import { fireEvent, render, RenderResult } from '~/src/testing';
@@ -11,11 +12,7 @@ describe('With a duration of `0`', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    const fire: FireInterface = {
-      duration: 0,
-      heat: 30,
-      position: { left: 2, top: 2 },
-    };
+    const fire = fireFactory({ ...fireBasic, duration: 0 }, 2, 2);
     store.dispatch(mapFireStart({ fire }));
     wrapper = render(<Fire fire={fire} />);
   });
@@ -29,11 +26,7 @@ describe('With a duration greater than `0`', () => {
   let wrapper: RenderResult;
 
   beforeEach(() => {
-    const fire: FireInterface = {
-      duration: 10,
-      heat: 30,
-      position: { left: 2, top: 2 },
-    };
+    const fire = fireFactory(fireBasic, 2, 2);
     store.dispatch(mapFireStart({ fire }));
     wrapper = render(<Fire fire={fire} />);
   });

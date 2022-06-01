@@ -7,6 +7,7 @@ const tinderNewspaper: FireTinder = {
     description: 'itemFireTinderNewspaperDescription',
     name: 'itemFireTinderNewspaperName',
   },
+  position: { left: 0, top: 0 },
   type: 'tinder',
   variant: 'newspaper',
 };

@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
-
 import hatBeanieWool from '../Item/Clothing/HatBeanieWool';
 import jacketDenim from '../Item/Clothing/JacketDenim';
 import pantsJeans from '../Item/Clothing/PantsJeans';
@@ -11,33 +9,28 @@ import underwearCotton from '../Item/Clothing/UnderwearCotton';
 import bearBerry from '../Item/Consumable/Bearberry';
 import bottleWater from '../Item/Consumable/BottleWater';
 import crispsTomato from '../Item/Consumable/CrispsTomato';
-import { Item } from '../Item/types';
+import itemFactory from '../Item/factory';
 import fistsBare from '../Item/Weapon/FistsBare';
 import knifeHunting from '../Item/Weapon/KnifeHunting';
 import { Inventory } from './types';
-
-const item = (itemModel: Item): Item => ({
-  ...itemModel,
-  id: uuidv4(),
-});
 
 const startingInventory: Inventory = {
   capacity: 30,
   isOpen: false,
   items: [
-    item(bearBerry),
-    item(bottleWater),
-    item(crispsTomato),
-    item(fistsBare),
-    item(hatBeanieWool),
-    item(jacketDenim),
-    item(knifeHunting),
-    item(pantsJeans),
-    item(shirtCotton),
-    item(shoesSneakers),
-    item(socksCotton),
-    item(socksWool),
-    item(underwearCotton),
+    itemFactory(bearBerry),
+    itemFactory(bottleWater),
+    itemFactory(crispsTomato),
+    itemFactory(fistsBare),
+    itemFactory(hatBeanieWool),
+    itemFactory(jacketDenim),
+    itemFactory(knifeHunting),
+    itemFactory(pantsJeans),
+    itemFactory(shirtCotton),
+    itemFactory(shoesSneakers),
+    itemFactory(socksCotton),
+    itemFactory(socksWool),
+    itemFactory(underwearCotton),
   ],
 };
 

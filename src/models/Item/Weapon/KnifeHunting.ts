@@ -10,6 +10,7 @@ const knifeHunting: Weapon = {
     description: 'itemWeaponKnifeHuntingDescription',
     name: 'itemWeaponKnifeHuntingName',
   },
+  position: { left: 0, top: 0 },
   type: 'knife',
   variant: 'hunting',
 };

@@ -7,6 +7,7 @@ const socksWool: ClothingSocks = {
     description: 'itemClothingSocksWoolDescription',
     name: 'itemClothingSocksWoolName',
   },
+  position: { left: 0, top: 0 },
   protection: 0,
   type: 'socks',
   variant: 'wool',

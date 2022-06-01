@@ -9,6 +9,7 @@ const bearBerry: ConsumableBerry = {
     description: 'itemConsumableBearberryDescription',
     name: 'itemConsumableBearberryName',
   },
+  position: { left: 0, top: 0 },
   type: 'berry',
   variant: 'bearberry',
 };

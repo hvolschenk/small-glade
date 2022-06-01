@@ -7,9 +7,9 @@ import { RootState } from '../types';
 const mapFiresDurationUpdate =
   (): ThunkAction<void, RootState, void, AnyAction> => (dispatch, getState) => {
     const fires = selectMapFires(getState());
-    fires.forEach((fire, index) => {
+    fires.forEach((fire) => {
       if (fire.duration > 0) {
-        dispatch(mapFireDurationUpdate({ duration: fire.duration - 1, index }));
+        dispatch(mapFireDurationUpdate({ duration: fire.duration - 1, id: fire.id }));
       }
     });
   };

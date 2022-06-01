@@ -7,6 +7,7 @@ const hideDeer: Material = {
     description: 'itemMaterialHideDeerDescription',
     name: 'itemMaterialHideDeerName',
   },
+  position: { left: 0, top: 0 },
   type: 'hide',
   variant: 'deer',
 };

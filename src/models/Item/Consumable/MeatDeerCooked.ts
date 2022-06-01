@@ -9,6 +9,7 @@ const meatDeerCooked: ConsumableMeat = {
     description: 'itemConsumableMeatDeerCookedDescription',
     name: 'itemConsumableMeatDeerCookedName',
   },
+  position: { left: 0, top: 0 },
   type: 'meat',
   variant: 'deer-cooked',
 };

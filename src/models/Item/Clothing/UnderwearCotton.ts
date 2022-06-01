@@ -7,6 +7,7 @@ const underwearCotton: ClothingUnderwear = {
     description: 'itemClothingUnderwearCottonDescription',
     name: 'itemClothingUnderwearCottonName',
   },
+  position: { left: 0, top: 0 },
   protection: 0,
   type: 'underwear',
   variant: 'cotton',
