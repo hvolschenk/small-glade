@@ -9,6 +9,7 @@ const crispsTomato: ConsumableCrisps = {
     description: 'itemConsumableCrispsTomatoDescription',
     name: 'itemConsumableCrispsTomatoName',
   },
+  position: { left: 0, top: 0 },
   type: 'crisps',
   variant: 'tomato',
 };

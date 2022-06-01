@@ -7,6 +7,7 @@ const hatBeanieWool: ClothingHat = {
     description: 'itemClothingHatBeanieWoolDescription',
     name: 'itemClothingHatBeanieWoolName',
   },
+  position: { left: 0, top: 0 },
   protection: 0,
   type: 'hat',
   variant: 'beanie-wool',

@@ -67,9 +67,12 @@ const mapSlice = createSlice({
     },
     mapFireDurationUpdate: (
       state,
-      action: PayloadAction<{ duration: Fire['duration']; index: number }>,
+      action: PayloadAction<{ duration: Fire['duration']; id: Fire['id'] }>,
     ) => {
-      state.fires[action.payload.index].duration = action.payload.duration;
+      const fire = state.fires.find((stateFire) => stateFire.id === action.payload.id);
+      if (fire) {
+        fire.duration = action.payload.duration;
+      }
     },
     mapFireStart: (state, action: PayloadAction<{ fire: Fire }>) => {
       state.fires.push(action.payload.fire);

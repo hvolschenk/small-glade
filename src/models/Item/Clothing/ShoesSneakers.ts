@@ -7,6 +7,7 @@ const shoesSneakers: ClothingShoes = {
     description: 'itemClothingShoesSneakersDescription',
     name: 'itemClothingShoesSneakersName',
   },
+  position: { left: 0, top: 0 },
   protection: 0,
   type: 'shoes',
   variant: 'sneakers',

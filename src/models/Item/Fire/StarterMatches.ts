@@ -8,6 +8,7 @@ const starterMatches: FireStarter = {
     name: 'itemFireStarterMatchesName',
   },
   lights: 10,
+  position: { left: 0, top: 0 },
   type: 'starter',
   variant: 'matches',
 };

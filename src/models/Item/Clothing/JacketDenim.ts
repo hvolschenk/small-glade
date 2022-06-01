@@ -7,6 +7,7 @@ const jacketDenim: ClothingJacket = {
     description: 'itemClothingJacketDenimDescription',
     name: 'itemClothingJacketDenimName',
   },
+  position: { left: 0, top: 0 },
   protection: 1,
   type: 'jacket',
   variant: 'denim',

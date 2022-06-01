@@ -7,6 +7,7 @@ const gut: Material = {
     description: 'itemMaterialGutDescription',
     name: 'itemMaterialGutName',
   },
+  position: { left: 0, top: 0 },
   type: 'gut',
   variant: 'default',
 };
