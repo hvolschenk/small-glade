@@ -4,16 +4,12 @@ import { useEngine } from '~/src/engine';
 import { InteractableHarvestOptions } from '~/src/engine/event/InteractableHarvest';
 import l10n from '~/src/l10n';
 import bearBerry from '~/src/models/Item/Consumable/Bearberry';
-import { useSelector } from '~/src/store/hooks';
-import { selectPlayerPosition } from '~/src/store/reducers/player/selectors';
-import positionsEqual from '~/src/utilities/positionsEqual';
 
 import InteractionOverlay from './InteractionOverlay';
 import { InteractableRendererProps } from './types';
 
 const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
   const { trigger } = useEngine();
-  const playerPosition = useSelector(selectPlayerPosition);
 
   if (interactable.hasBeenInteractedWith) {
     return null;
@@ -22,21 +18,20 @@ const BushBearberry: React.FC<InteractableRendererProps> = ({ interactable, styl
   return (
     <React.Fragment>
       <div className="interactable bush-bearberry" style={style} />
-      {positionsEqual(playerPosition, interactable.position) && (
-        <InteractionOverlay
-          actions={[
-            {
-              action: () => {
-                trigger<InteractableHarvestOptions>('interactable:harvest', {
-                  interactable,
-                  item: bearBerry,
-                });
-              },
-              title: l10n.interactableActionHarvest,
+      <InteractionOverlay
+        actions={[
+          {
+            action: () => {
+              trigger<InteractableHarvestOptions>('interactable:harvest', {
+                interactable,
+                item: bearBerry,
+              });
             },
-          ]}
-        />
-      )}
+            title: l10n.interactableActionHarvest,
+          },
+        ]}
+        position={interactable.position}
+      />
     </React.Fragment>
   );
 };
