@@ -25,6 +25,11 @@ export interface L10n {
   gameIntroductionQuote: string;
   interactableActionHarvest: string;
   interactableActionPickUp: string;
+  interactableBushBearberryName: string;
+  interactableCarcassDeerElkName: string;
+  interactableFuelStickName: string;
+  interactableStarterMatchesName: string;
+  interactableTinderNewspaperName: string;
   inventoryItemActionDrink: string;
   inventoryItemActionEat: string;
   inventoryMessageNoItems: string;
