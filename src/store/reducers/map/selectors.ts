@@ -21,14 +21,18 @@ export const selectMapAnimalsPrey = createSelector(
 export const selectMapContainers = createSelector([selectMap], (map) => map.containers);
 export const selectMapFires = createSelector([selectMap], (map) => map.fires);
 export const selectMapFogOfWar = createSelector([selectMap], (map) => map.fogOfWar);
-export const selectMapFogOfWarPositionVisible = createSelector(
-  [selectMapFogOfWar, (_, position: Position) => position],
-  (fogOfWar, position) => {
+export const selectMapFogOfWarPosition = createSelector(
+  [
+    selectMapFogOfWar,
+    (_, position: Position) => position,
+    (_, __, status: FogOfWarStatus) => status,
+  ],
+  (fogOfWar, position, status) => {
     const row = fogOfWar[position.top];
     if (row) {
       const tile = row[position.left];
       if (tile) {
-        return tile === FogOfWarStatus.VISIBLE;
+        return tile === status;
       }
     }
     return false;

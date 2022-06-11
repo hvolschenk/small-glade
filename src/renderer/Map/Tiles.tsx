@@ -17,6 +17,7 @@ const Tiles: React.FC<TilesProps> = ({ tiles }) => (
         {row.map((tile, tileIndex) => (
           <Tile
             key={`${rowIndex}-${tileIndex}`}
+            position={{ left: tileIndex, top: rowIndex }}
             style={{
               left: tileIndex * configuration.tileSize(),
               top: rowIndex * configuration.tileSize(),

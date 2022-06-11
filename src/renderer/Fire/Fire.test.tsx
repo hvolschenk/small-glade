@@ -4,9 +4,16 @@ import fireBasic from '~/src/models/Fire/Basic';
 import fireFactory from '~/src/models/Fire/factory';
 import { store } from '~/src/store';
 import { mapFireStart } from '~/src/store/reducers/map';
+import { selectMapFogOfWarPosition } from '~/src/store/reducers/map/selectors';
 import { fireEvent, render, RenderResult } from '~/src/testing';
 
 import Fire from './index';
+
+jest.mock('~/src/store/reducers/map/selectors');
+
+beforeEach(() => {
+  (selectMapFogOfWarPosition as unknown as jest.Mock<boolean>).mockReturnValue(false);
+});
 
 describe('With a duration of `0`', () => {
   let wrapper: RenderResult;

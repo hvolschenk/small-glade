@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { FogOfWarStatus } from '~/src/models/Map/types';
+import { Position } from '~/src/models/Position';
 import { Tile as TileInterface } from '~/src/models/Tile/types';
+import { useSelector } from '~/src/store/hooks';
+import { selectMapFogOfWarPosition } from '~/src/store/reducers/map/selectors';
 
 import PlaceholderEmpty from './PlaceholderEmpty';
 import RockBasic from './RockBasic';
@@ -35,7 +39,17 @@ const tileFactory = (tile: TileInterface): React.ComponentType<TileRendererProps
   return PlaceholderEmpty;
 };
 
-const Tile: React.FC<TileRendererProps> = ({ style, tile }) => {
+type TileProps = TileRendererProps & { position: Position };
+
+const Tile: React.FC<TileProps> = ({ position, style, tile }) => {
+  const isPositionUnexplored = useSelector((state) =>
+    selectMapFogOfWarPosition(state, position, FogOfWarStatus.UNEXPLORED),
+  );
+
+  if (isPositionUnexplored) {
+    return null;
+  }
+
   const TileRenderer = tileFactory(tile);
   return <TileRenderer style={style} tile={tile} />;
 };
