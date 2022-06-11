@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Interactable as InteractableInterface } from '~/src/models/Interactable/types';
+import { FogOfWarStatus } from '~/src/models/Map/types';
+import { useSelector } from '~/src/store/hooks';
+import { selectMapFogOfWarPosition } from '~/src/store/reducers/map/selectors';
 
 import BushBearberry from './BushBearberry';
 import CarcassDeerElk from './CarcassDeerElk';
@@ -46,6 +49,14 @@ const interactableFactory = (
 };
 
 const Interactable: React.FC<InteractableRendererProps> = ({ interactable, style }) => {
+  const isPositionUnexplored = useSelector((state) =>
+    selectMapFogOfWarPosition(state, interactable.position, FogOfWarStatus.UNEXPLORED),
+  );
+
+  if (isPositionUnexplored) {
+    return null;
+  }
+
   const InteractableRenderer = interactableFactory(interactable);
   return <InteractableRenderer interactable={interactable} style={style} />;
 };

@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Predator as PredatorInterface } from '~/src/models/Animal/Predator/types';
 import { Prey as PreyInterface } from '~/src/models/Animal/Prey/types';
+import { FogOfWarStatus } from '~/src/models/Map/types';
 import { useSelector } from '~/src/store/hooks';
-import { selectMapFogOfWarPositionVisible } from '~/src/store/reducers/map/selectors';
+import { selectMapFogOfWarPosition } from '~/src/store/reducers/map/selectors';
 
 import Predator from './Predator';
 import Prey from './Prey';
@@ -13,7 +14,7 @@ import './animal.css';
 
 const Animal: React.FC<AnimalRendererProps> = ({ animal, style }) => {
   const isPositionVisible = useSelector((state) =>
-    selectMapFogOfWarPositionVisible(state, animal.position),
+    selectMapFogOfWarPosition(state, animal.position, FogOfWarStatus.VISIBLE),
   );
 
   if (!isPositionVisible) {
